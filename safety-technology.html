@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Safety & Technology | CLS Global Transportation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="description" content="11 million miles without a passenger injury. TSI-certified drivers, electronic HOS monitoring, real-time GPS and mobile app.">
+<meta property="og:title" content="Safety & Technology | CLS Global Transportation">
+<meta property="og:description" content="11 million miles without a passenger injury. TSI-certified drivers, electronic HOS monitoring, real-time GPS and mobile app.">
+<meta property="og:image" content="https://www.clsgt.com/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1a1a'/%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='1.5'/%3E%3Cellipse cx='32' cy='32' rx='10' ry='24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='1.2'/%3E%3Cline x1='8' y1='32' x2='56' y2='32' stroke='rgba(255,255,255,0.4)' stroke-width='1.2'/%3E%3Ctext x='32' y='37' font-family='IBM Plex Sans' font-weight='800' font-size='13' fill='white' text-anchor='middle'%3ECLS%3C/text%3E%3C/svg%3E">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#C41E1E;--red-dark:#9e1717;--red-light:#fde8e8;--red-bright:#E02020;
+  --warm-white:#fdfcfb;--warm-bg:#f5f3ef;--warm-border:#e2ddd6;
+  --black:#111110;--gray-700:#3d3c39;--gray-500:#6b6a66;--gray-300:#a8a7a2;--gray-100:#f0ede8;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'IBM Plex Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--warm-white);color:var(--black)}
+/* NAV */
+nav{position:sticky;top:0;z-index:9999;background:rgba(253,252,251,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-btn{font-size:13px;color:var(--gray-500);text-decoration:none;padding:8px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;cursor:pointer;background:none;border:none;font-family:var(--sans);white-space:nowrap}
+.nav-btn:hover{color:var(--black);background:var(--warm-bg)}
+.nav-dropdown{display:none;position:fixed;background:#fff;border:1px solid var(--warm-border);border-radius:10px;padding:8px;min-width:220px;z-index:99999;box-shadow:0 8px 32px rgba(0,0,0,0.12);max-height:80vh;overflow-y:auto}
+.nav-dropdown.active{display:block}
+.nav-dropdown a{display:block;font-size:13px;color:var(--gray-700);text-decoration:none;padding:9px 12px;border-radius:6px}
+.nav-dropdown a:hover{background:var(--warm-bg);color:var(--black)}
+.nav-dropdown-label{font-size:10px;color:var(--gray-300);text-transform:uppercase;letter-spacing:0.1em;font-weight:500;padding:8px 12px 4px}
+.nav-dropdown hr{border:none;border-top:1px solid var(--warm-border);margin:6px 0}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-phone{font-size:12px;color:var(--gray-500);white-space:nowrap}
+.nav-phone strong{color:var(--black)}
+.nav-cta{background:var(--red);color:#fff!important;font-size:13px;font-weight:500;padding:10px 22px;border-radius:6px;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:var(--red-dark)}
+.chevron{font-size:10px;opacity:.5}
+/* PAGE HERO */
+.page-hero{background:#111110;padding:80px 80px 72px;position:relative}
+.page-hero::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:radial-gradient(ellipse at 100% 50%,rgba(196,30,30,0.12) 0%,transparent 70%);pointer-events:none}
+.page-hero-label{font-size:11px;font-weight:500;color:rgba(196,30,30,0.9);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:16px}
+.page-hero h1{font-family:var(--serif);font-size:60px;color:#fff;line-height:1.05;margin-bottom:20px;max-width:700px}
+.page-hero h1 em{color:#E02020;font-style:italic}
+.page-hero p{font-size:15px;font-weight:300;color:rgba(255,255,255,0.5);line-height:1.75;max-width:560px;margin-bottom:32px}
+.page-hero-btns{display:flex;gap:14px;align-items:center}
+.btn-primary{background:var(--red);color:#fff;font-size:14px;font-weight:500;padding:13px 26px;border-radius:7px;text-decoration:none;display:inline-block}
+.btn-primary:hover{background:var(--red-dark)}
+.btn-outline{border:1px solid rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);font-size:14px;padding:13px 26px;border-radius:7px;text-decoration:none}
+.btn-outline:hover{border-color:rgba(255,255,255,0.5);color:#fff}
+/* STATS BAND */
+.stats-band{background:var(--red);display:grid;grid-template-columns:repeat(4,1fr)}
+.band-stat{padding:32px 24px;text-align:center;border-right:1px solid rgba(255,255,255,0.15)}
+.band-stat:last-child{border-right:none}
+.band-num{font-family:var(--serif);font-size:40px;color:#fff;margin-bottom:4px}
+.band-label{font-size:11px;color:rgba(255,255,255,0.65);letter-spacing:0.1em;text-transform:uppercase}
+/* SECTIONS */
+.section{padding:80px 80px}
+.section-alt{background:var(--warm-bg)}
+.section-dark{background:#111110}
+.section-label{font-size:11px;font-weight:500;color:var(--red);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:12px}
+.section-label-dark{font-size:11px;font-weight:500;color:rgba(196,30,30,0.85);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-family:var(--serif);font-size:40px;color:var(--black);line-height:1.1;margin-bottom:14px}
+.section-title-white{font-family:var(--serif);font-size:40px;color:#fff;line-height:1.1;margin-bottom:14px}
+.section-sub{font-size:14px;font-weight:300;color:var(--gray-500);line-height:1.75;max-width:580px}
+.section-sub-white{font-size:14px;font-weight:300;color:rgba(255,255,255,0.45);line-height:1.75;max-width:580px}
+/* LAYOUT */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+/* CARDS */
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.benefit-card{background:var(--warm-bg);border:1px solid var(--warm-border);border-radius:12px;padding:28px}
+.benefit-card:hover{background:#fff}
+.benefit-card-dark{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:28px}
+.benefit-icon{width:40px;height:40px;border-radius:9px;background:var(--red-light);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.benefit-icon svg{width:20px;height:20px;stroke:var(--red);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.benefit-title{font-size:15px;font-weight:500;color:var(--black);margin-bottom:8px}
+.benefit-title-white{font-size:15px;font-weight:500;color:#fff;margin-bottom:8px}
+.benefit-desc{font-size:13px;font-weight:300;color:var(--gray-500);line-height:1.65}
+.benefit-desc-white{font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.65}
+/* FEATURE LIST */
+.feature-list{display:flex;flex-direction:column}
+.feature-item{border-top:1px solid var(--warm-border);padding:18px 0;display:flex;gap:14px;align-items:flex-start}
+.feature-item:last-child{border-bottom:1px solid var(--warm-border)}
+.feature-dot{width:6px;height:6px;border-radius:50%;background:var(--red);flex-shrink:0;margin-top:6px}
+.feature-title{font-size:14px;font-weight:500;color:var(--black);margin-bottom:4px}
+.feature-desc{font-size:13px;font-weight:300;color:var(--gray-500);line-height:1.65}
+.feature-item-dark{border-top:1px solid rgba(255,255,255,0.07);padding:18px 0;display:flex;gap:14px;align-items:flex-start}
+.feature-item-dark:last-child{border-bottom:1px solid rgba(255,255,255,0.07)}
+.feature-dot-red{width:6px;height:6px;border-radius:50%;background:#E02020;flex-shrink:0;margin-top:6px}
+.feature-title-white{font-size:14px;font-weight:500;color:#fff;margin-bottom:4px}
+.feature-desc-white{font-size:13px;font-weight:300;color:rgba(255,255,255,0.4);line-height:1.65}
+/* FORM */
+.cstrip-form{background:#fff;border:1px solid var(--warm-border);border-radius:14px;padding:36px}
+.form-title{font-family:var(--serif);font-size:24px;color:var(--black);margin-bottom:6px}
+.form-sub{font-size:13px;color:var(--gray-500);font-weight:300;margin-bottom:22px}
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.form-group label{font-size:12px;color:var(--gray-700);font-weight:500}
+.form-group input,.form-group select,.form-group textarea{font-family:var(--sans);font-size:13px;color:var(--black);background:var(--warm-bg);border:1px solid var(--warm-border);border-radius:7px;padding:11px 14px;outline:none;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--red);background:#fff}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-submit{background:var(--red);color:#fff;font-family:var(--sans);font-size:14px;font-weight:500;padding:14px;border-radius:7px;border:none;cursor:pointer;width:100%}
+.form-submit:hover{background:var(--red-dark)}
+/* MISC */
+.tag{font-size:12px;color:var(--gray-700);background:var(--warm-bg);border:1px solid var(--warm-border);border-radius:4px;padding:4px 10px}
+.tag-red{font-size:12px;color:var(--red);background:var(--red-light);border:1px solid rgba(196,30,30,0.15);border-radius:4px;padding:4px 10px}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.callout{background:var(--red-light);border:1px solid rgba(196,30,30,0.15);border-radius:10px;padding:24px 28px;margin-top:24px}
+.callout-title{font-size:13px;font-weight:500;color:var(--red);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
+.callout-text{font-size:13px;font-weight:300;color:var(--gray-700);line-height:1.65}
+.cstrip-item{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px}
+.cstrip-icon{width:36px;height:36px;border-radius:8px;background:var(--red-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cstrip-icon svg{width:16px;height:16px;stroke:var(--red);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.cstrip-label{font-size:11px;color:var(--gray-300);text-transform:uppercase;letter-spacing:0.08em;font-weight:500;margin-bottom:3px}
+.cstrip-val{font-size:15px;color:var(--black)}
+.cstrip-sub{font-size:12px;color:var(--gray-500);font-weight:300;margin-top:2px}
+/* FOOTER */
+footer{background:#111110;padding:56px 80px 36px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-tagline{font-size:13px;font-weight:300;color:rgba(255,255,255,0.38);line-height:1.7;max-width:260px;margin-bottom:18px}
+.footer-phone{font-size:13px;color:rgba(255,255,255,0.6)}
+.footer-phone strong{color:#fff}
+.footer-col-title{font-size:10px;font-weight:500;color:rgba(255,255,255,0.28);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.45);text-decoration:none;margin-bottom:9px}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:24px;display:flex;justify-content:space-between}
+.footer-copy,.footer-tcp{font-size:12px;color:rgba(255,255,255,0.22)}
+/* MOBILE */
+@media(max-width:900px){
+  nav{padding:0 20px;height:56px}
+  .nav-links{display:none}
+  .nav-phone{display:none}
+  .page-hero{padding:40px 24px 36px}
+  .page-hero h1{font-size:36px}
+  .section{padding:48px 24px}
+  .two-col{grid-template-columns:1fr;gap:36px}
+  .benefit-grid{grid-template-columns:1fr}
+  .stats-band{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  footer{padding:40px 24px 28px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:24px}
+}
+@media(max-width:480px){
+  .page-hero h1{font-size:30px}
+  .stats-band{grid-template-columns:1fr 1fr}
+  .band-num{font-size:28px}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body><nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="168" height="36" viewBox="0 0 168 36" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="17" fill="#1a1a1a"/>
+      <ellipse cx="18" cy="18" rx="7.5" ry="17" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <line x1="1" y1="18" x2="35" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <line x1="3" y1="10" x2="33" y2="10" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+      <line x1="3" y1="26" x2="33" y2="26" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+      <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/>
+      <text x="18" y="22" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="9" fill="#fff" text-anchor="middle" letter-spacing="1.2">CLS</text>
+      <text x="44" y="21" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="18" fill="#C41E1E" letter-spacing="-0.3">CLS Global</text>
+      <text x="44" y="33" font-family="IBM Plex Sans,sans-serif" font-weight="400" font-size="9" fill="#a8a7a2" letter-spacing="2.5">TRANSPORTATION</text>
+    </svg>
+  </a>
+  <div class="nav-links">
+    <button class="nav-btn" data-dropdown="dd-services">Services <span class="chevron">&#9660;</span></button>
+    <a href="about.html" class="nav-btn">About</a>
+    <button class="nav-btn" data-dropdown="dd-safety">Safety &amp; Tech <span class="chevron">&#9660;</span></button>
+    <a href="fleet.html" class="nav-btn">Fleet</a>
+    <a href="environmental.html" class="nav-btn">Environmental</a>
+    <a href="careers.html" class="nav-btn">Careers</a>
+  </div>
+  <div class="nav-right">
+    <span class="nav-phone"><strong>650.460.8778</strong></span>
+    <a href="index.html#contact" class="nav-cta">Get a Quote</a>
+  </div>
+</nav>
+<div id="dd-services" class="nav-dropdown">
+  <div class="nav-dropdown-label">Corporate</div>
+  <a href="corporate.html">Commuter Shuttles</a>
+  <a href="corporate.html#shared">Shared Commuter Solutions</a>
+  <a href="corporate.html#intercampus">Inter-Campus Shuttles</a>
+  <a href="corporate.html#lastmile">Last Mile &amp; Parking</a>
+  <hr>
+  <div class="nav-dropdown-label">University</div>
+  <a href="university.html">University Transit Programs</a>
+  <hr>
+  <div class="nav-dropdown-label">Government</div>
+  <a href="government.html">Municipal &amp; Agency Shuttles</a>
+  <a href="government.html#employee">Employee Transit Programs</a>
+  <a href="government.html#ada">ADA &amp; Paratransit</a>
+  <hr>
+  <div class="nav-dropdown-label">Personal &amp; Events</div>
+  <a href="personal-events.html#weddings">Weddings &amp; Celebrations</a>
+  <a href="personal-events.html#concerts">Concerts &amp; Nightlife</a>
+  <a href="personal-events.html#group">Group Travel</a>
+  <a href="personal-events.html#wine">Wine Country Tours</a>
+  <a href="personal-events.html#airport">Airport Services</a>
+  <a href="personal-events.html#conferences">Conferences &amp; Conventions</a>
+</div>
+<div id="dd-safety" class="nav-dropdown">
+  <a href="safety-technology.html">Safety Programs</a>
+  <a href="safety-technology.html#training">Driver Training</a>
+  <a href="safety-technology.html#tech">Technology &amp; App</a>
+  <a href="safety-technology.html#compliance">Compliance</a>
+</div>
+<section class="page-hero">
+  <div class="page-hero-label">Safety and Technology</div>
+  <h1>We live and breathe<br><em>safety.</em></h1>
+  <p>A comprehensive, system-wide safety program that is unique and unmatched in the industry paired with technology that keeps your riders informed and your program running flawlessly.</p>
+  <div class="page-hero-btns"><a href="index.html#contact" class="btn-primary">Get in Touch</a><a href="#safety" class="btn-outline">Our Programs</a></div>
+</section>
+<div class="stats-band">
+  <div class="band-stat"><div class="band-num">11M+</div><div class="band-label">Miles Zero Injuries</div></div>
+  <div class="band-stat"><div class="band-num">100%</div><div class="band-label">CHP and DMV Pass Rate</div></div>
+  <div class="band-stat"><div class="band-num">Weekly</div><div class="band-label">Safety Committee</div></div>
+  <div class="band-stat"><div class="band-num">TSI</div><div class="band-label">Certified Instructors</div></div>
+</div>
+<section class="section" id="safety">
+  <div class="two-col">
+    <div>
+      <div class="section-label">Safety Programs</div>
+      <div class="section-title">A culture of safety, not just a policy.</div>
+      <p class="section-sub" style="margin-bottom:28px">At CLS Global, safety is not a department. It is a culture. Every person in the organization understands its importance. Our programs are ongoing, not one-time.</p>
+      <div class="feature-list">
+        <div class="feature-item"><div class="feature-dot"></div><div><div class="feature-title">Bus Rodeos and Competitive Safety Training</div><div class="feature-desc">All chauffeurs compete on difficult obstacle courses for the prize of best driver of the year. Real-world skill reinforcement in a high-stakes, competitive format.</div></div></div>
+        <div class="feature-item"><div class="feature-dot"></div><div><div class="feature-title">Internal Safety Committee and Review Board</div><div class="feature-desc">Weekly meetings to review incidents, identify risks, and ensure compliance across all operations. Every safety rule is enforced without exception.</div></div></div>
+        <div class="feature-item"><div class="feature-dot"></div><div><div class="feature-title">Hours of Service Monitoring</div><div class="feature-desc">Our HOS policy is more stringent than DOT guidelines. Every driver's hours are electronically monitored ensuring fully rested operators before every shift.</div></div></div>
+        <div class="feature-item"><div class="feature-dot"></div><div><div class="feature-title">Road Observation and Ride Checks</div><div class="feature-desc">Our safety department conducts regularly scheduled road observations and unannounced ride checks to monitor chauffeur performance in real conditions.</div></div></div>
+        <div class="feature-item"><div class="feature-dot"></div><div><div class="feature-title">ADA Vehicle Operation</div><div class="feature-desc">All chauffeurs are trained on ADA vehicle operation and maintenance including ramp systems, priority seating protocols, and sensitivity training.</div></div></div>
+      </div>
+    </div>
+    <div>
+      <div style="background:rgba(196,30,30,0.06);border:1px solid rgba(196,30,30,0.15);border-radius:14px;padding:36px;margin-bottom:24px">
+        <div style="font-family:var(--serif);font-size:56px;color:var(--red);line-height:1;margin-bottom:8px">11M+</div>
+        <div style="font-size:16px;font-weight:500;color:var(--black);margin-bottom:8px">Miles operated without a single passenger injury or major vehicle damage.</div>
+        <div style="font-size:13px;font-weight:300;color:var(--gray-500);line-height:1.65">This is the result of a comprehensive safety culture not luck. Every mile reflects our investment in training, technology, and accountability.</div>
+      </div>
+      <div class="section-label" id="compliance">Compliance</div>
+      <div class="benefit-grid" style="grid-template-columns:1fr;gap:14px;margin-top:12px">
+        <div class="benefit-card"><div class="benefit-title">CHP Inspections and DMV Audits</div><div class="benefit-desc">We consistently pass all California Highway Patrol inspections and DMV audits. Full compliance documentation available on request for any client or government contract.</div></div>
+        <div class="benefit-card"><div class="benefit-title">Periodic Retraining</div><div class="benefit-desc">Minimum 6 hours per quarter of refresher training for every chauffeur reinforcing defensive driving, client relations, and safety protocols.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section section-alt" id="training">
+  <div class="section-label">Driver Training</div>
+  <div class="section-title">The most thorough training program in the industry.</div>
+  <p class="section-sub">After extensive interviews and background checks, applicants attend CLS Global's training program with classroom and on-road sessions taught by two highly qualified instructors.</p>
+  <div class="benefit-grid" style="margin-top:36px">
+    <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div><div class="benefit-title">TSI-Certified Defensive Driving</div><div class="benefit-desc">Transportation Safety Institute certified instructors teach the most effective defensive driving techniques available, the same standard used by major transit agencies.</div></div>
+    <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="benefit-title">Sensitivity and Accessibility Training</div><div class="benefit-desc">Empathy training for mobility-challenged clients, ADA vehicle operation certification, and disability awareness so every rider feels welcomed and accommodated.</div></div>
+    <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="benefit-title">Quarterly Refresher Training</div><div class="benefit-desc">A minimum of 6 hours per quarter of ongoing training reinforcing concepts, updating drivers on policy changes, and maintaining the highest performance standards.</div></div>
+    <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div><div class="benefit-title">CPR and First Aid Certified</div><div class="benefit-desc">All Class B chauffeurs are CPR and first aid certified so your riders have a trained first responder on board for every trip.</div></div>
+    <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><div class="benefit-title">Background Screening</div><div class="benefit-desc">Comprehensive background checks before any applicant enters training. Driving record review, criminal screening, and reference verification with zero compromises.</div></div>
+    <div class="benefit-card"><div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/></svg></div><div class="benefit-title">Airport and Special Procedures</div><div class="benefit-desc">Dedicated training for airport pickups, VIP client relations, and vehicle safety inspection protocols.</div></div>
+  </div>
+</section>
+<section class="section section-dark" id="tech">
+  <div class="section-label-dark">Technology</div>
+  <div class="section-title-white" style="margin-bottom:12px">We stay miles ahead of the pack.</div>
+  <p class="section-sub-white" style="margin-bottom:48px">From our GPS-powered mobile app to onboard camera systems, technology drives safety, transparency, and rider satisfaction across every program.</p>
+  <div class="two-col">
+    <div>
+      <div class="feature-item-dark"><div class="feature-dot-red"></div><div><div class="feature-title-white">Real-Time GPS Tracking</div><div class="feature-desc-white">Live vehicle location accessible by every rider via the mobile app. Stop-by-stop route history and precise ETA visibility.</div></div></div>
+      <div class="feature-item-dark"><div class="feature-dot-red"></div><div><div class="feature-title-white">Mobile App iOS and Android</div><div class="feature-desc-white">Schedules and stops, real-time tracking, intelligent delay notifications, eFare ticketing, rider badging, and capacity reporting.</div></div></div>
+      <div class="feature-item-dark"><div class="feature-dot-red"></div><div><div class="feature-title-white">Onboard Camera Systems</div><div class="feature-desc-white">Cameras on every vehicle provide real-time data used for training, coaching, and incident investigation.</div></div></div>
+      <div class="feature-item-dark"><div class="feature-dot-red"></div><div><div class="feature-title-white">Electronic HOS Monitoring</div><div class="feature-desc-white">Driver hours tracked electronically to standards more rigorous than DOT requirements. Automated alerts flag any compliance risk.</div></div></div>
+    </div>
+    <div>
+      <div class="feature-item-dark"><div class="feature-dot-red"></div><div><div class="feature-title-white">Fleet-Wide Secured Wi-Fi</div><div class="feature-desc-white">Every vehicle is equipped with secured Wi-Fi so riders can work, stay connected, and arrive already productive.</div></div></div>
+      <div class="feature-item-dark"><div class="feature-dot-red"></div><div><div class="feature-title-white">Computerized Dispatch System</div><div class="feature-desc-white">Fully computerized reservation and dispatch with accurate job allocation, real-time driver assignment, and continuous rider notifications.</div></div></div>
+      <div class="feature-item-dark"><div class="feature-dot-red"></div><div><div class="feature-title-white">Rider Feedback Systems</div><div class="feature-desc-white">Onboard automated surveys and an in-app feedback channel ensure continuous improvement. Every complaint is tracked, triaged, and resolved.</div></div></div>
+      <div class="feature-item-dark"><div class="feature-dot-red"></div><div><div class="feature-title-white">Performance Reporting Dashboard</div><div class="feature-desc-white">Clients receive daily, weekly, and monthly reports on on-time performance, ridership, route efficiency, and driver metrics.</div></div></div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <svg width="168" height="36" viewBox="0 0 168 36" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="17" fill="#fff" fill-opacity="0.08"/>
+          <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
+          <ellipse cx="18" cy="18" rx="7.5" ry="17" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <line x1="1" y1="18" x2="35" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
+          <line x1="3" y1="10" x2="33" y2="10" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+          <line x1="3" y1="26" x2="33" y2="26" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+          <text x="18" y="22" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="9" fill="#fff" text-anchor="middle" letter-spacing="1.2">CLS</text>
+          <text x="44" y="21" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="18" fill="#C41E1E" letter-spacing="-0.3">CLS Global</text>
+          <text x="44" y="33" font-family="IBM Plex Sans,sans-serif" font-weight="400" font-size="9" fill="rgba(255,255,255,0.35)" letter-spacing="2.5">TRANSPORTATION</text>
+        </svg>
+      </div>
+      <p class="footer-tagline">Bay Area trusted partner for corporate, campus, and event transportation delivering riders on time, every time.</p>
+      <div class="footer-phone">Call or text: <strong>650.460.8778</strong></div>
+      <div style="margin-top:6px;font-size:13px;color:rgba(255,255,255,0.38)">info@clsgt.com</div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Corporate</div>
+      <a href="corporate.html">Commuter Shuttles</a>
+      <a href="corporate.html#shared">Shared Commuter</a>
+      <a href="corporate.html#intercampus">Inter-Campus</a>
+      <a href="corporate.html#lastmile">Last Mile &amp; Parking</a>
+      <a href="corporate.html#bike">Bike Share</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">University &amp; Gov</div>
+      <a href="university.html">University Transit</a>
+      <a href="government.html">Municipal Shuttles</a>
+      <a href="government.html#employee">Employee Transit</a>
+      <a href="government.html#ada">ADA &amp; Paratransit</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Personal &amp; Events</div>
+      <a href="personal-events.html#weddings">Weddings</a>
+      <a href="personal-events.html#concerts">Concerts &amp; Nightlife</a>
+      <a href="personal-events.html#group">Group Travel</a>
+      <a href="personal-events.html#wine">Wine Tours</a>
+      <a href="personal-events.html#airport">Airport Service</a>
+      <a href="personal-events.html#conferences">Conferences</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="about.html">About CLS</a>
+      <a href="safety-technology.html">Safety &amp; Tech</a>
+      <a href="fleet.html">Fleet</a>
+      <a href="environmental.html">Environmental</a>
+      <a href="careers.html">Careers</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">2025 CLS Global Transportation, Inc. All rights reserved.</div>
+    <div class="footer-tcp">TCP #37344</div>
+  </div>
+</footer>
+<script>
+(function(){{
+  var btns = document.querySelectorAll('[data-dropdown]');
+  function closeAll(){{ document.querySelectorAll('.nav-dropdown').forEach(function(d){{ d.classList.remove('active'); }}); }}
+  btns.forEach(function(btn){{
+    btn.addEventListener('click', function(e){{
+      e.stopPropagation();
+      var id = btn.getAttribute('data-dropdown');
+      var dd = document.getElementById(id);
+      var wasOpen = dd.classList.contains('active');
+      closeAll();
+      if(!wasOpen){{
+        var r = btn.getBoundingClientRect();
+        dd.style.top = (r.bottom + 4) + 'px';
+        dd.style.left = r.left + 'px';
+        dd.classList.add('active');
+      }}
+    }});
+  }});
+  document.addEventListener('click', closeAll);
+  document.querySelectorAll('.nav-dropdown').forEach(function(d){{ d.addEventListener('click', function(e){{ e.stopPropagation(); }}); }});
+}})();
+</script>
+</body>
+</html>
