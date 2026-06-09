@@ -270,14 +270,16 @@ footer { background: var(--black); padding: 56px 80px 36px; }
   @media (max-width: 480px) {
     /* Hero */
     .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 32px 20px 28px; }
-    .hero-h1 { font-size: 42px; line-height: 1.05; }
-    .hero-sub { font-size: 14px; margin-bottom: 28px; }
-    .hero-btns { flex-direction: row; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; }
-    .btn-primary { padding: 12px 20px; font-size: 13px; white-space: nowrap; }
+    .hero-left { padding: 28px 20px 24px; }
+    .hero-eyebrow { font-size: 10px; margin-bottom: 14px; }
+    .hero-h1 { font-size: 40px; line-height: 1.05; margin-bottom: 16px; }
+    .hero-sub { font-size: 13px; margin-bottom: 22px; max-width: 100%; }
+    .hero-btns { display: flex; flex-direction: row; align-items: center; flex-wrap: nowrap; gap: 14px; margin-bottom: 22px; }
+    .btn-primary { padding: 11px 18px; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
     .btn-ghost { font-size: 13px; white-space: nowrap; }
-    .hero-trust { gap: 14px; flex-wrap: wrap; }
+    .hero-trust { gap: 12px; flex-wrap: wrap; }
     .trust-text { font-size: 11px; }
+    .trust-dot { width: 4px; height: 4px; }
     .hero-right { display: none; }
     /* Ticker */
     .ticker-item { font-size: 10px; padding: 0 12px; }
@@ -336,6 +338,85 @@ nav{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(253,252
 .nav-cta:hover{background:#9e1717}
 .chevron{font-size:10px;opacity:.5;margin-left:2px}
 
+/* ── HAMBURGER ── */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--black);
+  border-radius: 2px;
+  transition: all 0.25s;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE DRAWER ── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 56px;
+  left: 0; right: 0;
+  background: #fff;
+  border-bottom: 1px solid var(--warm-border);
+  z-index: 9998;
+  padding: 16px 0 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu-section { padding: 0 20px; }
+.mobile-menu-label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--gray-300);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 0 6px;
+  border-top: 1px solid var(--warm-border);
+  margin-top: 8px;
+}
+.mobile-menu-label:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+.mobile-menu a {
+  display: block;
+  font-size: 15px;
+  color: var(--black);
+  text-decoration: none;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--warm-border);
+  font-family: var(--sans);
+}
+.mobile-menu a:last-child { border-bottom: none; }
+.mobile-menu a:hover { color: var(--red); }
+.mobile-menu-cta {
+  margin: 16px 20px 0;
+}
+.mobile-menu-cta a {
+  display: block;
+  background: var(--red);
+  color: #fff !important;
+  text-align: center;
+  padding: 14px;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: none !important;
+}
+
 </style>
 </head>
 <body>
@@ -363,6 +444,7 @@ nav{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(253,252
     <a href="environmental.html" class="nav-btn">Environmental</a>
     <a href="careers.html" class="nav-btn">Careers</a>
   </div>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-right">
     <span class="nav-phone"><strong>650.460.8778</strong></span>
     <a href="index.html#contact" class="nav-cta">Get a Quote</a>
@@ -399,6 +481,38 @@ nav{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(253,252
   <a href="safety-technology.html#tech">Technology &amp; App</a>
   <a href="safety-technology.html#compliance">Compliance</a>
 </div>
+
+<div class="mobile-menu" id="mobile-menu">
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-label">Corporate</div>
+    <a href="corporate.html">Commuter Shuttles</a>
+    <a href="corporate.html#shared">Shared Commuter Solutions</a>
+    <a href="corporate.html#intercampus">Inter-Campus Shuttles</a>
+    <a href="corporate.html#lastmile">Last Mile &amp; Parking</a>
+    <div class="mobile-menu-label">University</div>
+    <a href="university.html">University Transit Programs</a>
+    <div class="mobile-menu-label">Government</div>
+    <a href="government.html">Municipal &amp; Agency Shuttles</a>
+    <a href="government.html#employee">Employee Transit Programs</a>
+    <a href="government.html#ada">ADA &amp; Paratransit</a>
+    <div class="mobile-menu-label">Personal &amp; Events</div>
+    <a href="personal-events.html#weddings">Weddings &amp; Celebrations</a>
+    <a href="personal-events.html#concerts">Concerts &amp; Nightlife</a>
+    <a href="personal-events.html#group">Group Travel</a>
+    <a href="personal-events.html#wine">Wine Country Tours</a>
+    <a href="personal-events.html#airport">Airport Services</a>
+    <div class="mobile-menu-label">Company</div>
+    <a href="about.html">About CLS</a>
+    <a href="safety-technology.html">Safety &amp; Technology</a>
+    <a href="fleet.html">Fleet</a>
+    <a href="environmental.html">Environmental</a>
+    <a href="careers.html">Careers</a>
+  </div>
+  <div class="mobile-menu-cta">
+    <a href="#contact">Get a Quote</a>
+  </div>
+</div>
+
 </div>
 
 
@@ -796,32 +910,50 @@ nav{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(253,252
 
 <script>
 (function(){
-  var dropdowns = document.querySelectorAll('.nav-dropdown');
-  
-  function closeAll() {
-    dropdowns.forEach(function(d){ d.classList.remove('active'); });
-  }
-  
-  document.querySelectorAll('[data-dropdown]').forEach(function(btn){
+  // Dropdown (desktop)
+  var btns = document.querySelectorAll('[data-dropdown]');
+  function closeAll(){ document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('active'); }); }
+  btns.forEach(function(btn){
     btn.addEventListener('click', function(e){
       e.stopPropagation();
-      var target = document.getElementById(btn.getAttribute('data-dropdown'));
-      var isOpen = target.classList.contains('active');
+      var id = btn.getAttribute('data-dropdown');
+      var dd = document.getElementById(id);
+      var wasOpen = dd.classList.contains('active');
       closeAll();
-      if(!isOpen){
-        var rect = btn.getBoundingClientRect();
-        target.style.top = (rect.bottom + 4) + 'px';
-        target.style.left = rect.left + 'px';
-        target.classList.add('active');
+      if(!wasOpen){
+        var r = btn.getBoundingClientRect();
+        dd.style.top = (r.bottom + 4) + 'px';
+        dd.style.left = r.left + 'px';
+        dd.classList.add('active');
       }
     });
   });
-  
-  document.addEventListener('click', function(){ closeAll(); });
-  
-  document.querySelectorAll('.nav-dropdown').forEach(function(d){
-    d.addEventListener('click', function(e){ e.stopPropagation(); });
-  });
+  document.addEventListener('click', closeAll);
+  document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.addEventListener('click', function(e){ e.stopPropagation(); }); });
+
+  // Hamburger (mobile)
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobile-menu');
+  if(hamburger && mobileMenu){
+    hamburger.addEventListener('click', function(e){
+      e.stopPropagation();
+      var isOpen = mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+    mobileMenu.addEventListener('click', function(e){ e.stopPropagation(); });
+    document.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+    });
+    // Close on link tap
+    mobileMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){
+        mobileMenu.classList.remove('open');
+        hamburger.classList.remove('open');
+      });
+    });
+  }
 })();
 </script>
 </body>
