@@ -33,6 +33,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+
+nav{position:sticky;top:0;z-index:9999;background:rgba(253,252,251,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:4px;position:relative}
+.nav-item{position:static}
+.nav-btn{font-size:13px;color:var(--gray-500);text-decoration:none;padding:8px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;cursor:pointer;background:none;border:none;font-family:var(--sans);white-space:nowrap;transition:color .2s,background .2s}
+.nav-btn:hover{color:var(--black);background:var(--warm-bg)}
+.nav-dropdown{display:none;position:fixed;background:#fff;border:1px solid var(--warm-border);border-radius:10px;padding:8px;min-width:220px;z-index:99999;box-shadow:0 8px 32px rgba(0,0,0,0.12);max-height:80vh;overflow-y:auto}
+.nav-dropdown.active{display:block}
+.nav-dropdown a{display:block;font-size:13px;color:var(--gray-700);text-decoration:none;padding:9px 12px;border-radius:6px;transition:background .15s}
+.nav-dropdown a:hover{background:var(--warm-bg);color:var(--black)}
+.nav-dropdown-label{font-size:10px;color:var(--gray-300);text-transform:uppercase;letter-spacing:0.1em;font-weight:500;padding:8px 12px 4px}
+.nav-dropdown hr{border:none;border-top:1px solid var(--warm-border);margin:6px 0}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-phone{font-size:12px;color:var(--gray-500);white-space:nowrap}
+.nav-phone strong{color:var(--black)}
+.nav-cta{background:var(--red);color:#fff!important;font-size:13px;font-weight:500;padding:10px 22px;border-radius:6px;text-decoration:none;transition:background .2s;white-space:nowrap}
+.nav-cta:hover{background:var(--red-dark)}
+.chevron{font-size:10px;opacity:.5;margin-left:2px}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --red:#C41E1E;--red-dark:#9e1717;--red-light:#fde8e8;--red-bright:#E02020;
@@ -43,27 +63,22 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--warm-white);color:var(--black)}
-nav{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(253,252,251,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
-.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
 
 
 
 
-.nav-links{display:flex;align-items:center;gap:4px}
-.nav-item{position:relative}
-.nav-item>a,.nav-item>span{font-size:13px;color:var(--gray-500);text-decoration:none;padding:8px 12px;border-radius:6px;display:flex;align-items:center;gap:4px;cursor:pointer;transition:color .2s,background .2s;white-space:nowrap}
-.nav-item>a:hover,.nav-item>span:hover{color:var(--black);background:var(--warm-bg)}
-..nav-item.open .nav-dropdown{position:absolute;top:100%;left:0;margin-top:2px;background:#fff;border:1px solid var(--warm-border);border-radius:10px;padding:8px;min-width:220px;z-index:9999;opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .18s,transform .18s;box-shadow:0 8px 32px rgba(0,0,0,0.12);max-height:80vh;overflow-y:auto}
-.nav-dropdown a{display:block;font-size:13px;color:var(--gray-700);text-decoration:none;padding:9px 12px;border-radius:6px;transition:background .15s}
-.nav-dropdown a:hover{background:var(--warm-bg);color:var(--black)}
-.nav-dropdown-label{font-size:10px;color:var(--gray-300);text-transform:uppercase;letter-spacing:0.1em;font-weight:500;padding:8px 12px 4px}
-.nav-dropdown hr{border:none;border-top:1px solid var(--warm-border);margin:6px 0}
-.nav-right{display:flex;align-items:center;gap:14px}
-.nav-phone{font-size:12px;color:var(--gray-500);white-space:nowrap}
-.nav-phone strong{color:var(--black)}
-.nav-cta{background:var(--red);color:#fff!important;font-size:13px;font-weight:500;padding:10px 22px;border-radius:6px;text-decoration:none;transition:background .2s;white-space:nowrap}
-.nav-cta:hover{background:var(--red-dark)}
-.chevron{font-size:10px;opacity:.5}
+
+.
+
+
+
+
+
+
+
+
+
+
 /* page hero */
 .page-hero{background:var(--black);padding:80px 80px 72px;position:relative;z-index:1}
 .page-hero::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:radial-gradient(ellipse at 100% 50%,rgba(196,30,30,0.12) 0%,transparent 70%);pointer-events:none}
@@ -179,12 +194,12 @@ footer{background:var(--black);padding:56px 80px 36px}
   @media (max-width: 900px) {
     nav { padding: 0 20px; height: 56px; }
     .nav-links { display: none; }
-    .nav-phone { display: none; }
-    .nav-cta { padding: 9px 18px; font-size: 13px; border-radius: 6px; }
-    .page-hero { padding: 40px 20px 36px; }
-    .page-hero h1 { font-size: 36px; }
-    .page-hero p { font-size: 14px; }
-    .page-hero-btns { flex-direction: column; align-items: flex-start; gap: 10px; }
+    
+    
+    
+    
+    
+    
     .btn-primary { padding: 12px 22px; font-size: 14px; }
     .btn-outline { padding: 12px 22px; font-size: 14px; }
     .section { padding: 48px 20px; }
@@ -248,8 +263,8 @@ footer{background:var(--black);padding:56px 80px 36px}
     /* Section */
     .section { padding: 40px 20px; }
     .section-title { font-size: 30px; }
-    .page-hero { padding: 32px 20px 28px; }
-    .page-hero h1 { font-size: 32px; }
+    
+    
   }
 
 </style>
@@ -257,64 +272,64 @@ footer{background:var(--black);padding:56px 80px 36px}
 <body>
 <nav>
   <a href="index.html" class="nav-logo">
-      <svg width="168" height="36" viewBox="0 0 168 36" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="18" cy="18" r="17" fill="#1a1a1a"/>
-        <ellipse cx="18" cy="18" rx="7.5" ry="17" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
-        <line x1="1" y1="18" x2="35" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
-        <line x1="3" y1="10" x2="33" y2="10" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
-        <line x1="3" y1="26" x2="33" y2="26" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
-        <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/>
-        <text x="18" y="22" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="9" fill="#fff" text-anchor="middle" letter-spacing="1.2">CLS</text>
-        <text x="44" y="21" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="18" fill="#C41E1E" letter-spacing="-0.3">CLS Global</text>
-        <text x="44" y="33" font-family="IBM Plex Sans,sans-serif" font-weight="400" font-size="9" fill="#a8a7a2" letter-spacing="2.5">TRANSPORTATION</text>
-      </svg>
-    </a>
+    <svg width="168" height="36" viewBox="0 0 168 36" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="18" r="17" fill="#1a1a1a"/>
+      <ellipse cx="18" cy="18" rx="7.5" ry="17" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <line x1="1" y1="18" x2="35" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
+      <line x1="3" y1="10" x2="33" y2="10" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+      <line x1="3" y1="26" x2="33" y2="26" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+      <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/>
+      <text x="18" y="22" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="9" fill="#fff" text-anchor="middle" letter-spacing="1.2">CLS</text>
+      <text x="44" y="21" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="18" fill="#C41E1E" letter-spacing="-0.3">CLS Global</text>
+      <text x="44" y="33" font-family="IBM Plex Sans,sans-serif" font-weight="400" font-size="9" fill="#a8a7a2" letter-spacing="2.5">TRANSPORTATION</text>
+    </svg>
+  </a>
   <div class="nav-links">
-    <div class="nav-item">
-      <span>Services <span class="chevron">▾</span></span>
-      <div class="nav-dropdown">
-        <div class="nav-dropdown-label">Corporate</div>
-        <a href="corporate.html">Commuter Shuttles</a>
-        <a href="corporate.html#shared">Shared Commuter Solutions</a>
-        <a href="corporate.html#intercampus">Inter-Campus Shuttles</a>
-        <a href="corporate.html#lastmile">Last Mile &amp; Parking</a>
-        <hr>
-        <div class="nav-dropdown-label">University</div>
-        <a href="university.html">University Transit Programs</a>
-        <hr>
-        <div class="nav-dropdown-label">Government</div>
-        <a href="government.html">Municipal &amp; Agency Shuttles</a>
-        <a href="government.html#employee">Employee Transit Programs</a>
-        <a href="government.html#ada">ADA &amp; Paratransit</a>
-        <hr>
-        <div class="nav-dropdown-label">Personal &amp; Events</div>
-        <a href="personal-events.html#weddings">Weddings &amp; Celebrations</a>
-        <a href="personal-events.html#concerts">Concerts &amp; Nightlife</a>
-        <a href="personal-events.html#group">Group Travel</a>
-        <a href="personal-events.html#wine">Wine Country Tours</a>
-        <a href="personal-events.html#airport">Airport Services</a>
-        <a href="personal-events.html#conferences">Conferences &amp; Conventions</a>
-      </div>
-    </div>
-    <div class="nav-item"><a href="about.html">About</a></div>
-    <div class="nav-item">
-      <span>Safety &amp; Tech <span class="chevron">▾</span></span>
-      <div class="nav-dropdown">
-        <a href="safety-technology.html">Safety Programs</a>
-        <a href="safety-technology.html#training">Driver Training</a>
-        <a href="safety-technology.html#tech">Technology &amp; App</a>
-        <a href="safety-technology.html#compliance">Compliance</a>
-      </div>
-    </div>
-    <div class="nav-item"><a href="fleet.html">Fleet</a></div>
-    <div class="nav-item"><a href="environmental.html">Environmental</a></div>
-    <div class="nav-item"><a href="careers.html">Careers</a></div>
+    <button class="nav-btn" data-dropdown="dd-services">Services <span class="chevron">▾</span></button>
+    <a href="about.html" class="nav-btn">About</a>
+    <button class="nav-btn" data-dropdown="dd-safety">Safety &amp; Tech <span class="chevron">▾</span></button>
+    <a href="fleet.html" class="nav-btn">Fleet</a>
+    <a href="environmental.html" class="nav-btn">Environmental</a>
+    <a href="careers.html" class="nav-btn">Careers</a>
   </div>
   <div class="nav-right">
     <span class="nav-phone"><strong>650.460.8778</strong></span>
     <a href="index.html#contact" class="nav-cta">Get a Quote</a>
   </div>
 </nav>
+
+<div id="dd-services" class="nav-dropdown">
+  <div class="nav-dropdown-label">Corporate</div>
+  <a href="corporate.html">Commuter Shuttles</a>
+  <a href="corporate.html#shared">Shared Commuter Solutions</a>
+  <a href="corporate.html#intercampus">Inter-Campus Shuttles</a>
+  <a href="corporate.html#lastmile">Last Mile &amp; Parking</a>
+  <hr>
+  <div class="nav-dropdown-label">University</div>
+  <a href="university.html">University Transit Programs</a>
+  <hr>
+  <div class="nav-dropdown-label">Government</div>
+  <a href="government.html">Municipal &amp; Agency Shuttles</a>
+  <a href="government.html#employee">Employee Transit Programs</a>
+  <a href="government.html#ada">ADA &amp; Paratransit</a>
+  <hr>
+  <div class="nav-dropdown-label">Personal &amp; Events</div>
+  <a href="personal-events.html#weddings">Weddings &amp; Celebrations</a>
+  <a href="personal-events.html#concerts">Concerts &amp; Nightlife</a>
+  <a href="personal-events.html#group">Group Travel</a>
+  <a href="personal-events.html#wine">Wine Country Tours</a>
+  <a href="personal-events.html#airport">Airport Services</a>
+  <a href="personal-events.html#conferences">Conferences &amp; Conventions</a>
+</div>
+
+<div id="dd-safety" class="nav-dropdown">
+  <a href="safety-technology.html">Safety Programs</a>
+  <a href="safety-technology.html#training">Driver Training</a>
+  <a href="safety-technology.html#tech">Technology &amp; App</a>
+  <a href="safety-technology.html#compliance">Compliance</a>
+</div>
+</div>
+
 <section class="page-hero">
   <div class="breadcrumb"><a href="index.html">Home</a><span>›</span>Services<span>›</span>Corporate</div>
   <div class="page-hero-label">Corporate Services</div>
@@ -500,31 +515,35 @@ footer{background:var(--black);padding:56px 80px 36px}
   </div>
 </footer>
 
+
+
 <script>
 (function(){
-  var items = document.querySelectorAll('.nav-item');
-  var timer;
-  items.forEach(function(item){
-    var dropdown = item.querySelector('.nav-dropdown');
-    if(!dropdown) return;
-    item.addEventListener('mouseenter', function(){
-      clearTimeout(timer);
-      items.forEach(function(i){ i.classList.remove('open'); });
-      item.classList.add('open');
+  var dropdowns = document.querySelectorAll('.nav-dropdown');
+  
+  function closeAll() {
+    dropdowns.forEach(function(d){ d.classList.remove('active'); });
+  }
+  
+  document.querySelectorAll('[data-dropdown]').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      var target = document.getElementById(btn.getAttribute('data-dropdown'));
+      var isOpen = target.classList.contains('active');
+      closeAll();
+      if(!isOpen){
+        var rect = btn.getBoundingClientRect();
+        target.style.top = (rect.bottom + 4) + 'px';
+        target.style.left = rect.left + 'px';
+        target.classList.add('active');
+      }
     });
-    item.addEventListener('mouseleave', function(){
-      timer = setTimeout(function(){
-        item.classList.remove('open');
-      }, 150);
-    });
-    dropdown.addEventListener('mouseenter', function(){
-      clearTimeout(timer);
-    });
-    dropdown.addEventListener('mouseleave', function(){
-      timer = setTimeout(function(){
-        item.classList.remove('open');
-      }, 150);
-    });
+  });
+  
+  document.addEventListener('click', function(){ closeAll(); });
+  
+  document.querySelectorAll('.nav-dropdown').forEach(function(d){
+    d.addEventListener('click', function(e){ e.stopPropagation(); });
   });
 })();
 </script>
