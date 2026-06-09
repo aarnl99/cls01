@@ -33,26 +33,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-
-nav{position:sticky;top:0;z-index:9999;background:rgba(253,252,251,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
-.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:4px;position:relative}
-.nav-item{position:static}
-.nav-btn{font-size:13px;color:var(--gray-500);text-decoration:none;padding:8px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;cursor:pointer;background:none;border:none;font-family:var(--sans);white-space:nowrap;transition:color .2s,background .2s}
-.nav-btn:hover{color:var(--black);background:var(--warm-bg)}
-.nav-dropdown{display:none;position:fixed;background:#fff;border:1px solid var(--warm-border);border-radius:10px;padding:8px;min-width:220px;z-index:99999;box-shadow:0 8px 32px rgba(0,0,0,0.12);max-height:80vh;overflow-y:auto}
-.nav-dropdown.active{display:block}
-.nav-dropdown a{display:block;font-size:13px;color:var(--gray-700);text-decoration:none;padding:9px 12px;border-radius:6px;transition:background .15s}
-.nav-dropdown a:hover{background:var(--warm-bg);color:var(--black)}
-.nav-dropdown-label{font-size:10px;color:var(--gray-300);text-transform:uppercase;letter-spacing:0.1em;font-weight:500;padding:8px 12px 4px}
-.nav-dropdown hr{border:none;border-top:1px solid var(--warm-border);margin:6px 0}
-.nav-right{display:flex;align-items:center;gap:14px}
-.nav-phone{font-size:12px;color:var(--gray-500);white-space:nowrap}
-.nav-phone strong{color:var(--black)}
-.nav-cta{background:var(--red);color:#fff!important;font-size:13px;font-weight:500;padding:10px 22px;border-radius:6px;text-decoration:none;transition:background .2s;white-space:nowrap}
-.nav-cta:hover{background:var(--red-dark)}
-.chevron{font-size:10px;opacity:.5;margin-left:2px}
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   --red: #C41E1E; --red-dark: #9e1717; --red-light: #fde8e8; --red-bright: #E02020;
@@ -336,6 +316,25 @@ footer { background: var(--black); padding: 56px 80px 36px; }
     
     
   }
+
+nav{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(253,252,251,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-links{display:flex;align-items:center;gap:4px;position:relative}
+.nav-item{position:static}
+.nav-btn{font-size:13px;color:var(--gray-500);text-decoration:none;padding:8px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;cursor:pointer;background:none;border:none;font-family:var(--sans);white-space:nowrap;transition:color .2s,background .2s}
+.nav-btn:hover{color:var(--black);background:var(--warm-bg)}
+.nav-dropdown{display:none;position:fixed;background:#fff;border:1px solid var(--warm-border);border-radius:10px;padding:8px;min-width:220px;z-index:99999;box-shadow:0 8px 32px rgba(0,0,0,0.12);max-height:80vh;overflow-y:auto}
+.nav-dropdown.active{display:block}
+.nav-dropdown a{display:block;font-size:13px;color:#3d3c39;text-decoration:none;padding:9px 12px;border-radius:6px;transition:background .15s}
+.nav-dropdown a:hover{background:#f5f3ef;color:#111110}
+.nav-dropdown-label{font-size:10px;color:#a8a7a2;text-transform:uppercase;letter-spacing:0.1em;font-weight:500;padding:8px 12px 4px}
+.nav-dropdown hr{border:none;border-top:1px solid #e2ddd6;margin:6px 0}
+.nav-right{display:flex;align-items:center;gap:14px}
+.nav-phone{font-size:12px;color:#6b6a66;white-space:nowrap}
+.nav-phone strong{color:#111110}
+.nav-cta{background:#C41E1E;color:#fff!important;font-size:13px;font-weight:500;padding:10px 22px;border-radius:6px;text-decoration:none;transition:background .2s;white-space:nowrap}
+.nav-cta:hover{background:#9e1717}
+.chevron{font-size:10px;opacity:.5;margin-left:2px}
 
 </style>
 </head>
