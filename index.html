@@ -3,674 +3,401 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLS Global Transportation | Bay Area Corporate & Campus Shuttles</title>
-  <meta name="description" content="Bay Area premier shuttle partner for corporate commuter programs, university transit, government, and personal events. Serving SF, Peninsula, San Jose, and East Bay.">
-  <meta name="keywords" content="corporate shuttle Bay Area, commuter shuttle San Francisco, campus transportation, employee shuttle program, university transit, wine country tours, San Jose shuttle">
-  <meta name="robots" content="index, follow">
-  <meta name="author" content="CLS Global Transportation">
-  <meta name="theme-color" content="#C41E1E">
-  <link rel="canonical" href="https://www.clsgt.com/">
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="CLS Global Transportation | Bay Area Corporate & Campus Shuttles">
-  <meta property="og:description" content="Bay Area premier shuttle partner for corporate commuter programs, university transit, government, and personal events. Serving SF, Peninsula, San Jose, and East Bay.">
-  <meta property="og:url" content="https://www.clsgt.com/">
-  <meta property="og:image" content="https://www.clsgt.com/og-image.svg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:site_name" content="CLS Global Transportation">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CLS Global Transportation | Bay Area Corporate & Campus Shuttles">
-  <meta name="twitter:description" content="Bay Area premier shuttle partner for corporate commuter programs, university transit, government, and personal events. Serving SF, Peninsula, San Jose, and East Bay.">
-  <meta name="twitter:image" content="https://www.clsgt.com/og-image.svg">
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1a1a'/%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='rgba(255,255,255,0.5)' stroke-width='1.5'/%3E%3Cellipse cx='32' cy='32' rx='10' ry='24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='1.2'/%3E%3Cline x1='8' y1='32' x2='56' y2='32' stroke='rgba(255,255,255,0.4)' stroke-width='1.2'/%3E%3Cline x1='11' y1='20' x2='53' y2='20' stroke='rgba(255,255,255,0.25)' stroke-width='1'/%3E%3Cline x1='11' y1='44' x2='53' y2='44' stroke='rgba(255,255,255,0.25)' stroke-width='1'/%3E%3Ctext x='32' y='37' font-family='IBM Plex Sans' font-weight='800' font-size='13' fill='white' text-anchor='middle' letter-spacing='1.5'%3ECLS%3C/text%3E%3C/svg%3E">
-  <!-- Mobile -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>CLS Global — Swoop Style Mockup</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --red: #C41E1E; --red-dark: #9e1717; --red-light: #fde8e8; --red-bright: #E02020;
-  --warm-white: #fdfcfb; --warm-bg: #f5f3ef; --warm-border: #e2ddd6;
-  --black: #111110; --gray-700: #3d3c39; --gray-500: #6b6a66; --gray-300: #a8a7a2; --gray-100: #f0ede8;
-  --serif: 'Playfair Display', Georgia, serif;
-  --sans: 'IBM Plex Sans', system-ui, sans-serif;
-}
-html { scroll-behavior: smooth; overflow-x: hidden; }
-body { font-family: var(--sans); background: var(--warm-white); color: var(--black); overflow-x: hidden; }
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff}
 
-/* ── NAV ── */
-nav {
-  position: sticky; top: 0; z-index: 200;
-  background: rgba(253,252,251,0.97); backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--warm-border);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px; height: 64px;
-}
-
-
-
-
-
-.nav-links { display: flex; align-items: center; gap: 4px; }
-.nav-item { position: relative; }
-.nav-item > a, .nav-item > span {
-  font-size: 13px; color: var(--gray-500); text-decoration: none;
-  padding: 8px 12px; border-radius: 6px; display: flex; align-items: center; gap: 4px;
-  cursor: pointer; transition: color 0.2s, background 0.2s; white-space: nowrap;
-}
-.nav-item > a:hover, .nav-item > span:hover { color: var(--black); background: var(--warm-bg); }
-
-
-
-
-
-
-.nav-right { display: flex; align-items: center; gap: 14px; }
-
-
-
-
-.chevron { font-size: 10px; opacity: 0.5; }
-
-/* ── HERO ── */
-.hero { min-height: calc(100vh - 64px); display: grid; grid-template-columns: 52% 48%; background: var(--warm-white); position: relative; overflow: hidden; }
-.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 100% 0%, rgba(196,30,30,0.04) 0%, transparent 60%); pointer-events: none; }
-.hero-left { padding: 80px 56px; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 1; }
-.hero-eyebrow { font-size: 11px; font-weight: 500; color: var(--red); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px; }
-.hero-h1 { font-family: var(--serif); font-size: 72px; line-height: 1.04; color: var(--black); margin-bottom: 24px; }
-.hero-h1 em { color: var(--red); font-style: italic; }
-.hero-sub { font-size: 15px; font-weight: 300; color: var(--gray-500); line-height: 1.75; margin-bottom: 40px; max-width: 380px; }
-.hero-btns { display: flex; align-items: center; gap: 16px; margin-bottom: 56px; }
-.btn-primary { background: var(--red); color: #fff; font-size: 14px; font-weight: 500; padding: 14px 28px; border-radius: 7px; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
-.btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
-.btn-ghost { color: var(--gray-700); font-size: 14px; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
-.btn-ghost:hover { color: var(--red); }
-.hero-trust { display: flex; align-items: center; gap: 24px; }
-.trust-item { display: flex; align-items: center; gap: 8px; }
-.trust-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--red); opacity: 0.5; }
-.trust-text { font-size: 12px; color: var(--gray-300); }
-
-.hero-right { background: var(--gray-100); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 60px 40px; }
-.hero-right::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,0,0,0.03) 39px, rgba(0,0,0,0.03) 40px), repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,0,0,0.03) 39px, rgba(0,0,0,0.03) 40px); pointer-events: none; }
-.stat-cards-grid { position: relative; z-index: 1; width: 100%; max-width: 380px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.stat-card { background: #fff; border: 1px solid var(--warm-border); border-radius: 12px; padding: 24px 20px; transition: transform 0.25s, box-shadow 0.25s; animation: cardFloat 0.6s ease both; }
-.stat-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
-.stat-card.wide { grid-column: span 2; }
-.stat-card.accent { border-top: 3px solid var(--red); }
-@keyframes cardFloat { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-.stat-card:nth-child(1) { animation-delay: 0.1s; } .stat-card:nth-child(2) { animation-delay: 0.2s; }
-.stat-card:nth-child(3) { animation-delay: 0.3s; } .stat-card:nth-child(4) { animation-delay: 0.4s; }
-.stat-card:nth-child(5) { animation-delay: 0.5s; }
-.stat-val { font-family: var(--serif); font-size: 38px; color: var(--red); line-height: 1; margin-bottom: 6px; }
-.stat-val.large { font-size: 52px; }
-.stat-label { font-size: 12px; color: var(--gray-500); line-height: 1.4; }
-.stat-badge { display: inline-flex; align-items: center; gap: 5px; background: var(--red-light); color: var(--red); font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 8px; }
-.stat-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--red); }
-.stat-locations { display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
-.stat-loc-tag { font-size: 11px; font-weight: 500; color: var(--gray-700); background: var(--warm-bg); border: 1px solid var(--warm-border); border-radius: 4px; padding: 3px 8px; }
-
-/* ── TICKER ── */
-.ticker { background: var(--red); overflow: hidden; padding: 12px 0; }
-.ticker-track { display: flex; animation: ticker 35s linear infinite; width: max-content; }
-.ticker-track:hover { animation-play-state: paused; }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.ticker-item { display: flex; align-items: center; gap: 10px; padding: 0 20px; font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.9); letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap; }
-.ticker-sep { color: rgba(255,255,255,0.3); font-size: 8px; }
-
-/* ── SHARED ── */
-section { padding: 80px 80px; }
-.section-label { font-size: 11px; font-weight: 500; color: var(--red); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 14px; }
-.section-title { font-family: var(--serif); font-size: 40px; color: var(--black); line-height: 1.1; margin-bottom: 14px; }
-.section-sub { font-size: 14px; font-weight: 300; color: var(--gray-500); line-height: 1.75; max-width: 520px; }
-.section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
-.section-cta { font-size: 13px; color: var(--red); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: gap 0.2s; white-space: nowrap; }
-.section-cta:hover { gap: 10px; }
-
-/* ── SERVICES ── */
-#services { background: var(--warm-white); }
-.svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.svc-card { background: var(--warm-bg); border: 1px solid var(--warm-border); border-radius: 12px; padding: 28px; transition: transform 0.25s, box-shadow 0.25s, background 0.2s; display: flex; flex-direction: column; }
-.svc-card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.07); background: #fff; }
-.svc-icon-wrap { width: 40px; height: 40px; border-radius: 9px; background: var(--red-light); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
-.svc-icon-wrap svg { width: 20px; height: 20px; stroke: var(--red); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-.svc-label { font-size: 10px; color: var(--gray-300); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
-.svc-name { font-family: var(--serif); font-size: 22px; color: var(--black); margin-bottom: 10px; line-height: 1.2; }
-.svc-desc { font-size: 13px; color: var(--gray-500); line-height: 1.7; font-weight: 300; flex: 1; margin-bottom: 20px; }
-.svc-link { font-size: 13px; color: var(--red); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: gap 0.2s; }
-.svc-link:hover { gap: 9px; }
-
-/* ── WHY ── */
-#why { background: var(--warm-bg); padding-top: 0; padding-bottom: 0; }
-.why-inner { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--warm-border); }
-.why-item { background: var(--warm-bg); padding: 40px 28px; transition: background 0.2s; }
-.why-item:hover { background: #fff; }
-.why-num { font-family: var(--serif); font-size: 40px; color: var(--red-bright); line-height: 1; margin-bottom: 12px; }
-.why-title { font-size: 14px; font-weight: 500; color: var(--black); margin-bottom: 8px; }
-.why-desc { font-size: 13px; font-weight: 300; color: var(--gray-500); line-height: 1.7; }
-
-/* ── STATS BAND ── */
-.stats-band { background: var(--red); display: grid; grid-template-columns: repeat(4,1fr); }
-.band-stat { padding: 36px 24px; text-align: center; border-right: 1px solid rgba(255,255,255,0.15); }
-.band-stat:last-child { border-right: none; }
-.band-num { font-family: var(--serif); font-size: 44px; color: #fff; margin-bottom: 4px; }
-.band-label { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 0.1em; text-transform: uppercase; }
-
-/* ── PERSONAL & EVENTS ── */
-#personal { background: var(--black); }
-#personal .section-title { color: #fff; }
-#personal .section-sub { color: rgba(255,255,255,0.45); }
-#personal .section-label { color: rgba(196,30,30,0.85); }
-#personal .section-cta { color: rgba(196,30,30,0.85); }
-#personal .section-cta:hover { color: var(--red-bright); }
-.events-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 0; }
-.event-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 22px 20px; transition: background 0.2s, border-color 0.2s; cursor: default; }
-.event-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(196,30,30,0.3); }
-.event-icon { font-size: 22px; margin-bottom: 12px; }
-.event-name { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 6px; }
-.event-desc { font-size: 12px; color: rgba(255,255,255,0.35); font-weight: 300; line-height: 1.6; }
-.events-cta-row { margin-top: 32px; display: flex; align-items: center; gap: 20px; }
-.events-btn { background: var(--red); color: #fff; font-size: 13px; font-weight: 500; padding: 12px 24px; border-radius: 7px; text-decoration: none; transition: background 0.2s; }
-.events-btn:hover { background: var(--red-dark); }
-.events-note { font-size: 13px; color: rgba(255,255,255,0.3); font-weight: 300; }
-
-/* ── CONTACT ── */
-#contact { background: var(--warm-bg); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 48px; align-items: start; }
-.contact-info { display: flex; flex-direction: column; gap: 20px; padding-top: 4px; }
-.contact-item { display: flex; gap: 14px; align-items: flex-start; }
-.contact-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--red-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.contact-icon svg { width: 16px; height: 16px; stroke: var(--red); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.contact-item-label { font-size: 11px; color: var(--gray-300); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 500; margin-bottom: 3px; }
-.contact-item-val { font-size: 15px; color: var(--black); }
-.contact-item-sub { font-size: 12px; color: var(--gray-500); font-weight: 300; margin-top: 2px; }
-.contact-form { background: #fff; border: 1px solid var(--warm-border); border-radius: 14px; padding: 36px; }
-.form-title { font-family: var(--serif); font-size: 26px; color: var(--black); margin-bottom: 6px; }
-.form-sub { font-size: 13px; color: var(--gray-500); font-weight: 300; margin-bottom: 24px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-.form-group label { font-size: 12px; color: var(--gray-700); font-weight: 500; }
-.form-group input, .form-group select, .form-group textarea {
-  font-family: var(--sans); font-size: 13px; color: var(--black);
-  background: var(--warm-bg); border: 1px solid var(--warm-border);
-  border-radius: 7px; padding: 11px 14px; outline: none; width: 100%;
-  transition: border-color 0.2s, background 0.2s;
-}
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--red); background: #fff; }
-.form-group textarea { resize: vertical; min-height: 80px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-.form-submit { background: var(--red); color: #fff; font-family: var(--sans); font-size: 14px; font-weight: 500; padding: 14px; border-radius: 7px; border: none; cursor: pointer; width: 100%; transition: background 0.2s; }
-.form-submit:hover { background: var(--red-dark); }
-
-/* ── FOOTER ── */
-footer { background: var(--black); padding: 56px 80px 36px; }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-.footer-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
-.footer-logo-mark { width: 28px; height: 28px; background: var(--red); border-radius: 4px; display: flex; align-items: center; justify-content: center; }
-.footer-logo-mark svg { width: 15px; height: 15px; fill: #fff; }
-.footer-logo-name { font-size: 14px; font-weight: 600; color: #fff; }
-.footer-tagline { font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.38); line-height: 1.7; max-width: 260px; margin-bottom: 18px; }
-.footer-phone { font-size: 13px; color: rgba(255,255,255,0.6); }
-.footer-phone strong { color: #fff; }
-.footer-col-title { font-size: 10px; font-weight: 500; color: rgba(255,255,255,0.28); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 14px; }
-.footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; margin-bottom: 9px; transition: color 0.2s; }
-.footer-col a:hover { color: #fff; }
-.footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 24px; display: flex; justify-content: space-between; }
-.footer-copy, .footer-tcp { font-size: 12px; color: rgba(255,255,255,0.22); }
-
-@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
-.hero-left > * { animation: fadeUp 0.65s ease both; }
-.hero-left > *:nth-child(1) { animation-delay: 0.05s; }
-.hero-left > *:nth-child(2) { animation-delay: 0.15s; }
-.hero-left > *:nth-child(3) { animation-delay: 0.25s; }
-.hero-left > *:nth-child(4) { animation-delay: 0.35s; }
-.hero-left > *:nth-child(5) { animation-delay: 0.45s; }
-
-/* ── LOGOS ── */
-#logos { background: var(--warm-white); padding: 64px 80px; border-top: 1px solid var(--warm-border); }
-.logos-label { font-size: 11px; font-weight: 500; color: var(--gray-300); letter-spacing: 0.14em; text-transform: uppercase; text-align: center; margin-bottom: 32px; }
-.logos-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
-.logo-card { background: var(--warm-bg); border: 1px solid var(--warm-border); border-radius: 10px; height: 80px; display: flex; align-items: center; justify-content: center; transition: background 0.2s, transform 0.2s; }
-.logo-card:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
-.logo-name { font-size: 18px; font-weight: 700; letter-spacing: -0.02em; }
-
-
-  
-  /* ── MOBILE ── */
-  @media (max-width: 900px) {
-    .nav-hamburger { display: flex; }
-    nav { padding: 0 20px; height: 56px; }
-    .nav-links { display: none !important; }
-  .nav-right { display: none !important; }
-  .nav-hamburger { display: flex !important; }
-    
-    
-    
-    
-    
-    
-    .btn-primary { padding: 12px 22px; font-size: 14px; }
-    .btn-outline { padding: 12px 22px; font-size: 14px; }
-    .section { padding: 48px 20px; }
-    .contact-strip { padding: 48px 20px; }
-    .two-col { grid-template-columns: 1fr; gap: 36px; }
-    .two-col-3 { grid-template-columns: 1fr; }
-    .benefit-grid { grid-template-columns: 1fr; }
-    .stats-band { grid-template-columns: 1fr 1fr; }
-    .band-stat { padding: 24px 12px; }
-    .band-num { font-size: 32px; }
-    .contact-strip-inner { grid-template-columns: 1fr; gap: 32px; }
-    .form-row { grid-template-columns: 1fr; margin-bottom: 0; }
-    footer { padding: 40px 20px 28px; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 24px; }
-    .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
-    .section-title { font-size: 32px; }
-  }
-  @media (max-width: 480px) {
-    /* Hero */
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 28px 20px 24px; }
-    .hero-eyebrow { font-size: 10px; margin-bottom: 14px; }
-    .hero-h1 { font-size: 40px; line-height: 1.05; margin-bottom: 16px; }
-    .hero-sub { font-size: 13px; margin-bottom: 22px; max-width: 100%; }
-    .hero-btns { display: flex; flex-direction: row; align-items: center; flex-wrap: nowrap; gap: 14px; margin-bottom: 22px; }
-    .btn-primary { padding: 11px 18px; font-size: 13px; white-space: nowrap; flex-shrink: 0; }
-    .btn-ghost { font-size: 13px; white-space: nowrap; }
-    .hero-trust { gap: 12px; flex-wrap: wrap; }
-    .trust-text { font-size: 11px; }
-    .trust-dot { width: 4px; height: 4px; }
-    .hero-right { display: none; }
-    /* Ticker */
-    .ticker-item { font-size: 10px; padding: 0 12px; }
-    /* Services */
-    .svc-grid { grid-template-columns: 1fr; gap: 14px; }
-    .svc-card { padding: 22px 18px; }
-    /* Why */
-    .why-inner { grid-template-columns: 1fr 1fr; }
-    .why-item { padding: 24px 16px; }
-    .why-num { font-size: 32px; }
-    .why-title { font-size: 13px; }
-    .why-desc { font-size: 12px; }
-    /* Stats */
-    .stats-band { grid-template-columns: 1fr 1fr; }
-    .band-num { font-size: 28px; }
-    .band-label { font-size: 9px; }
-    /* Events */
-    .events-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-    .event-card { padding: 16px 14px; }
-    .event-name { font-size: 13px; }
-    .event-desc { font-size: 11px; }
-    /* Contact */
-    .contact-grid { grid-template-columns: 1fr; gap: 28px; }
-    .contact-form { padding: 24px 18px; }
-    .form-title { font-size: 22px; }
-    /* Logos */
-    .logos-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-    .logo-card { height: 60px; }
-    .logo-name { font-size: 14px; }
-    /* Footer */
-    .footer-top { grid-template-columns: 1fr; gap: 20px; }
-    footer { padding: 36px 20px 24px; }
-    /* Section */
-    .section { padding: 40px 20px; }
-    .section-title { font-size: 30px; }
-    
-    
-  }
-
-nav{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(253,252,251,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--warm-border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px}
-.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
-.nav-links{display:flex;align-items:center;gap:4px;position:relative}
-.nav-item{position:static}
-.nav-btn{font-size:13px;color:var(--gray-500);text-decoration:none;padding:8px 12px;border-radius:6px;display:inline-flex;align-items:center;gap:4px;cursor:pointer;background:none;border:none;font-family:var(--sans);white-space:nowrap;transition:color .2s,background .2s}
-.nav-btn:hover{color:var(--black);background:var(--warm-bg)}
-.nav-dropdown{display:none;position:fixed;background:#fff;border:1px solid var(--warm-border);border-radius:10px;padding:8px;min-width:220px;z-index:99999;box-shadow:0 8px 32px rgba(0,0,0,0.12);max-height:80vh;overflow-y:auto}
-.nav-dropdown.active{display:block}
-.nav-dropdown a{display:block;font-size:13px;color:#3d3c39;text-decoration:none;padding:9px 12px;border-radius:6px;transition:background .15s}
-.nav-dropdown a:hover{background:#f5f3ef;color:#111110}
-.nav-dropdown-label{font-size:10px;color:#a8a7a2;text-transform:uppercase;letter-spacing:0.1em;font-weight:500;padding:8px 12px 4px}
-.nav-dropdown hr{border:none;border-top:1px solid #e2ddd6;margin:6px 0}
+/* NAV */
+nav{display:flex;align-items:center;justify-content:space-between;padding:0 56px;height:68px;border-bottom:1px solid #f0f0f0;background:#fff;position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-globe{width:34px;height:34px;background:#111;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.nav-globe svg{width:18px;height:18px}
+.nav-brand{font-size:15px;font-weight:700;color:#C41E1E;line-height:1.1}
+.nav-sub{font-size:9px;color:#aaa;letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-link{font-size:13px;color:#555;padding:8px 13px;border-radius:24px;cursor:pointer;display:flex;align-items:center;gap:4px}
+.nav-link:hover{background:#f5f5f5;color:#111}
+.chevron{font-size:9px;color:#bbb}
 .nav-right{display:flex;align-items:center;gap:14px}
-.nav-phone{font-size:12px;color:#6b6a66;white-space:nowrap}
-.nav-phone strong{color:#111110}
-.nav-cta{background:#C41E1E;color:#fff!important;font-size:13px;font-weight:500;padding:10px 22px;border-radius:6px;text-decoration:none;transition:background .2s;white-space:nowrap}
+.nav-phone{font-size:13px;font-weight:600;color:#111}
+.nav-cta{background:#C41E1E;color:#fff;font-size:13px;font-weight:600;padding:10px 24px;border-radius:30px;cursor:pointer}
 .nav-cta:hover{background:#9e1717}
-.chevron{font-size:10px;opacity:.5;margin-left:2px}
 
-/* ── HAMBURGER ── */
-.nav-hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  background: none;
-  border: none;
-  padding: 4px;
-}
-.nav-hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--black);
-  border-radius: 2px;
-  transition: all 0.25s;
-}
-.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-hamburger.open span:nth-child(2) { opacity: 0; }
-.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* HERO */
+.hero{padding:72px 56px 32px;display:flex;flex-direction:column;align-items:flex-start;background:#fff;position:relative}
+.hero-h1{font-size:52px;font-weight:800;color:#111;line-height:1.05;letter-spacing:-1.5px}
+.hero-rotate-wrap{height:70px;overflow:hidden;margin-top:6px;margin-bottom:24px;position:relative}
+.hero-rotate-inner{display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.4,0,.2,1)}
+.hero-rotate-inner span{display:block;height:70px;font-size:52px;font-weight:800;color:#C41E1E;line-height:70px;letter-spacing:-1.5px;white-space:nowrap}
+.hero-sub{font-size:16px;color:#666;line-height:1.75;margin-bottom:32px;max-width:500px}
+.hero-btns{display:flex;gap:14px;margin-bottom:36px}
+.btn-red{background:#C41E1E;color:#fff;font-size:14px;font-weight:600;padding:14px 28px;border-radius:30px;cursor:pointer;display:inline-block}
+.btn-red:hover{background:#9e1717}
+.btn-ghost{border:1.5px solid #ddd;color:#333;font-size:14px;font-weight:500;padding:14px 28px;border-radius:30px;cursor:pointer;display:inline-block}
+.btn-ghost:hover{border-color:#bbb;color:#111}
+.hero-stats{display:flex;gap:32px;margin-bottom:48px}
+.hero-stat-num{font-size:24px;font-weight:800;color:#111;letter-spacing:-0.5px}
+.hero-stat-label{font-size:11px;color:#999;margin-top:2px}
 
-/* ── MOBILE DRAWER ── */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  top: 56px;
-  left: 0; right: 0;
-  background: #fff;
-  border-bottom: 1px solid var(--warm-border);
-  z-index: 9998;
-  padding: 16px 0 24px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-  max-height: calc(100vh - 56px);
-  overflow-y: auto;
-}
-.mobile-menu.open { display: block; }
-.mobile-menu-section { padding: 0 20px; }
-.mobile-menu-label {
-  font-size: 10px;
-  font-weight: 500;
-  color: var(--gray-300);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 14px 0 6px;
-  border-top: 1px solid var(--warm-border);
-  margin-top: 8px;
-}
-.mobile-menu-label:first-child { border-top: none; margin-top: 0; padding-top: 0; }
-.mobile-menu a {
-  display: block;
-  font-size: 15px;
-  color: var(--black);
-  text-decoration: none;
-  padding: 10px 0;
-  border-bottom: 1px solid var(--warm-border);
-  font-family: var(--sans);
-}
-.mobile-menu a:last-child { border-bottom: none; }
-.mobile-menu a:hover { color: var(--red); }
-.mobile-menu-cta {
-  margin: 16px 20px 0;
-}
-.mobile-menu-cta a {
-  display: block;
-  background: var(--red);
-  color: #fff !important;
-  text-align: center;
-  padding: 14px;
-  border-radius: 7px;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  border-bottom: none !important;
-}
+/* HERO RIGHT */
+.hero-right{position:relative;width:100vw;margin-left:calc(-56px);height:380px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.city-wrap{width:100%;position:relative}
+.city-badge{display:none}
+.city-badge-label{display:none}
+.city-badge-val{display:none}
+.city-badge-2{display:none}
 
+/* TICKER */
+.ticker{background:#C41E1E;overflow:hidden;padding:13px 0}
+.ticker-track{display:flex;animation:tick 32s linear infinite;width:max-content}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-item{font-size:11px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.1em;text-transform:uppercase;padding:0 24px;white-space:nowrap}
+.ticker-dot{color:rgba(255,255,255,.3)}
+
+/* LOGOS */
+.logos{padding:52px 56px;border-bottom:1px solid #f5f5f5}
+.logos-title{font-size:12px;color:#bbb;text-transform:uppercase;letter-spacing:.12em;text-align:center;margin-bottom:28px;font-weight:500}
+.logos-grid{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.logo-pill{background:#f8f8f8;border-radius:10px;padding:14px 22px;font-size:15px;font-weight:700}
+
+/* SERVICES */
+.services{padding:72px 56px}
+.section-hdr{text-align:center;margin-bottom:48px}
+.section-lbl{font-size:11px;font-weight:600;color:#C41E1E;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:38px;font-weight:800;color:#111;letter-spacing:-1px;line-height:1.1}
+.section-sub{font-size:15px;color:#777;margin-top:12px;line-height:1.7}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.svc-card{border-radius:18px;height:220px;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;position:relative;overflow:hidden;cursor:pointer}
+.svc-card:hover{transform:translateY(-3px);transition:transform .2s}
+.svc-tag{background:rgba(255,255,255,.18);color:#fff;font-size:10px;font-weight:600;padding:4px 10px;border-radius:20px;width:fit-content;margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase}
+.svc-name{font-size:20px;font-weight:700;color:#fff;line-height:1.2}
+.svc-arr{position:absolute;top:20px;right:20px;width:32px;height:32px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+
+/* STATS BAND */
+.stats-band{background:#C41E1E;display:grid;grid-template-columns:repeat(4,1fr)}
+.band-stat{padding:36px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.15)}
+.band-stat:last-child{border:none}
+.band-num{font-size:42px;font-weight:800;color:#fff;letter-spacing:-1px}
+.band-label{font-size:11px;color:rgba(255,255,255,.65);text-transform:uppercase;letter-spacing:.1em;margin-top:4px}
+
+/* WHY */
+.why{padding:72px 56px;background:#fafafa}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.why-card{background:#fff;border-radius:16px;padding:28px;border:1px solid #f0f0f0}
+.why-num{font-size:34px;font-weight:800;color:#C41E1E;margin-bottom:10px;line-height:1}
+.why-title{font-size:14px;font-weight:600;color:#111;margin-bottom:7px}
+.why-desc{font-size:13px;color:#999;line-height:1.65}
+
+/* CTA BAND */
+.cta-band{padding:80px 56px;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.cta-h2{font-size:38px;font-weight:800;color:#111;letter-spacing:-1px;line-height:1.1;max-width:480px}
+.cta-sub{font-size:15px;color:#777;margin-top:12px;line-height:1.7;max-width:440px}
+.cta-right{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+
+/* FOOTER */
+footer{background:#1a0a0a;padding:56px 56px 36px}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-logo-name{font-size:14px;font-weight:700;color:#e87070;margin-bottom:4px}
+.footer-tagline{font-size:13px;color:rgba(255,210,210,.45);line-height:1.7;max-width:240px;margin-bottom:16px}
+.footer-phone{font-size:13px;color:rgba(255,220,220,.7)}
+.footer-phone strong{color:#ffd0d0}
+.footer-col-title{font-size:10px;font-weight:500;color:rgba(255,180,180,.4);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(255,210,210,.45);text-decoration:none;margin-bottom:9px}
+.footer-bottom{border-top:1px solid rgba(255,150,150,.1);padding-top:24px;display:flex;justify-content:space-between}
+.footer-copy{font-size:12px;color:rgba(255,200,200,.3)}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">
-    <svg width="168" height="36" viewBox="0 0 168 36" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="18" cy="18" r="17" fill="#1a1a1a"/>
-      <ellipse cx="18" cy="18" rx="7.5" ry="17" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
-      <line x1="1" y1="18" x2="35" y2="18" stroke="rgba(255,255,255,0.45)" stroke-width="1"/>
-      <line x1="3" y1="10" x2="33" y2="10" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
-      <line x1="3" y1="26" x2="33" y2="26" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
-      <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/>
-      <text x="18" y="22" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="9" fill="#fff" text-anchor="middle" letter-spacing="1.2">CLS</text>
-      <text x="44" y="21" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="18" fill="#C41E1E" letter-spacing="-0.3">CLS Global</text>
-      <text x="44" y="33" font-family="IBM Plex Sans,sans-serif" font-weight="400" font-size="9" fill="#a8a7a2" letter-spacing="2.5">TRANSPORTATION</text>
-    </svg>
+    <div class="nav-globe">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round">
+        <circle cx="12" cy="12" r="10"/>
+        <ellipse cx="12" cy="12" rx="4" ry="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <line x1="5" y1="7" x2="19" y2="7"/>
+        <line x1="5" y1="17" x2="19" y2="17"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-brand">CLS Global</div>
+      <div class="nav-sub">Transportation</div>
+    </div>
   </a>
   <div class="nav-links">
-    <button class="nav-btn" data-dropdown="dd-services">Services <span class="chevron">▾</span></button>
-    <a href="about.html" class="nav-btn">About</a>
-    <button class="nav-btn" data-dropdown="dd-safety">Safety &amp; Tech <span class="chevron">▾</span></button>
-    <a href="fleet.html" class="nav-btn">Fleet</a>
-    <a href="environmental.html" class="nav-btn">Environmental</a>
-    <a href="careers.html" class="nav-btn">Careers</a>
+    <span class="nav-link">Services <span class="chevron">▾</span></span>
+    <span class="nav-link">About</span>
+    <span class="nav-link">Safety &amp; Tech <span class="chevron">▾</span></span>
+    <span class="nav-link">Fleet</span>
+    <span class="nav-link">Environmental</span>
+    <span class="nav-link">Careers</span>
   </div>
-  <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="nav-right">
-    <span class="nav-phone"><strong>650.460.8778</strong></span>
-    <a href="index.html#contact" class="nav-cta">Get a Quote</a>
+    <span class="nav-phone">650.460.8778</span>
+    <div class="nav-cta">Get a Quote</div>
   </div>
 </nav>
 
-<div id="dd-services" class="nav-dropdown">
-  <div class="nav-dropdown-label">Corporate</div>
-  <a href="corporate.html">Commuter Shuttles</a>
-  <a href="corporate.html#shared">Shared Commuter Solutions</a>
-  <a href="corporate.html#intercampus">Inter-Campus Shuttles</a>
-  <a href="corporate.html#lastmile">Last Mile &amp; Parking</a>
-  <hr>
-  <div class="nav-dropdown-label">University</div>
-  <a href="university.html">University Transit Programs</a>
-  <hr>
-  <div class="nav-dropdown-label">Government</div>
-  <a href="government.html">Municipal &amp; Agency Shuttles</a>
-  <a href="government.html#employee">Employee Transit Programs</a>
-  <a href="government.html#ada">ADA &amp; Paratransit</a>
-  <hr>
-  <div class="nav-dropdown-label">Personal &amp; Events</div>
-  <a href="personal-events.html#weddings">Weddings &amp; Celebrations</a>
-  <a href="personal-events.html#concerts">Concerts &amp; Nightlife</a>
-  <a href="personal-events.html#group">Group Travel</a>
-  <a href="personal-events.html#wine">Wine Country Tours</a>
-  <a href="personal-events.html#airport">Airport Services</a>
-  <a href="personal-events.html#conferences">Conferences &amp; Conventions</a>
-</div>
-
-<div id="dd-safety" class="nav-dropdown">
-  <a href="safety-technology.html">Safety Programs</a>
-  <a href="safety-technology.html#training">Driver Training</a>
-  <a href="safety-technology.html#tech">Technology &amp; App</a>
-  <a href="safety-technology.html#compliance">Compliance</a>
-</div>
-
-<div class="mobile-menu" id="mobile-menu">
-  <div class="mobile-menu-section">
-    <div class="mobile-menu-label">Corporate</div>
-    <a href="corporate.html">Commuter Shuttles</a>
-    <a href="corporate.html#shared">Shared Commuter Solutions</a>
-    <a href="corporate.html#intercampus">Inter-Campus Shuttles</a>
-    <a href="corporate.html#lastmile">Last Mile &amp; Parking</a>
-    <div class="mobile-menu-label">University</div>
-    <a href="university.html">University Transit Programs</a>
-    <div class="mobile-menu-label">Government</div>
-    <a href="government.html">Municipal &amp; Agency Shuttles</a>
-    <a href="government.html#employee">Employee Transit Programs</a>
-    <a href="government.html#ada">ADA &amp; Paratransit</a>
-    <div class="mobile-menu-label">Personal &amp; Events</div>
-    <a href="personal-events.html#weddings">Weddings &amp; Celebrations</a>
-    <a href="personal-events.html#concerts">Concerts &amp; Nightlife</a>
-    <a href="personal-events.html#group">Group Travel</a>
-    <a href="personal-events.html#wine">Wine Country Tours</a>
-    <a href="personal-events.html#airport">Airport Services</a>
-    <div class="mobile-menu-label">Company</div>
-    <a href="about.html">About CLS</a>
-    <a href="safety-technology.html">Safety &amp; Technology</a>
-    <a href="fleet.html">Fleet</a>
-    <a href="environmental.html">Environmental</a>
-    <a href="careers.html">Careers</a>
-  </div>
-  <div class="mobile-menu-cta">
-    <a href="#contact">Get a Quote</a>
-  </div>
-</div>
-
-</div>
-
-
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Bay Area's Premier Shuttle Partner</div>
-    <h1 class="hero-h1">Move your<br><em>team</em><br>forward.</h1>
-    <p class="hero-sub">Custom commuter, campus, and corporate shuttle programs designed around your riders not the other way around.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary">Get a Custom Quote</a>
-      <a href="#services" class="btn-ghost">View Services →</a>
+  <div>
+    <div class="hero-h1">The Bay Area Solution for</div>
+    <div class="hero-rotate-wrap">
+      <div class="hero-rotate-inner" id="rotator">
+        <span>Corporate Shuttles</span>
+        <span>University Transit</span>
+        <span>Personal &amp; Events</span>
+        <span>Government Programs</span>
+      </div>
     </div>
-    <div class="hero-trust">
-      <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">24/7 Operations</span></div>
-      <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">SF · SJ · East Bay</span></div>
-      <div class="trust-item"><div class="trust-dot"></div><span class="trust-text">TCP #37344</span></div>
+    <p class="hero-sub">CLS Global is the premier ground transportation solution for corporate commuters, university campuses, government programs, and personal events across the Bay Area.</p>
+    <div class="hero-btns">
+      <div class="btn-red">Get a Quote in 24 Hours</div>
+      <div class="btn-ghost">Talk with Our Team</div>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-num">1M+</div><div class="hero-stat-label">Annual Passengers</div></div>
+      <div><div class="hero-stat-num">99%</div><div class="hero-stat-label">On-Time Rate</div></div>
+      <div><div class="hero-stat-num">11M</div><div class="hero-stat-label">Safe Miles</div></div>
+      <div><div class="hero-stat-num">24/7</div><div class="hero-stat-label">Operations</div></div>
     </div>
   </div>
   <div class="hero-right">
-    <div class="stat-cards-grid">
-      <div class="stat-card accent">
-        <div class="stat-val large">99%</div>
-        <div class="stat-label">On-time performance</div>
-      </div>
-      <div class="stat-card accent">
-        <div class="stat-badge"><div class="stat-badge-dot"></div>Live</div>
-        <div class="stat-val">24/7</div>
-        <div class="stat-label">Operations always available</div>
-      </div>
-      <div class="stat-card accent">
-        <div class="stat-val">1M+</div>
-        <div class="stat-label">Annual passengers served</div>
-      </div>
-      <div class="stat-card accent">
-        <div class="stat-val">11M</div>
-        <div class="stat-label">Miles, zero passenger injuries</div>
-      </div>
-      <div class="stat-card wide accent">
-        <div class="stat-label" style="margin-bottom:10px;">Bay Area coverage</div>
-        <div class="stat-locations">
-          <div class="stat-loc-tag">San Francisco</div>
-          <div class="stat-loc-tag">Peninsula</div>
-          <div class="stat-loc-tag">San Jose</div>
-          <div class="stat-loc-tag">East Bay</div>
-          <div class="stat-loc-tag">Wine Country</div>
-        </div>
-      </div>
+    <div class="city-wrap">
+      <svg viewBox="0 0 700 220" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet" style="width:100%;height:100%;display:block">
+  <defs>
+    <!-- Fade mask: fully visible center, fades to transparent on both sides -->
+    <linearGradient id="fadeH" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="white" stop-opacity="1"/>
+      <stop offset="12%" stop-color="white" stop-opacity="0"/>
+      <stop offset="88%" stop-color="white" stop-opacity="0"/>
+      <stop offset="100%" stop-color="white" stop-opacity="1"/>
+    </linearGradient>
+    <!-- Vertical fade: solid bottom, fades up -->
+    <linearGradient id="fadeV" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="55%" stop-color="white" stop-opacity="0"/>
+      <stop offset="100%" stop-color="white" stop-opacity="1"/>
+    </linearGradient>
+    <mask id="maskH">
+      <rect width="700" height="220" fill="white"/>
+      <rect width="700" height="220" fill="url(#fadeH)"/>
+    </mask>
+    <mask id="maskV">
+      <rect width="700" height="220" fill="white"/>
+      <rect width="700" height="220" fill="url(#fadeV)"/>
+    </mask>
+  </defs>
+
+  <!-- All content in a group that gets masked -->
+  <g mask="url(#maskH)">
+
+    <!-- Background city skyline - LEFT -->
+    <rect x="0" y="130" width="20" height="80" rx="1" fill="#C41E1E" opacity=".06"/>
+    <rect x="24" y="115" width="16" height="95" rx="1" fill="#888" opacity=".05"/>
+    <rect x="44" y="100" width="24" height="110" rx="1" fill="#C41E1E" opacity=".07"/>
+    <rect x="52" y="82" width="10" height="128" rx="1" fill="#C41E1E" opacity=".09"/>
+    <rect x="72" y="90" width="28" height="120" rx="1" fill="#888" opacity=".06"/>
+    <rect x="104" y="70" width="32" height="140" rx="1" fill="#C41E1E" opacity=".08"/>
+    <rect x="114" y="52" width="12" height="158" rx="1" fill="#C41E1E" opacity=".11"/>
+    <rect x="140" y="80" width="26" height="130" rx="1" fill="#888" opacity=".06"/>
+    <rect x="170" y="88" width="20" height="122" rx="1" fill="#C41E1E" opacity=".07"/>
+
+    <!-- Background city skyline - RIGHT -->
+    <rect x="510" y="88" width="20" height="122" rx="1" fill="#C41E1E" opacity=".07"/>
+    <rect x="534" y="80" width="26" height="130" rx="1" fill="#888" opacity=".06"/>
+    <rect x="564" y="52" width="12" height="158" rx="1" fill="#C41E1E" opacity=".11"/>
+    <rect x="558" y="70" width="32" height="140" rx="1" fill="#C41E1E" opacity=".08"/>
+    <rect x="596" y="90" width="28" height="120" rx="1" fill="#888" opacity=".06"/>
+    <rect x="628" y="82" width="10" height="128" rx="1" fill="#C41E1E" opacity=".09"/>
+    <rect x="624" y="100" width="24" height="110" rx="1" fill="#C41E1E" opacity=".07"/>
+    <rect x="652" y="115" width="16" height="95" rx="1" fill="#888" opacity=".05"/>
+    <rect x="672" y="130" width="20" height="80" rx="1" fill="#C41E1E" opacity=".06"/>
+
+    <!-- CENTER buildings (taller, more prominent) -->
+    <rect x="200" y="60" width="36" height="150" rx="1" fill="#C41E1E" opacity=".09"/>
+    <rect x="212" y="42" width="14" height="168" rx="1" fill="#C41E1E" opacity=".13"/>
+    <rect x="242" y="72" width="30" height="138" rx="1" fill="#888" opacity=".07"/>
+    <rect x="278" y="45" width="40" height="165" rx="1" fill="#C41E1E" opacity=".08"/>
+    <rect x="292" y="28" width="14" height="182" rx="1" fill="#C41E1E" opacity=".14"/>
+    <rect x="324" y="55" width="44" height="155" rx="1" fill="#888" opacity=".07"/>
+    <rect x="342" y="36" width="12" height="174" rx="1" fill="#888" opacity=".1"/>
+    <rect x="374" y="48" width="38" height="162" rx="1" fill="#C41E1E" opacity=".08"/>
+    <rect x="388" y="30" width="12" height="180" rx="1" fill="#C41E1E" opacity=".12"/>
+    <rect x="418" y="65" width="32" height="145" rx="1" fill="#888" opacity=".07"/>
+    <rect x="456" y="55" width="36" height="155" rx="1" fill="#C41E1E" opacity=".08"/>
+    <rect x="468" y="38" width="14" height="172" rx="1" fill="#C41E1E" opacity=".12"/>
+
+    <!-- GOLDEN GATE BRIDGE — center, wide, prominent -->
+    <!-- Water shimmer -->
+    <rect x="120" y="185" width="460" height="14" rx="2" fill="#C41E1E" opacity=".05"/>
+
+    <!-- Road deck - wide and clear -->
+    <rect x="110" y="172" width="480" height="9" rx="2" fill="#C41E1E" opacity=".4"/>
+    <!-- Road markings -->
+    <rect x="160" y="174" width="28" height="2" fill="white" opacity=".55"/>
+    <rect x="210" y="174" width="28" height="2" fill="white" opacity=".55"/>
+    <rect x="260" y="174" width="28" height="2" fill="white" opacity=".55"/>
+    <rect x="310" y="174" width="28" height="2" fill="white" opacity=".55"/>
+    <rect x="360" y="174" width="28" height="2" fill="white" opacity=".55"/>
+    <rect x="410" y="174" width="28" height="2" fill="white" opacity=".55"/>
+    <rect x="460" y="174" width="28" height="2" fill="white" opacity=".55"/>
+    <rect x="510" y="174" width="28" height="2" fill="white" opacity=".55"/>
+
+    <!-- LEFT TOWER -->
+    <rect x="226" y="82" width="18" height="99" rx="2" fill="#C41E1E" opacity=".65"/>
+    <rect x="217" y="100" width="36" height="6" rx="1" fill="#C41E1E" opacity=".6"/>
+    <rect x="217" y="122" width="36" height="6" rx="1" fill="#C41E1E" opacity=".6"/>
+    <rect x="217" y="144" width="36" height="5" rx="1" fill="#C41E1E" opacity=".55"/>
+    <rect x="228" y="77" width="14" height="10" rx="1" fill="#C41E1E" opacity=".75"/>
+
+    <!-- RIGHT TOWER -->
+    <rect x="456" y="82" width="18" height="99" rx="2" fill="#C41E1E" opacity=".65"/>
+    <rect x="447" y="100" width="36" height="6" rx="1" fill="#C41E1E" opacity=".6"/>
+    <rect x="447" y="122" width="36" height="6" rx="1" fill="#C41E1E" opacity=".6"/>
+    <rect x="447" y="144" width="36" height="5" rx="1" fill="#C41E1E" opacity=".55"/>
+    <rect x="458" y="77" width="14" height="10" rx="1" fill="#C41E1E" opacity=".75"/>
+
+    <!-- Main suspension cables — big sweeping arcs -->
+    <path d="M 112 172 Q 235 60 350 80 Q 465 60 588 172" stroke="#C41E1E" stroke-width="3.5" opacity=".55" fill="none" stroke-linecap="round"/>
+    <path d="M 112 176 Q 235 66 350 86 Q 465 66 588 176" stroke="#C41E1E" stroke-width="1.5" opacity=".2" fill="none" stroke-linecap="round"/>
+
+    <!-- Vertical suspender cables -->
+    <line x1="150" y1="163" x2="150" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="170" y1="152" x2="170" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="190" y1="139" x2="190" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="210" y1="124" x2="210" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="235" y1="112" x2="235" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="260" y1="96" x2="260" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="285" y1="86" x2="285" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="310" y1="80" x2="310" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="350" y1="80" x2="350" y2="172" stroke="#C41E1E" stroke-width="1.5" opacity=".4"/>
+    <line x1="390" y1="80" x2="390" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="415" y1="86" x2="415" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="440" y1="96" x2="440" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="465" y1="112" x2="465" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="490" y1="124" x2="490" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="510" y1="139" x2="510" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="530" y1="152" x2="530" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+    <line x1="550" y1="163" x2="550" y2="172" stroke="#C41E1E" stroke-width="1.2" opacity=".35"/>
+
+    <!-- Anchor cables -->
+    <line x1="112" y1="172" x2="82" y2="210" stroke="#C41E1E" stroke-width="2" opacity=".25"/>
+    <line x1="588" y1="172" x2="618" y2="210" stroke="#C41E1E" stroke-width="2" opacity=".25"/>
+
+    <!-- Ground / road base -->
+    <rect x="0" y="200" width="700" height="20" rx="0" fill="#C41E1E" opacity=".04"/>
+
+    <!-- CLS Bus -->
+    <rect x="142" y="182" width="88" height="22" rx="6" fill="#C41E1E" opacity=".85"/>
+    <rect x="142" y="182" width="88" height="6" rx="6" fill="#9e1717" opacity=".7"/>
+    <circle cx="157" cy="206" r="5" fill="#111" opacity=".55"/>
+    <circle cx="218" cy="206" r="5" fill="#111" opacity=".55"/>
+    <rect x="150" y="186" width="14" height="9" rx="1.5" fill="white" opacity=".75"/>
+    <rect x="169" y="186" width="14" height="9" rx="1.5" fill="white" opacity=".75"/>
+    <rect x="188" y="186" width="14" height="9" rx="1.5" fill="white" opacity=".75"/>
+    <text x="158" y="200" font-size="6" fill="white" opacity=".9" font-family="Inter,sans-serif" font-weight="700" letter-spacing="1.2">CLS</text>
+
+    <!-- Shuttle van right side -->
+    <rect x="470" y="186" width="62" height="18" rx="5" fill="#555" opacity=".28"/>
+    <circle cx="483" cy="206" r="4.5" fill="#222" opacity=".35"/>
+    <circle cx="520" cy="206" r="4.5" fill="#222" opacity=".35"/>
+    <rect x="478" y="189" width="13" height="8" rx="1.5" fill="white" opacity=".35"/>
+    <rect x="496" y="189" width="13" height="8" rx="1.5" fill="white" opacity=".35"/>
+
+    <!-- Trees -->
+    <ellipse cx="72" cy="197" rx="11" ry="14" fill="#C41E1E" opacity=".07"/>
+    <rect x="70" y="208" width="4" height="16" fill="#C41E1E" opacity=".07"/>
+    <ellipse cx="628" cy="197" rx="11" ry="14" fill="#C41E1E" opacity=".07"/>
+    <rect x="626" y="208" width="4" height="16" fill="#C41E1E" opacity=".07"/>
+
+  </g>
+
+  <!-- Top fade overlay so illustration dissolves into white at top -->
+  <rect width="700" height="220" fill="url(#fadeV)" style="pointer-events:none"/>
+</svg>
     </div>
   </div>
 </section>
 
-<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ticker-item">Corporate Shuttles <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">University Transit <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Government Programs <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Weddings & Events <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Wine Country Tours <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Airport Services <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Last Mile Solutions <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Concerts & Nightlife <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">WiFi-Equipped Fleet <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Inter-Campus Shuttles <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Group Travel <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Corporate Shuttles <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">University Transit <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Government Programs <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Weddings & Events <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Wine Country Tours <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Airport Services <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Last Mile Solutions <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Concerts & Nightlife <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">WiFi-Equipped Fleet <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Inter-Campus Shuttles <span class="ticker-sep">◆</span></span>
-    <span class="ticker-item">Group Travel <span class="ticker-sep">◆</span></span>
+    <span class="ticker-item">Corporate Shuttles <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">University Transit <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Government Programs <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Weddings &amp; Events <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Wine Country Tours <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Airport Services <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Last Mile Solutions <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">WiFi Fleet <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Corporate Shuttles <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">University Transit <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Government Programs <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Weddings &amp; Events <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Wine Country Tours <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Airport Services <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">Last Mile Solutions <span class="ticker-dot">◆</span></span>
+    <span class="ticker-item">WiFi Fleet <span class="ticker-dot">◆</span></span>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-header">
-    <div>
-      <div class="section-label">What We Offer</div>
-      <h2 class="section-title">Transportation for every<br>need.</h2>
-    </div>
+<div class="logos">
+  <div class="logos-title">Trusted by leading Bay Area organizations</div>
+  <div class="logos-grid">
+    <div class="logo-pill" style="color:#FF0000">Adobe</div>
+    <div class="logo-pill"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></div>
+    <div class="logo-pill" style="color:#635BFF">Stripe</div>
+    <div class="logo-pill" style="color:#0061FF">Dropbox</div>
+    <div class="logo-pill" style="color:#0082FB">Meta</div>
+    <div class="logo-pill" style="color:#E8112D">Chevron</div>
+    <div class="logo-pill" style="color:#111">Neuralink</div>
+    <div class="logo-pill" style="color:#F0A500">IXL</div>
+    <div class="logo-pill" style="color:#003865">Packard Fdn</div>
+  </div>
+</div>
+
+<div class="services">
+  <div class="section-hdr">
+    <div class="section-lbl">What We Offer</div>
+    <div class="section-title">Transportation for every need.</div>
+    <p class="section-sub">From daily corporate commutes to once-in-a-lifetime events, we handle it all.</p>
   </div>
   <div class="svc-grid">
-    <div class="svc-card">
-      <div class="svc-icon-wrap">
-        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><circle cx="8" cy="13" r="1"/><circle cx="16" cy="13" r="1"/></svg>
-      </div>
-      <div class="svc-label">Corporate</div>
+    <div class="svc-card" style="background:linear-gradient(145deg,#1c0000,#4a0000)">
+      <div class="svc-arr">→</div>
+      <div class="svc-tag">Corporate</div>
       <div class="svc-name">Corporate Shuttles</div>
-      <p class="svc-desc">Dedicated commuter, inter-campus, last mile, and parking shuttle programs for Bay Area companies. We become an extension of your operations not just a vendor.</p>
-      <a href="corporate.html" class="svc-link">Explore corporate programs →</a>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon-wrap">
-        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-      </div>
-      <div class="svc-label">University</div>
+    <div class="svc-card" style="background:linear-gradient(145deg,#0a0a1f,#1a1a4a)">
+      <div class="svc-arr">→</div>
+      <div class="svc-tag">University</div>
       <div class="svc-name">University Transit</div>
-      <p class="svc-desc">On-demand and fixed-route campus solutions connecting students, faculty, and staff. From small colleges to large research universities any scale, any route.</p>
-      <a href="university.html" class="svc-link">Explore university programs →</a>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon-wrap">
-        <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-      </div>
-      <div class="svc-label">Government</div>
-      <div class="svc-name">Government & Municipal</div>
-      <p class="svc-desc">Reliable, fully compliant transportation solutions for municipal agencies, public institutions, and government employee transit programs with third-party GHG reporting included.</p>
-      <a href="government.html" class="svc-link">Explore government programs →</a>
+    <div class="svc-card" style="background:linear-gradient(145deg,#0f1a0a,#1f3a10)">
+      <div class="svc-arr">→</div>
+      <div class="svc-tag">Government</div>
+      <div class="svc-name">Government &amp; Municipal</div>
     </div>
-    <div class="svc-card">
-      <div class="svc-icon-wrap">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      </div>
-      <div class="svc-label">Personal & Events</div>
-      <div class="svc-name">Personal & Events</div>
-      <p class="svc-desc">Weddings, birthdays, concerts, wine tours, group travel, and more luxury vehicles and professional chauffeurs for any occasion, any group size.</p>
-      <a href="personal-events.html" class="svc-link">Explore personal & events →</a>
+    <div class="svc-card" style="background:linear-gradient(145deg,#1a0a0f,#4a1020)">
+      <div class="svc-arr">→</div>
+      <div class="svc-tag">Personal &amp; Events</div>
+      <div class="svc-name">Weddings &amp; Celebrations</div>
     </div>
-  </div>
-</section>
-
-<!-- WHY CLS -->
-<section id="why" style="padding:0;">
-  <div class="why-inner">
-    <div class="why-item">
-      <div class="why-num">01</div>
-      <div class="why-title">Dedicated Account Management</div>
-      <p class="why-desc">A single point of contact for your program with daily oversight, reporting, and proactive rider engagement.</p>
+    <div class="svc-card" style="background:linear-gradient(145deg,#0f0a1a,#251040)">
+      <div class="svc-arr">→</div>
+      <div class="svc-tag">Events</div>
+      <div class="svc-name">Wine Country Tours</div>
     </div>
-    <div class="why-item">
-      <div class="why-num">02</div>
-      <div class="why-title">24/7 Operations</div>
-      <p class="why-desc">Dispatchers across three Bay Area locations monitoring performance around the clock, before issues arise.</p>
-    </div>
-    <div class="why-item">
-      <div class="why-num">03</div>
-      <div class="why-title">Safety-First Culture</div>
-      <p class="why-desc">11 million miles without a single passenger injury. TSI-certified drivers, electronic HOS monitoring, weekly safety reviews.</p>
-    </div>
-    <div class="why-item">
-      <div class="why-num">04</div>
-      <div class="why-title">Eco-Friendly Fleet</div>
-      <p class="why-desc">Gold Member of Green Ride Global. WiFi-equipped vehicles with EV and hybrid options plus verified GHG reporting.</p>
+    <div class="svc-card" style="background:linear-gradient(145deg,#001010,#003030)">
+      <div class="svc-arr">→</div>
+      <div class="svc-tag">Events</div>
+      <div class="svc-name">Airport Services</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- STATS BAND -->
 <div class="stats-band">
   <div class="band-stat"><div class="band-num">1M+</div><div class="band-label">Annual Passengers</div></div>
   <div class="band-stat"><div class="band-num">11M+</div><div class="band-label">Miles, Zero Injuries</div></div>
@@ -678,286 +405,85 @@ nav{position:sticky;top:0;z-index:9999;isolation:isolate;background:rgba(253,252
   <div class="band-stat"><div class="band-num">24/7</div><div class="band-label">Operations Support</div></div>
 </div>
 
-<!-- PERSONAL & EVENTS -->
-<section id="personal">
-  <div class="section-header" style="margin-bottom:36px;">
-    <div>
-      <div class="section-label">Personal & Events</div>
-      <h2 class="section-title" style="color:#fff;">Every occasion,<br>handled.</h2>
-      <p class="section-sub" style="margin-top:8px;">Luxury vehicles, professional chauffeurs, and seamless logistics so you and your guests can be fully present.</p>
-    </div>
-    <a href="personal-events.html" class="section-cta">See all occasions →</a>
+<div class="why">
+  <div class="section-hdr">
+    <div class="section-lbl">Why CLS</div>
+    <div class="section-title">Reliability your riders can count on.</div>
   </div>
-  <div class="events-grid">
-    <div class="event-card">
-      <div class="event-icon">💍</div>
-      <div class="event-name">Weddings</div>
-      <div class="event-desc">Elegant transportation for the entire wedding party from ceremony to reception and beyond.</div>
-    </div>
-    <div class="event-card">
-      <div class="event-icon">🎂</div>
-      <div class="event-name">Birthdays & Celebrations</div>
-      <div class="event-desc">Make the night unforgettable with a professional chauffeur and luxury vehicle for your group.</div>
-    </div>
-    <div class="event-card">
-      <div class="event-icon">🎵</div>
-      <div class="event-name">Concerts & Nightlife</div>
-      <div class="event-desc">Arrive together, leave worry-free. Safe, stylish group transport to any venue in the Bay Area.</div>
-    </div>
-    <div class="event-card">
-      <div class="event-icon">✈️</div>
-      <div class="event-name">Airport Services</div>
-      <div class="event-desc">Punctual, stress-free airport transfers individual or group, any Bay Area airport.</div>
-    </div>
-    <div class="event-card">
-      <div class="event-icon">🍷</div>
-      <div class="event-name">Wine Country Tours</div>
-      <div class="event-desc">Napa and Sonoma in style a curated day trip with a dedicated driver and premium vehicle.</div>
-    </div>
-    <div class="event-card">
-      <div class="event-icon">🚌</div>
-      <div class="event-name">Group Travel</div>
-      <div class="event-desc">Family reunions, retreats, sports teams flexible vehicle sizing for any group, any distance.</div>
-    </div>
-    <div class="event-card">
-      <div class="event-icon">🏟️</div>
-      <div class="event-name">Sporting Events</div>
-      <div class="event-desc">Skip the parking nightmare. Shuttle your group to the game and back in comfort.</div>
-    </div>
-    <div class="event-card">
-      <div class="event-icon">🎤</div>
-      <div class="event-name">Conferences & Conventions</div>
-      <div class="event-desc">Seamless multi-day shuttle logistics for conferences, trade shows, and corporate events.</div>
-    </div>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-num">01</div><div class="why-title">Dedicated Account Management</div><div class="why-desc">A single point of contact for your entire program with daily oversight and proactive rider engagement.</div></div>
+    <div class="why-card"><div class="why-num">02</div><div class="why-title">24/7 Operations</div><div class="why-desc">Dispatchers across three Bay Area locations monitoring performance around the clock.</div></div>
+    <div class="why-card"><div class="why-num">03</div><div class="why-title">Safety-First Culture</div><div class="why-desc">11 million miles without a single passenger injury. TSI-certified drivers, weekly safety reviews.</div></div>
+    <div class="why-card"><div class="why-num">04</div><div class="why-title">Eco-Friendly Fleet</div><div class="why-desc">Gold Member of Green Ride Global. WiFi-equipped with EV and hybrid options available.</div></div>
   </div>
-  <div class="events-cta-row">
-    <a href="personal-events.html#book" class="events-btn">Book an event →</a>
-    <span class="events-note">Call or text 650.460.8778 for same-day availability</span>
-  </div>
-</section>
+</div>
 
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-label">Get in Touch</div>
-  <h2 class="section-title">Request information on a<br>transportation program.</h2>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <p style="font-size:14px; font-weight:300; color:var(--gray-500); line-height:1.75; max-width:340px; margin-bottom:24px;">Tell us about your needs and we'll design a custom solution usually within 24 hours.</p>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.42 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.34 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.37a16 16 0 0 0 5.72 5.72l1.72-1.72a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 14.92z"/></svg></div>
-        <div>
-          <div class="contact-item-label">Call or Text</div>
-          <div class="contact-item-val">650.460.8778</div>
-          <div class="contact-item-sub">24 hours, 7 days, 365 days</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <div>
-          <div class="contact-item-label">Email</div>
-          <div class="contact-item-val">info@clsgt.com</div>
-          <div class="contact-item-sub">We respond within 24 hours</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div>
-          <div class="contact-item-label">Offices</div>
-          <div class="contact-item-val">SF · Peninsula · San Jose · East Bay</div>
-          <div class="contact-item-sub">Serving all of Northern California</div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-form">
-      <div class="form-title">Request Information</div>
-      <p class="form-sub">Tell us about your program and we'll be in touch within 24 hours.</p>
-      <div class="form-row">
-        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name"></div>
-        <div class="form-group"><label>Company</label><input type="text" placeholder="Company (optional)"></div>
-      </div>
-      <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
-      <div class="form-group">
-        <label>Service Needed</label>
-        <select>
-          <option value="">Select a service...</option>
-          <optgroup label="Corporate">
-            <option>Commuter Shuttle</option>
-            <option>Inter-Campus / Last Mile</option>
-            <option>Shared Commuter Solution</option>
-          </optgroup>
-          <optgroup label="University">
-            <option>University Transit Program</option>
-          </optgroup>
-          <optgroup label="Government">
-            <option>Municipal / Agency Shuttle</option>
-            <option>ADA / Paratransit</option>
-          </optgroup>
-          <optgroup label="Personal & Events">
-            <option>Wedding / Celebration</option>
-            <option>Concert / Nightlife</option>
-            <option>Group Travel</option>
-            <option>Wine Country Tour</option>
-            <option>Airport Service</option>
-            <option>Conference / Convention</option>
-            <option>Sporting Event</option>
-          </optgroup>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="form-group"><label>Message</label><textarea placeholder="Tell us about your group size, route, and timeline..."></textarea></div>
-      <button class="form-submit">Send Request →</button>
-    </div>
+<div class="cta-band">
+  <div>
+    <div class="cta-h2">Ready to move your team forward?</div>
+    <p class="cta-sub">Tell us about your program and we will put together a custom transportation plan within 24 hours.</p>
   </div>
-</section>
-
-<!-- CLIENT LOGOS -->
-<section id="logos">
-  <div class="logos-label">Trusted by leading organizations</div>
-  <div class="logos-grid">
-    <div class="logo-card">
-      <span class="logo-name" style="color:#FF0000;">Adobe</span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name"><span style="color:#4285F4;">G</span><span style="color:#EA4335;">o</span><span style="color:#FBBC05;">o</span><span style="color:#4285F4;">g</span><span style="color:#34A853;">l</span><span style="color:#EA4335;">e</span></span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name" style="color:#635BFF;">Stripe</span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name" style="color:#0061FF;">Dropbox</span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name" style="color:#0082FB;">Meta</span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name" style="color:#E8112D;">Chevron</span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name" style="color:#111;">Neuralink</span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name" style="color:#00A4EF;">HP Enterprise</span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name" style="color:#F0A500;">IXL</span>
-    </div>
-    <div class="logo-card">
-      <span class="logo-name" style="color:#003865;">Packard Fdn</span>
-    </div>
+  <div class="cta-right">
+    <div class="btn-red" style="text-align:center;padding:16px 36px;font-size:15px">Get a Quote in 24 Hours</div>
+    <div class="btn-ghost" style="text-align:center;padding:16px 36px;font-size:15px">Talk with Our Team</div>
   </div>
-</section>
+</div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div>
-      <div class="footer-logo">
-        <svg width="168" height="36" viewBox="0 0 168 36" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="18" r="17" fill="#fff" fill-opacity="0.08"/>
-          <circle cx="18" cy="18" r="17" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/>
-          <ellipse cx="18" cy="18" rx="7.5" ry="17" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-          <line x1="1" y1="18" x2="35" y2="18" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-          <line x1="3" y1="10" x2="33" y2="10" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-          <line x1="3" y1="26" x2="33" y2="26" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
-          <text x="18" y="22" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="9" fill="#fff" text-anchor="middle" letter-spacing="1.2">CLS</text>
-          <text x="44" y="21" font-family="IBM Plex Sans,sans-serif" font-weight="800" font-size="18" fill="#C41E1E" letter-spacing="-0.3">CLS Global</text>
-          <text x="44" y="33" font-family="IBM Plex Sans,sans-serif" font-weight="400" font-size="9" fill="rgba(255,255,255,0.35)" letter-spacing="2.5">TRANSPORTATION</text>
-        </svg>
-      </div>
-      <p class="footer-tagline">Bay Area's trusted partner for corporate, campus, and event transportation delivering riders on time, every time.</p>
+      <div class="footer-logo-name">CLS Global Transportation</div>
+      <p class="footer-tagline">Bay Area trusted partner for corporate, campus, and event transportation delivering riders on time, every time.</p>
       <div class="footer-phone">Call or text: <strong>650.460.8778</strong></div>
-      <div style="margin-top:6px; font-size:13px; color:rgba(255,255,255,0.38);">info@clsgt.com</div>
+      <div style="margin-top:6px;font-size:13px;color:rgba(255,255,255,.38)">info@clsgt.com</div>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Corporate</div>
-      <a href="corporate.html">Commuter Shuttles</a>
-      <a href="corporate.html#shared">Shared Commuter</a>
-      <a href="corporate.html#intercampus">Inter-Campus</a>
-      <a href="corporate.html#lastmile">Last Mile & Parking</a>
-      <a href="corporate.html#bike">Bike Share</a>
+      <a href="#">Commuter Shuttles</a>
+      <a href="#">Shared Commuter</a>
+      <a href="#">Inter-Campus</a>
+      <a href="#">Last Mile</a>
     </div>
     <div class="footer-col">
-      <div class="footer-col-title">University & Gov</div>
-      <a href="university.html">University Transit</a>
-      <a href="government.html">Municipal Shuttles</a>
-      <a href="government.html#employee">Employee Transit</a>
-      <a href="government.html#ada">ADA & Paratransit</a>
+      <div class="footer-col-title">University &amp; Gov</div>
+      <a href="#">University Transit</a>
+      <a href="#">Municipal Shuttles</a>
+      <a href="#">Employee Transit</a>
+      <a href="#">ADA &amp; Paratransit</a>
     </div>
     <div class="footer-col">
-      <div class="footer-col-title">Personal & Events</div>
-      <a href="personal-events.html#weddings">Weddings</a>
-      <a href="personal-events.html#concerts">Concerts & Nightlife</a>
-      <a href="personal-events.html#group">Group Travel</a>
-      <a href="personal-events.html#wine">Wine Tours</a>
-      <a href="personal-events.html#airport">Airport Service</a>
-      <a href="personal-events.html#conferences">Conferences</a>
+      <div class="footer-col-title">Personal &amp; Events</div>
+      <a href="#">Weddings</a>
+      <a href="#">Concerts &amp; Nightlife</a>
+      <a href="#">Wine Tours</a>
+      <a href="#">Airport Service</a>
     </div>
     <div class="footer-col">
       <div class="footer-col-title">Company</div>
-      <a href="about.html">About CLS</a>
-      <a href="safety-technology.html">Safety & Tech</a>
-      <a href="fleet.html">Fleet</a>
-      <a href="environmental.html">Environmental</a>
-      <a href="careers.html">Careers</a>
-      <a href="#">Privacy Policy</a>
+      <a href="#">About CLS</a>
+      <a href="#">Safety &amp; Tech</a>
+      <a href="#">Fleet</a>
+      <a href="#">Environmental</a>
+      <a href="#">Careers</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="footer-copy">© 2025 CLS Global Transportation, Inc. All rights reserved.</div>
-    <div class="footer-tcp">TCP #37344</div>
+    <div class="footer-copy">2025 CLS Global Transportation, Inc. All rights reserved.</div>
+    <div class="footer-copy">TCP #37344</div>
   </div>
 </footer>
 
-
-
-
 <script>
-(function(){
-  // Dropdown (desktop)
-  var btns = document.querySelectorAll('[data-dropdown]');
-  function closeAll(){ document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('active'); }); }
-  btns.forEach(function(btn){
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      var id = btn.getAttribute('data-dropdown');
-      var dd = document.getElementById(id);
-      var wasOpen = dd.classList.contains('active');
-      closeAll();
-      if(!wasOpen){
-        var r = btn.getBoundingClientRect();
-        dd.style.top = (r.bottom + 4) + 'px';
-        dd.style.left = r.left + 'px';
-        dd.classList.add('active');
-      }
-    });
-  });
-  document.addEventListener('click', closeAll);
-  document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.addEventListener('click', function(e){ e.stopPropagation(); }); });
-
-  // Hamburger (mobile)
-  var hamburger = document.getElementById('hamburger');
-  var mobileMenu = document.getElementById('mobile-menu');
-  if(hamburger && mobileMenu){
-    hamburger.addEventListener('click', function(e){
-      e.stopPropagation();
-      var isOpen = mobileMenu.classList.contains('open');
-      mobileMenu.classList.toggle('open');
-      hamburger.classList.toggle('open');
-    });
-    mobileMenu.addEventListener('click', function(e){ e.stopPropagation(); });
-    document.addEventListener('click', function(){
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('open');
-    });
-    // Close on link tap
-    mobileMenu.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('open');
-      });
-    });
-  }
-})();
+const words = ['Corporate Shuttles','University Transit','Personal & Events','Government Programs'];
+let i = 0;
+const el = document.getElementById('rotator');
+if(el){
+  setInterval(()=>{
+    i = (i+1) % words.length;
+    el.style.transform = 'translateY(-'+(i*70)+'px)';
+    el.style.transition = 'transform 0.5s cubic-bezier(0.4,0,0.2,1)';
+  }, 2200);
+}
 </script>
 </body>
 </html>
