@@ -47,10 +47,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 56px
 /* HERO RIGHT */
 .hero-right{display:none}.city-wrap{display:none}.city-badge{display:none}
 
-/* TICKER */
-.ticker{background:#C41E1E;overflow:hidden;padding:13px 0}
-.ticker-track{display:flex;animation:tick 32s linear infinite;width:max-content}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
 .ticker-item{font-size:11px;font-weight:600;color:rgba(255,255,255,.9);letter-spacing:.1em;text-transform:uppercase;padding:0 24px;white-space:nowrap}
 .ticker-dot{color:rgba(255,255,255,.3)}
 
@@ -105,6 +102,54 @@ footer{background:#1a0a0a;padding:56px 56px 36px}
 .footer-col a{display:block;font-size:13px;color:rgba(255,210,210,.45);text-decoration:none;margin-bottom:9px}
 .footer-bottom{border-top:1px solid rgba(255,150,150,.1);padding-top:24px;display:flex;justify-content:space-between}
 .footer-copy{font-size:12px;color:rgba(255,200,200,.3)}
+
+
+  .hero-h1{font-size:36px !important}
+  #rotate-inner > div{height:48px !important;line-height:48px !important}
+  .hero-h1 > div{height:48px !important}
+}
+
+@media(max-width:900px){
+  nav{padding:0 20px;height:56px}
+  .nav-links{display:none !important}
+  .nav-phone{display:none !important}
+  .nav-right .nav-phone{display:none !important}
+  .hero{min-height:500px}
+  .hero-content{margin:20px 16px;padding:28px 24px;max-width:100%}
+  .hero-h1{font-size:36px !important;letter-spacing:-0.5px}
+  #rotate-inner > div{height:46px !important;line-height:46px !important}
+  .hero-content > div:first-child{height:46px !important}
+  .hero-sub{font-size:14px}
+  .hero-btns{flex-direction:column;gap:10px}
+  .btn-red,.btn-ghost{text-align:center;padding:13px 20px}
+  .hero-stats{gap:20px;flex-wrap:wrap}
+  .logos{padding:32px 20px}
+  .logos-grid{gap:10px}
+  .logo-pill{padding:10px 14px;font-size:13px}
+  .services{padding:48px 20px}
+  .svc-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .svc-card{height:160px}
+  .svc-name{font-size:16px}
+  .stats-band{grid-template-columns:1fr 1fr}
+  .why{padding:48px 20px}
+  .why-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .cta-band{padding:48px 20px;flex-direction:column;gap:24px}
+  .cta-right{width:100%}
+  .btn-red,.btn-ghost{width:100%;text-align:center}
+  footer{padding:40px 20px 28px}
+  .footer-top{grid-template-columns:1fr 1fr;gap:24px}
+  .section-title{font-size:28px}
+}
+@media(max-width:480px){
+  .hero-h1{font-size:30px !important}
+  #rotate-inner > div{height:40px !important;line-height:40px !important}
+  .hero-content > div:first-child{height:40px !important}
+  .svc-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .stats-band{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -175,26 +220,7 @@ footer{background:#1a0a0a;padding:56px 56px 36px}
   </div>
 </section>
 
-<div class="ticker">
-  <div class="ticker-track">
-    <span class="ticker-item">Corporate Shuttles</span>
-    <span class="ticker-item">University Transit</span>
-    <span class="ticker-item">Government Programs</span>
-    <span class="ticker-item">Weddings &amp; Events</span>
-    <span class="ticker-item">Wine Country Tours</span>
-    <span class="ticker-item">Airport Services</span>
-    <span class="ticker-item">Last Mile Solutions</span>
-    <span class="ticker-item">WiFi Fleet</span>
-    <span class="ticker-item">Corporate Shuttles</span>
-    <span class="ticker-item">University Transit</span>
-    <span class="ticker-item">Government Programs</span>
-    <span class="ticker-item">Weddings &amp; Events</span>
-    <span class="ticker-item">Wine Country Tours</span>
-    <span class="ticker-item">Airport Services</span>
-    <span class="ticker-item">Last Mile Solutions</span>
-    <span class="ticker-item">WiFi Fleet</span>
-  </div>
-</div>
+
 
 <div class="logos">
   <div class="logos-title">Trusted by leading Bay Area organizations</div>
@@ -334,7 +360,8 @@ const el = document.getElementById('rotate-inner');
 if(el){
   setInterval(()=>{
     i = (i+1) % items.length;
-    el.style.transform = 'translateY(-'+(i*72)+'px)';
+    const h = window.innerWidth <= 480 ? 40 : window.innerWidth <= 900 ? 46 : 72;
+    el.style.transform = 'translateY(-'+(i*h)+'px)';
   }, 2400);
 }
 </script>
