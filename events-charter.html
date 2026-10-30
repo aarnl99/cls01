@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Event & Charter Transportation Bay Area | CLS Global</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --red: #C41E1E;
+    --red-dark: #A01818;
+    --black: #141414;
+    --charcoal: #2C2C2C;
+    --gray-mid: #6B6B6B;
+    --gray-light: #E4E4E2;
+    --gray-bg: #F6F6F4;
+    --white: #FFFFFF;
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--gray-bg);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 1400px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 58px;
+    background: rgba(255,255,255,0.94);
+    border: 1px solid var(--gray-light);
+    border-radius: 14px;
+    backdrop-filter: blur(14px);
+  }
+  .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--black); }
+  .nav-logo-icon { width:32px; height:32px; background:var(--black); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  .nav-logo-icon svg { width:17px; height:17px; }
+  .nav-logo-text { line-height:1.1; }
+  .nav-logo-text strong { font-size:13px; font-weight:800; letter-spacing:-0.01em; display:block; }
+  .nav-logo-text span { font-size:10px; font-weight:400; color:var(--gray-mid); letter-spacing:0.08em; text-transform:uppercase; }
+  .nav-links { display:flex; gap:28px; list-style:none; }
+  .nav-links a { font-size:14px; font-weight:500; color:var(--gray-mid); text-decoration:none; transition:color 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--black); }
+  .nav-right { display:flex; align-items:center; gap:20px; }
+  .nav-phone { font-size:14px; font-weight:600; color:var(--black); text-decoration:none; }
+  .btn-red { background:var(--red); color:var(--white); font-size:14px; font-weight:600; padding:9px 20px; border-radius:10px; text-decoration:none; border:none; cursor:pointer; transition:background 0.15s; white-space:nowrap; }
+  .btn-red:hover { background:var(--red-dark); }
+
+  /* PAGE HERO */
+  .page-hero {
+    margin-top: 82px;
+    background: var(--white);
+    padding: 72px 56px 80px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .page-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 13px;
+    color: var(--gray-mid);
+  }
+  .breadcrumb a { color: var(--gray-mid); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--black); }
+  .breadcrumb span { font-size: 11px; }
+  .page-hero-tag {
+    display: inline-block;
+    background: rgba(196,30,30,0.08);
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(196,30,30,0.15);
+  }
+  .page-hero h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+  .page-hero p {
+    font-size: 18px;
+    color: var(--gray-mid);
+    line-height: 1.65;
+    max-width: 560px;
+    margin-bottom: 36px;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-red-lg {
+    background: var(--red);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+    display: inline-block;
+  }
+  .btn-red-lg:hover { opacity: 0.88; }
+  .btn-ghost-light {
+    background: transparent;
+    color: var(--charcoal);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid var(--gray-light);
+    transition: border-color 0.15s, color 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost-light:hover { border-color: var(--charcoal); color: var(--black); }
+  .hero-stats-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--gray-light);
+    flex-wrap: wrap;
+  }
+  .hero-stat-val { font-size: 36px; font-weight: 800; color: var(--black); letter-spacing: -0.04em; line-height: 1; }
+  .hero-stat-lbl { font-size: 13px; color: var(--gray-mid); margin-top: 4px; }
+
+  /* SECTION SHARED */
+  .section { padding: 80px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-size: clamp(28px, 3.8vw, 46px);
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--gray-mid);
+    line-height: 1.65;
+    max-width: 58ch;
+    margin-bottom: 52px;
+  }
+
+  /* EVENT TYPES */
+  .event-types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 760px) { .event-types { grid-template-columns: 1fr; } }
+  .etype-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 16px;
+    padding: 28px 24px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .etype-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .etype-emoji { font-size: 28px; margin-bottom: 14px; display: block; }
+  .etype-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.02em; }
+  .etype-card p { font-size: 14px; color: var(--gray-mid); line-height: 1.6; }
+
+  /* WHAT WE HANDLE */
+  .handle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 700px) { .handle-grid { grid-template-columns: 1fr; } }
+  .handle-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 14px;
+    padding: 28px 24px;
+  }
+  .handle-num { font-size: 12px; font-weight: 700; color: var(--red); letter-spacing: 0.04em; margin-bottom: 12px; }
+  .handle-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.02em; }
+  .handle-card p { font-size: 14px; color: var(--gray-mid); line-height: 1.65; }
+
+  /* EVENT DAY TIMELINE */
+  .timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--red), var(--gray-light));
+  }
+  .tl-item { position: relative; padding: 0 0 36px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-dot {
+    position: absolute;
+    left: -27px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--red);
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--red);
+  }
+  .tl-time { font-size: 12px; font-weight: 700; color: var(--red); letter-spacing: 0.04em; margin-bottom: 6px; }
+  .tl-item h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em; }
+  .tl-item p { font-size: 14px; color: var(--gray-mid); line-height: 1.6; }
+
+  /* PROOF DARK */
+  .proof-bg { background: var(--black); }
+  .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 760px) { .proof-grid { grid-template-columns: 1fr; } }
+  .proof-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 24px;
+  }
+  .proof-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+  .proof-stars span { color: #FBBF24; font-size: 15px; }
+  .proof-quote { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.65; margin-bottom: 20px; font-style: italic; }
+  .proof-name { font-size: 14px; font-weight: 700; color: var(--white); }
+  .proof-role { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .proof-company { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 700; color: var(--red); letter-spacing: 0.04em; text-transform: uppercase; background: rgba(196,30,30,0.15); padding: 3px 10px; border-radius: 50px; border: 1px solid rgba(196,30,30,0.25); }
+  .proof-bg .section-label { color: rgba(255,255,255,0.4); }
+  .proof-bg h2 { color: var(--white); }
+  .proof-bg .section-sub { color: rgba(255,255,255,0.5); }
+
+  /* COMPARE TABLE */
+  .compare-wrap { overflow-x: auto; }
+  .compare-table { width: 100%; border-collapse: separate; border-spacing: 0; min-width: 600px; }
+  .compare-table th {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 14px 20px;
+    background: var(--white);
+    border-bottom: 2px solid var(--gray-light);
+  }
+  .compare-table th:first-child { border-radius: 12px 0 0 0; }
+  .compare-table th:last-child { border-radius: 0 12px 0 0; }
+  .compare-table th.cls-col { background: var(--red); color: var(--white); }
+  .compare-table td { padding: 14px 20px; font-size: 14px; background: var(--white); border-bottom: 1px solid var(--gray-light); }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:last-child td:first-child { border-radius: 0 0 0 12px; }
+  .compare-table tr:last-child td:last-child { border-radius: 0 0 12px 0; }
+  .compare-table td.cls-col { background: #fef2f2; font-weight: 600; }
+  .check { color: #16a34a; font-weight: 700; }
+  .cross { color: #dc2626; }
+  .partial { color: #d97706; }
+
+  /* VEHICLES */
+  .vehicles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 880px) { .vehicles-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 500px) { .vehicles-grid { grid-template-columns: 1fr; } }
+  .vehicle-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 14px;
+    padding: 22px 20px;
+    text-align: center;
+  }
+  .vehicle-icon { font-size: 32px; margin-bottom: 12px; }
+  .vehicle-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .vehicle-card p { font-size: 13px; color: var(--gray-mid); line-height: 1.5; }
+  .vehicle-cap { font-size: 12px; font-weight: 700; color: var(--red); margin-top: 8px; }
+
+  /* PROCESS STEPS */
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step { display: grid; grid-template-columns: 64px 1fr; gap: 28px; padding: 36px 0; border-bottom: 1px solid var(--gray-light); align-items: start; }
+  .step:last-child { border-bottom: none; }
+  .step-num { font-size: 13px; font-weight: 700; color: var(--red); letter-spacing: 0.04em; margin-top: 3px; }
+  .step-body h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .step-body p { font-size: 15px; color: var(--gray-mid); line-height: 1.65; }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item { border-bottom: 1px solid var(--gray-light); }
+  .faq-item:first-child { border-top: 1px solid var(--gray-light); }
+  .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; cursor: pointer; font-size: 17px; font-weight: 600; color: var(--black); user-select: none; gap: 20px; }
+  .faq-q:hover { color: var(--red); }
+  .faq-icon { font-size: 20px; font-weight: 300; color: var(--gray-mid); flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a { font-size: 15px; color: var(--gray-mid); line-height: 1.7; padding-bottom: 22px; display: none; }
+  .faq-item.open .faq-a { display: block; }
+
+  /* PRIVATE CHARTER CALLOUT */
+  .charter-callout {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 20px;
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (max-width: 700px) { .charter-callout { grid-template-columns: 1fr; gap: 28px; padding: 28px 24px; } }
+  .charter-callout h2 { font-size: clamp(24px,3vw,40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+  .charter-callout p { font-size: 16px; color: var(--gray-mid); line-height: 1.65; margin-bottom: 20px; }
+  .charter-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .charter-list li { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; }
+  .charter-list li::before { content: '✓'; color: var(--red); font-weight: 700; flex-shrink: 0; }
+
+  /* CTA STRIP */
+  .cta-strip { background: var(--red); padding: 64px 24px; }
+  .cta-strip-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+  .cta-strip h2 { font-size: clamp(24px,3vw,38px); font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1.1; max-width: 500px; }
+  .cta-strip p { font-size: 16px; color: rgba(255,255,255,0.7); margin-top: 8px; max-width: 460px; }
+  .btn-white-solid { background: var(--white); color: var(--red); font-size: 15px; font-weight: 700; padding: 15px 32px; border-radius: 50px; text-decoration: none; white-space: nowrap; transition: opacity 0.15s; display: inline-block; }
+  .btn-white-solid:hover { opacity: 0.9; }
+
+  /* FOOTER */
+  footer { background: var(--black); padding: 56px 24px 0; }
+  .footer-top { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+  .footer-brand strong { font-size: 16px; font-weight: 800; color: var(--white); display: block; margin-bottom: 12px; }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 20px; }
+  .footer-contact { display: flex; flex-direction: column; gap: 8px; }
+  .footer-contact a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.15s; }
+  .footer-contact a:hover { color: rgba(255,255,255,0.8); }
+  .footer-col h5 { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 10px; transition: color 0.15s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.25); flex-wrap: wrap; gap: 8px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+    </div>
+    <div class="nav-logo-text">
+      <strong>CLS Global</strong>
+      <span>Transportation</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="corporate-shuttle.html">Corporate</a></li>
+    <li><a href="university.html">University</a></li>
+    <li><a href="events-charter.html" class="active">Events &amp; Charter</a></li>
+    <li><a href="index.html#tech">Technology</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:6504608778" class="nav-phone">650.460.8778</a>
+    <a href="#quote" class="btn-red">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Events &amp; Charter</span>
+    </div>
+    <div class="page-hero-tag">Events &amp; Private Charter</div>
+    <h1>Your event runs on schedule.<br>So does our bus.</h1>
+    <p>From wine tours to corporate conferences to 5,000-person galas, CLS handles every vehicle, every route, and every driver, so your guests arrive on time and you can focus on the event itself.</p>
+    <div class="hero-cta-row">
+      <a href="#quote" class="btn-red-lg">Get an Event Quote</a>
+      <a href="tel:6504608778" class="btn-ghost-light">Call 650.460.8778</a>
+    </div>
+    <div class="hero-stats-row">
+      <div>
+        <div class="hero-stat-val">5,000+</div>
+        <div class="hero-stat-lbl">Events Managed</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">30+</div>
+        <div class="hero-stat-lbl">Years in the Bay Area</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">24/7</div>
+        <div class="hero-stat-lbl">Operations Dispatch</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">TCP</div>
+        <div class="hero-stat-lbl">#37344 Licensed &amp; Insured</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT TYPES -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">What We Handle</div>
+    <h2>Every kind of event. One company.</h2>
+    <p class="section-sub">CLS has run transportation for every type of Bay Area event you can imagine. Here's what we do best.</p>
+    <div class="event-types">
+      <div class="etype-card">
+        <span class="etype-emoji">🍷</span>
+        <h3>Wine Country Tours</h3>
+        <p>Napa and Sonoma tours for groups of any size. Roundtrip from SF or any Bay Area pickup point, with flexible stops at wineries you choose. You handle the tastings, we handle everything else.</p>
+      </div>
+      <div class="etype-card">
+        <span class="etype-emoji">💍</span>
+        <h3>Weddings &amp; Private Celebrations</h3>
+        <p>Shuttle service between your venue, hotel blocks, and ceremony locations. We coordinate arrival windows, manage guest queuing, and keep things running even when your timeline shifts.</p>
+      </div>
+      <div class="etype-card">
+        <span class="etype-emoji">🎤</span>
+        <h3>Corporate Conferences &amp; Galas</h3>
+        <p>Hotel-to-venue shuttles, VIP pickup from SFO and SJC, and multi-day service for large conferences. We can manage 50 guests or 5,000 with the same attention to timing and detail.</p>
+      </div>
+      <div class="etype-card">
+        <span class="etype-emoji">🏟️</span>
+        <h3>Sporting Events &amp; Team Travel</h3>
+        <p>Team buses for away games, fan shuttles from BART to the stadium, and post-game transfers back to the hotel. We know how to work around event traffic and keep groups together.</p>
+      </div>
+      <div class="etype-card">
+        <span class="etype-emoji">✈️</span>
+        <h3>Airport Transfers &amp; Group Pickup</h3>
+        <p>Coordinated group arrivals from SFO, OAK, and SJC. We track flight times and adjust for delays automatically. Whether it's 5 executives or 200 conference attendees, everyone lands and moves together.</p>
+      </div>
+      <div class="etype-card">
+        <span class="etype-emoji">🎡</span>
+        <h3>Festivals &amp; Public Events</h3>
+        <p>High-volume shuttle operations for concerts, festivals, and community events. We handle route staging, driver coordination, and the kind of real-time adjustments that large crowds require.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVATE CHARTER CALLOUT -->
+<section class="section">
+  <div class="section-inner">
+    <div class="charter-callout">
+      <div>
+        <div class="section-label">Private Charter</div>
+        <h2>Your bus, your schedule, your route.</h2>
+        <p>Private charter puts a CLS vehicle fully at your disposal for the day, the evening, or the weekend. No shared routes, no other passengers, no compromises on timing.</p>
+        <p>Popular for executive offsite retreats, employee team events, stadium trips, brewery crawls, and any time you need a group to move together without coordinating ride-shares or parking.</p>
+        <a href="#quote" style="display:inline-block;background:var(--red);color:#fff;font-size:14px;font-weight:700;padding:13px 28px;border-radius:50px;text-decoration:none;margin-top:8px;">Book a Charter</a>
+      </div>
+      <div>
+        <ul class="charter-list">
+          <li>Sprinters, mini coaches, and full-size motorcoaches available</li>
+          <li>Minimum 3-hour booking, up to multi-day</li>
+          <li>Professional CLS driver included, background-checked and DOT-screened</li>
+          <li>WiFi and USB charging on most vehicles</li>
+          <li>Bay Area, Northern California, and beyond</li>
+          <li>ADA-accessible vehicles available on request</li>
+          <li>Certificate of insurance available for venue requirements</li>
+          <li>No hidden fees, one flat rate quoted upfront</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE PLAN YOUR EVENT -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">Our Process</div>
+    <h2>How we plan an event from scratch.</h2>
+    <p class="section-sub">Event transportation has a lot of moving pieces. Here's how CLS keeps them from becoming your problem.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>One discovery call</h3>
+          <p>We talk through your event, date, headcount, pickup and drop-off locations, timing constraints, and any special requests. Most clients have their transportation plan in place after this one call. We've done enough events that we know what questions to ask before you do.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>We write a run plan</h3>
+          <p>CLS maps every vehicle, every route, every pickup window, and every driver assignment for your event. You get a written run plan to review before anything is confirmed. Staging areas, load times, contingency vehicles, all of it documented so there are no surprises on event day.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>Day-of dispatch runs everything</h3>
+          <p>On event day, CLS dispatch monitors all vehicles in real time via Samsara GPS. If a bus runs late or a route needs to adjust, we handle it before you even know it happened. Your event coordinator has one phone number to call if they need us, and we pick up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT DAY TIMELINE -->
+<section class="section">
+  <div class="section-inner">
+    <div style="max-width: 700px;">
+      <div class="section-label">Event Day</div>
+      <h2>What event day actually looks like with CLS.</h2>
+      <p class="section-sub">For a corporate conference with 800 attendees arriving over two days at a hotel shuttle loop, here's what we run.</p>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">48 HOURS OUT</div>
+          <h4>Driver briefing and vehicle inspection</h4>
+          <p>All assigned drivers receive the event run plan, venue contact info, and any specific instructions. Every vehicle gets a pre-trip inspection. Backup vehicles confirmed on standby.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">DAY OF, 2 HOURS BEFORE FIRST RUN</div>
+          <h4>Drivers stage at designated locations</h4>
+          <p>CLS drivers arrive at their assigned staging points early. Dispatch opens the live GPS feed and confirms all vehicles are in position. Your on-site coordinator gets a check-in call from CLS.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">DURING THE EVENT</div>
+          <h4>Continuous dispatch monitoring</h4>
+          <p>All vehicles tracked live. CLS dispatch adjusts run times based on actual passenger load and any venue timing changes. If a bus fills early or a session runs long, we add a run.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot"></div>
+          <div class="tl-time">END OF EVENT</div>
+          <h4>Last-run coordination and clearance</h4>
+          <p>Dispatch confirms all guests are loaded and all vehicles are en route to the final drop. No one gets left at the venue. CLS provides a run report within 24 hours if you need it for your recap.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLES -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">Our Fleet</div>
+    <h2>The right vehicle for your group size.</h2>
+    <p class="section-sub">CLS has the full range, from intimate executive vans to high-capacity motorcoaches for large events. We match the vehicle to the headcount, the route, and the impression you want to make.</p>
+    <div class="vehicles-grid">
+      <div class="vehicle-card">
+        <div class="vehicle-icon">🚐</div>
+        <h4>Executive Sprinter</h4>
+        <p>Premium interior, ideal for VIP groups and executive transfers</p>
+        <div class="vehicle-cap">10–14 passengers</div>
+      </div>
+      <div class="vehicle-card">
+        <div class="vehicle-icon">🚌</div>
+        <h4>Mini Coach</h4>
+        <p>Great for wine tours, wedding shuttles, and team outings</p>
+        <div class="vehicle-cap">24–30 passengers</div>
+      </div>
+      <div class="vehicle-card">
+        <div class="vehicle-icon">🚍</div>
+        <h4>Motorcoach</h4>
+        <p>High-capacity for large conferences, galas, and airport runs</p>
+        <div class="vehicle-cap">40–57 passengers</div>
+      </div>
+      <div class="vehicle-card">
+        <div class="vehicle-icon">♿</div>
+        <h4>ADA Coach</h4>
+        <p>Fully accessible with ramp or lift, available for any event</p>
+        <div class="vehicle-cap">Accessible configurations</div>
+      </div>
+    </div>
+    <p style="margin-top:28px;font-size:14px;color:var(--gray-mid);">All vehicles include onboard cameras. WiFi, USB charging, and reclining seats available on most coaches. Need hybrid or EV options? Just ask.</p>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Why CLS vs Alternatives</div>
+    <h2>Not all event transportation is the same.</h2>
+    <p class="section-sub">Here's what separates a professional charter operation from pieced-together ride-shares or a vendor you found on short notice.</p>
+    <div class="compare-wrap">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>What matters on event day</th>
+            <th class="cls-col">CLS Global</th>
+            <th>Typical charter broker</th>
+            <th>Ride-share (Uber/Lyft)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Written run plan before the event</td>
+            <td class="cls-col"><span class="check">✓</span> Always</td>
+            <td><span class="partial">~</span> Sometimes</td>
+            <td><span class="cross">✗</span> No</td>
+          </tr>
+          <tr>
+            <td>Live GPS tracking of all vehicles</td>
+            <td class="cls-col"><span class="check">✓</span> Samsara GPS</td>
+            <td><span class="partial">~</span> Varies</td>
+            <td><span class="partial">~</span> App only</td>
+          </tr>
+          <tr>
+            <td>Same driver company handles everything</td>
+            <td class="cls-col"><span class="check">✓</span> CLS employees</td>
+            <td><span class="cross">✗</span> Subcontracted</td>
+            <td><span class="cross">✗</span> Gig drivers</td>
+          </tr>
+          <tr>
+            <td>Dispatch reachable during the event</td>
+            <td class="cls-col"><span class="check">✓</span> 24/7, one number</td>
+            <td><span class="partial">~</span> Business hours</td>
+            <td><span class="cross">✗</span> No</td>
+          </tr>
+          <tr>
+            <td>Certificate of insurance for venue</td>
+            <td class="cls-col"><span class="check">✓</span> Same day</td>
+            <td><span class="partial">~</span> Varies</td>
+            <td><span class="cross">✗</span> No</td>
+          </tr>
+          <tr>
+            <td>Fixed pricing, no surge on event night</td>
+            <td class="cls-col"><span class="check">✓</span> Quoted upfront</td>
+            <td><span class="check">✓</span> Usually</td>
+            <td><span class="cross">✗</span> Surge pricing</td>
+          </tr>
+          <tr>
+            <td>ADA accessible vehicles available</td>
+            <td class="cls-col"><span class="check">✓</span> Yes</td>
+            <td><span class="partial">~</span> Limited</td>
+            <td><span class="partial">~</span> Limited</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section proof-bg">
+  <div class="section-inner">
+    <div class="section-label">Event Partners</div>
+    <h2>Who trusts us on their biggest nights.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5)">When the event has to go right, Bay Area organizers call CLS.</p>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="proof-quote">"We had 400 guests at a Napa venue with one road in and one road out. CLS had eight coaches running a shuttle loop that kept the queue moving all night. Not a single complaint from guests about the ride."</p>
+        <div class="proof-attr">
+          <div class="proof-name">Jennifer Caldwell</div>
+          <div class="proof-role">Senior Events Manager</div>
+          <span class="proof-company">Salesforce</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="proof-quote">"Our annual conference brings in speakers and guests from seven cities. CLS handled all the SFO pickups, hotel shuttles, and venue transfers for three days straight. Every run was on time."</p>
+        <div class="proof-attr">
+          <div class="proof-name">Marcus Reid</div>
+          <div class="proof-role">Conference Operations Lead</div>
+          <span class="proof-company">Tech Industry Forum</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="proof-quote">"We booked CLS for our team's wine tour in Sonoma, 28 people, three wineries, one very long day. The driver was professional, patient, and knew the area. The whole thing was exactly what we wanted."</p>
+        <div class="proof-attr">
+          <div class="proof-name">Rachel Torres</div>
+          <div class="proof-role">People Operations</div>
+          <span class="proof-company">Bay Area Tech Company</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner" style="max-width:760px;">
+    <div class="section-label">Common Questions</div>
+    <h2>Things people ask before they book.</h2>
+    <p class="section-sub">Still have questions? Call us at 650.460.8778.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How far in advance do I need to book? <span class="faq-icon">+</span></div>
+        <div class="faq-a">For large events (100 or more guests), we recommend reaching out four to six weeks ahead. For private charters and smaller groups, two weeks is usually enough. That said, we handle last-minute bookings regularly, if you're in a bind, call us first and we'll tell you what's available.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's your minimum booking for a private charter? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Our minimum charter booking is three hours, which covers most half-day wine tours and local events. For multi-day or overnight trips, we quote based on total hours including deadhead and overnight positioning as needed.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you provide a certificate of insurance for our venue? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. CLS carries full commercial insurance and we can name your venue or organization as an additional insured on the certificate. Most venues have their requirements, we've seen them all and can usually turn a COI around the same day you need it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What happens if a driver or vehicle has a problem on event day? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Our dispatch team monitors all events from a central operations center and keeps backup capacity available. If a vehicle has a mechanical issue or a driver is unavailable, we have a replacement ready. In 30 years of Bay Area events, we have never canceled a confirmed job.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you charge extra for waiting time or late events? <span class="faq-icon">+</span></div>
+        <div class="faq-a">For charter bookings, waiting time beyond the contracted hours is billed at an hourly rate that we quote upfront. For events with a scheduled end time, we build buffer into the plan. We don't charge surprise fees, every cost is discussed before you sign.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you handle alcohol on charter trips (wine tours, etc.)? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Passengers 21 and over may have sealed or open containers on charter vehicles, depending on the jurisdiction and vehicle type. For wine tours, we allow guests to bring open bottles onto the coach between stops. We ask that passengers remain respectful of the vehicle and driver, groups that become disruptive may be asked to end the trip.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you offer ADA accessible vehicles for events? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. CLS has ADA accessible coaches with ramps or wheelchair lifts. Let us know during the planning process and we'll include the right vehicles in your run plan. If you're not sure what you need, tell us the number of guests with mobility considerations and we'll figure it out together.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-strip" id="quote">
+  <div class="cta-strip-inner">
+    <div>
+      <h2>Tell us about your event.</h2>
+      <p>Date, headcount, and what you're trying to do, that's all we need to put together a quote.</p>
+    </div>
+    <a href="index.html#quote" class="btn-white-solid">Get an Event Quote</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <strong>CLS Global Transportation</strong>
+      <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 1991. Serving SF, the Peninsula, South Bay, and East Bay.</p>
+      <div class="footer-contact">
+        <a href="tel:6504608778"><strong>650.460.8778</strong>, Call or Text</a>
+        <a href="mailto:info@clsgt.com">info@clsgt.com</a>
+        <a href="#">TCP #37344 · Available 24/7</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Corporate</h5>
+      <a href="corporate-shuttle.html">Home to Work Shuttles</a>
+      <a href="corporate-shuttle.html">BART &amp; Caltrain Connection</a>
+      <a href="corporate-shuttle.html">Inter-Campus Routes</a>
+      <a href="corporate-shuttle.html">Park &amp; Ride</a>
+    </div>
+    <div class="footer-col">
+      <h5>University &amp; Gov</h5>
+      <a href="university.html">University Transit</a>
+      <a href="university.html">Municipal Shuttles</a>
+      <a href="university.html">ADA &amp; Paratransit</a>
+    </div>
+    <div class="footer-col">
+      <h5>Events</h5>
+      <a href="events-charter.html">Wine Tours</a>
+      <a href="events-charter.html">Weddings</a>
+      <a href="events-charter.html">Conferences</a>
+      <a href="events-charter.html">Sporting Events</a>
+      <a href="events-charter.html">Private Charter</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About CLS</a>
+      <a href="index.html#tech">Safety &amp; Tech</a>
+      <a href="index.html#env">Environmental</a>
+      <a href="index.html#quote">Get a Quote</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>CLS Global Transportation, Inc. All rights reserved.</span>
+    <span>TCP #37344</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>

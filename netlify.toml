@@ -1,7 +1,12 @@
 [[redirects]]
-  from = "/"
-  to = "/index.html"
-  status = 200
+  from = "/corporate.html"
+  to = "/corporate-shuttle.html"
+  status = 301
+
+[[redirects]]
+  from = "/personal-events.html"
+  to = "/events-charter.html"
+  status = 301
 
 [[headers]]
   for = "/*"
@@ -18,5 +23,10 @@
 
 [[headers]]
   for = "/*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*.jpg"
   [headers.values]
     Cache-Control = "public, max-age=86400"
