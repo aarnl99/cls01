@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Corporate Shuttle Service Bay Area | CLS Global Transportation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --red: #C41E1E;
+    --red-dark: #A01818;
+    --black: #141414;
+    --charcoal: #2C2C2C;
+    --gray-mid: #6B6B6B;
+    --gray-light: #E4E4E2;
+    --gray-bg: #F6F6F4;
+    --white: #FFFFFF;
+    color-scheme: light;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--gray-bg);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 32px);
+    max-width: 1400px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 58px;
+    background: rgba(255,255,255,0.94);
+    border: 1px solid var(--gray-light);
+    border-radius: 14px;
+    backdrop-filter: blur(14px);
+  }
+  .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--black); }
+  .nav-logo-icon { width:32px; height:32px; background:var(--black); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+  .nav-logo-icon svg { width:17px; height:17px; }
+  .nav-logo-text { line-height:1.1; }
+  .nav-logo-text strong { font-size:13px; font-weight:800; letter-spacing:-0.01em; display:block; }
+  .nav-logo-text span { font-size:10px; font-weight:400; color:var(--gray-mid); letter-spacing:0.08em; text-transform:uppercase; }
+  .nav-links { display:flex; gap:28px; list-style:none; }
+  .nav-links a { font-size:14px; font-weight:500; color:var(--gray-mid); text-decoration:none; transition:color 0.15s; }
+  .nav-links a:hover, .nav-links a.active { color:var(--black); }
+  .nav-right { display:flex; align-items:center; gap:20px; }
+  .nav-phone { font-size:14px; font-weight:600; color:var(--black); text-decoration:none; }
+  .btn-red { background:var(--red); color:var(--white); font-size:14px; font-weight:600; padding:9px 20px; border-radius:10px; text-decoration:none; border:none; cursor:pointer; transition:background 0.15s; white-space:nowrap; }
+  .btn-red:hover { background:var(--red-dark); }
+
+  /* PAGE HERO */
+  .page-hero {
+    margin-top: 82px;
+    background: var(--white);
+    padding: 72px 56px 80px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .page-hero-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    font-size: 13px;
+    color: var(--gray-mid);
+  }
+  .breadcrumb a { color: var(--gray-mid); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--black); }
+  .breadcrumb span { font-size: 11px; }
+  .page-hero-tag {
+    display: inline-block;
+    background: rgba(196,30,30,0.08);
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 50px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(196,30,30,0.15);
+  }
+  .page-hero h1 {
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    color: var(--black);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+    max-width: 700px;
+  }
+  .page-hero p {
+    font-size: 18px;
+    color: var(--gray-mid);
+    line-height: 1.65;
+    max-width: 560px;
+    margin-bottom: 36px;
+  }
+  .hero-cta-row {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .btn-red-lg {
+    background: var(--red);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+    display: inline-block;
+  }
+  .btn-red-lg:hover { opacity: 0.88; }
+  .btn-ghost-light {
+    background: transparent;
+    color: var(--charcoal);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    border: 1px solid var(--gray-light);
+    transition: border-color 0.15s, color 0.15s;
+    display: inline-block;
+  }
+  .btn-ghost-light:hover { border-color: var(--charcoal); color: var(--black); }
+  .hero-stats-row {
+    display: flex;
+    gap: 48px;
+    margin-top: 56px;
+    padding-top: 40px;
+    border-top: 1px solid var(--gray-light);
+    flex-wrap: wrap;
+  }
+  .hero-stat-item {}
+  .hero-stat-val { font-size: 36px; font-weight: 800; color: var(--black); letter-spacing: -0.04em; line-height: 1; }
+  .hero-stat-lbl { font-size: 13px; color: var(--gray-mid); margin-top: 4px; }
+
+  /* SECTION SHARED */
+  .section { padding: 80px 24px; }
+  .section-inner { max-width: 1200px; margin: 0 auto; }
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 14px;
+  }
+  .section h2 {
+    font-size: clamp(28px, 3.8vw, 46px);
+    font-weight: 800;
+    color: var(--black);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    font-size: 17px;
+    color: var(--gray-mid);
+    line-height: 1.65;
+    max-width: 58ch;
+    margin-bottom: 52px;
+  }
+
+  /* HOW IT WORKS */
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 28px;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--gray-light);
+    align-items: start;
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--red);
+    letter-spacing: 0.04em;
+    margin-top: 3px;
+  }
+  .step-body h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .step-body p { font-size: 15px; color: var(--gray-mid); line-height: 1.65; }
+
+  /* SERVICE TYPES */
+  .service-types-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  @media (max-width: 760px) { .service-types-grid { grid-template-columns: 1fr; } }
+  .stype-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 16px;
+    padding: 28px 24px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .stype-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+  .stype-icon {
+    width: 44px;
+    height: 44px;
+    background: #fef2f2;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .stype-icon svg { width: 22px; height: 22px; stroke: var(--red); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .stype-card h3 { font-size: 17px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  .stype-card p { font-size: 14px; color: var(--gray-mid); line-height: 1.6; }
+
+  /* BENEFITS TWO-COL */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 80px;
+    align-items: start;
+  }
+  @media (max-width: 760px) { .benefits-grid { grid-template-columns: 1fr; gap: 28px; } }
+  .benefit-item { display: flex; gap: 18px; align-items: flex-start; }
+  .benefit-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--red); flex-shrink: 0; margin-top: 6px; }
+  .benefit-item h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .benefit-item p { font-size: 14px; color: var(--gray-mid); line-height: 1.6; }
+
+  /* PROOF */
+  .proof-bg { background: var(--black); }
+  .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 760px) { .proof-grid { grid-template-columns: 1fr; } }
+  .proof-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 24px;
+  }
+  .proof-stars { display: flex; gap: 3px; margin-bottom: 16px; }
+  .proof-stars span { color: #FBBF24; font-size: 15px; }
+  .proof-quote { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.65; margin-bottom: 20px; font-style: italic; }
+  .proof-attr {}
+  .proof-name { font-size: 14px; font-weight: 700; color: var(--white); }
+  .proof-role { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+  .proof-company { display: inline-block; margin-top: 8px; font-size: 12px; font-weight: 700; color: var(--red); letter-spacing: 0.04em; text-transform: uppercase; background: rgba(196,30,30,0.15); padding: 3px 10px; border-radius: 50px; border: 1px solid rgba(196,30,30,0.25); }
+  .proof-bg .section-label { color: rgba(255,255,255,0.4); }
+  .proof-bg h2 { color: var(--white); }
+  .proof-bg .section-sub { color: rgba(255,255,255,0.5); }
+
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 0; }
+  .faq-item {
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .faq-item:first-child { border-top: 1px solid var(--gray-light); }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--black);
+    user-select: none;
+    gap: 20px;
+  }
+  .faq-q:hover { color: var(--red); }
+  .faq-icon { font-size: 20px; font-weight: 300; color: var(--gray-mid); flex-shrink: 0; transition: transform 0.2s; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-a {
+    font-size: 15px;
+    color: var(--gray-mid);
+    line-height: 1.7;
+    padding-bottom: 22px;
+    display: none;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* TECH SPECS */
+  .tech-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  @media (max-width: 760px) { .tech-specs { grid-template-columns: 1fr; gap: 28px; } }
+  .tech-spec-left h2 { font-size: clamp(26px,3.5vw,40px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 16px; }
+  .tech-spec-left p { font-size: 16px; color: var(--gray-mid); line-height: 1.65; margin-bottom: 24px; }
+  .tech-spec-list { display: flex; flex-direction: column; gap: 14px; }
+  .tech-spec-item { display: flex; gap: 14px; align-items: flex-start; }
+  .tech-check { width: 22px; height: 22px; border-radius: 50%; background: #fef2f2; border: 1.5px solid #fca5a5; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+  .tech-check svg { width: 11px; height: 11px; stroke: var(--red); fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .tech-spec-item p { font-size: 15px; color: var(--black); line-height: 1.5; }
+
+  /* CTA STRIP */
+  .cta-strip {
+    background: var(--red);
+    padding: 64px 24px;
+  }
+  .cta-strip-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .cta-strip h2 { font-size: clamp(24px,3vw,38px); font-weight: 800; color: var(--white); letter-spacing: -0.03em; line-height: 1.1; max-width: 500px; }
+  .cta-strip p { font-size: 16px; color: rgba(255,255,255,0.7); margin-top: 8px; max-width: 460px; }
+  .btn-white-solid {
+    background: var(--white);
+    color: var(--red);
+    font-size: 15px;
+    font-weight: 700;
+    padding: 15px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+    display: inline-block;
+  }
+  .btn-white-solid:hover { opacity: 0.9; }
+
+  /* VEHICLE TYPES */
+  .vehicles-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+  @media (max-width: 880px) { .vehicles-grid { grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 500px) { .vehicles-grid { grid-template-columns: 1fr; } }
+  .vehicle-card {
+    background: var(--white);
+    border: 1px solid var(--gray-light);
+    border-radius: 14px;
+    padding: 22px 20px;
+    text-align: center;
+  }
+  .vehicle-icon { font-size: 32px; margin-bottom: 12px; }
+  .vehicle-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
+  .vehicle-card p { font-size: 13px; color: var(--gray-mid); line-height: 1.5; }
+  .vehicle-cap { font-size: 12px; font-weight: 700; color: var(--red); margin-top: 8px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 56px 24px 0;
+  }
+  .footer-top {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  @media (max-width: 900px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+  .footer-brand strong { font-size: 16px; font-weight: 800; color: var(--white); display: block; margin-bottom: 12px; }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 20px; }
+  .footer-contact { display: flex; flex-direction: column; gap: 8px; }
+  .footer-contact a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.15s; }
+  .footer-contact a:hover { color: rgba(255,255,255,0.8); }
+  .footer-col h5 { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 10px; transition: color 0.15s; }
+  .footer-col a:hover { color: var(--white); }
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.25);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+    </div>
+    <div class="nav-logo-text">
+      <strong>CLS Global</strong>
+      <span>Transportation</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="corporate-shuttle.html" class="active">Corporate</a></li>
+    <li><a href="university.html">University</a></li>
+    <li><a href="events-charter.html">Events &amp; Charter</a></li>
+    <li><a href="index.html#tech">Technology</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:6504608778" class="nav-phone">650.460.8778</a>
+    <a href="#quote" class="btn-red">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span>Corporate Shuttle</span>
+    </div>
+    <div class="page-hero-tag">Corporate Shuttle Programs</div>
+    <h1>Your commuter program, fully managed.</h1>
+    <p>From route design to daily dispatch, CLS runs your Bay Area employee shuttle end to end. You get one contact, live reporting, and a program that your employees actually use.</p>
+    <div class="hero-cta-row">
+      <a href="#quote" class="btn-red-lg">Get a Custom Quote</a>
+      <a href="tel:6504608778" class="btn-ghost-light">Call 650.460.8778</a>
+    </div>
+    <div class="hero-stats-row">
+      <div class="hero-stat-item">
+        <div class="hero-stat-val">1M+</div>
+        <div class="hero-stat-lbl">Annual Passengers</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-val">99%</div>
+        <div class="hero-stat-lbl">On-Time Rate</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-val">11M</div>
+        <div class="hero-stat-lbl">Safe Miles</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-val">30+</div>
+        <div class="hero-stat-lbl">Years in the Bay Area</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2>From first call to running program<br>in three steps.</h2>
+    <p class="section-sub">We've launched commuter programs for companies of every size. Here's how a typical program goes from idea to live service.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <h3>Tell us your situation</h3>
+          <p>Share your office locations, headcount, neighborhood data, and shift times on one call. We've done this for dozens of Bay Area companies, we know the right questions to ask. No RFP required to get started.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <h3>We design your program</h3>
+          <p>CLS maps your routes using real ridership demand, BART/Caltrain connection points, and your office locations. We select the right vehicle mix, set stop schedules, and give you clear pricing before anything launches.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <h3>We launch and run it daily</h3>
+          <p>Your dedicated account manager handles driver scheduling, daily dispatch, rider communications, and any last-minute changes. You get a monthly ridership report and one phone number to call if anything comes up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE TYPES -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Service Types</div>
+    <h2>What kind of program do you need?</h2>
+    <p class="section-sub">Every Bay Area company has a different situation. We build around yours.</p>
+    <div class="service-types-grid">
+      <div class="stype-card">
+        <div class="stype-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </div>
+        <h3>Home to Work Shuttles</h3>
+        <p>Daily door-near service from residential pickup zones to your office. Routes are built around where your employees actually live, using real address data to maximize ridership and minimize empty seats.</p>
+      </div>
+      <div class="stype-card">
+        <div class="stype-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>BART &amp; Caltrain Connections</h3>
+        <p>Last-mile shuttles from transit hubs straight to your campus. Timed to train arrivals so employees step off the train and onto your shuttle without waiting. We watch the real-time feed and adjust when trains run late.</p>
+      </div>
+      <div class="stype-card">
+        <div class="stype-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <h3>Inter-Campus Routes</h3>
+        <p>Fixed-schedule shuttles between your office locations, parking structures, and nearby amenities. Keeps employees moving between buildings without needing a car mid-day.</p>
+      </div>
+      <div class="stype-card">
+        <div class="stype-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Shared Commuter Programs</h3>
+        <p>If your office park or business district has multiple tenants, a shared shuttle program can cut each company's cost by 30 to 50 percent. CLS manages the route, the billing split, and the communication to all groups.</p>
+      </div>
+      <div class="stype-card">
+        <div class="stype-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3>Park &amp; Ride Service</h3>
+        <p>Solve parking overflow by shuttling employees from an off-site lot to your front door. Reduces on-site congestion, reduces your parking spend, and gives employees a stress-free start to the day.</p>
+      </div>
+      <div class="stype-card">
+        <div class="stype-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Executive &amp; VIP Transport</h3>
+        <p>Premium vehicle service for executive teams, board visitors, and recurring VIP runs. Sedans, SUVs, and Sprinter vans with professional drivers who know how to represent your company.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VEHICLES -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="section-label">Our Fleet</div>
+    <h2>The right vehicle for every route.</h2>
+    <p class="section-sub">We match your headcount, route length, and rider experience goals to the best vehicle for the job. Every vehicle in our fleet is inspected, insured, and staffed by a CLS-employed driver.</p>
+    <div class="vehicles-grid">
+      <div class="vehicle-card">
+        <div class="vehicle-icon">🚐</div>
+        <h4>Executive Sprinter</h4>
+        <p>Premium ride for small groups and VIP runs</p>
+        <div class="vehicle-cap">10–14 passengers</div>
+      </div>
+      <div class="vehicle-card">
+        <div class="vehicle-icon">🚌</div>
+        <h4>Mini Coach</h4>
+        <p>Most popular for mid-size corporate routes</p>
+        <div class="vehicle-cap">24–30 passengers</div>
+      </div>
+      <div class="vehicle-card">
+        <div class="vehicle-icon">🚍</div>
+        <h4>Full Coach</h4>
+        <p>High-capacity commuter and event bus</p>
+        <div class="vehicle-cap">40–57 passengers</div>
+      </div>
+      <div class="vehicle-card">
+        <div class="vehicle-icon">♿</div>
+        <h4>ADA Coach</h4>
+        <p>Wheelchair accessible with ramp or lift</p>
+        <div class="vehicle-cap">Accessible configurations</div>
+      </div>
+    </div>
+    <p style="margin-top:28px;font-size:14px;color:var(--gray-mid);">All vehicles include WiFi, USB charging, air conditioning, and onboard cameras. Hybrid and EV options available on select routes.</p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Why CLS</div>
+    <h2>What you actually get when you work with us.</h2>
+    <p class="section-sub">Not what's in the brochure. What it looks like day to day when CLS is running your program.</p>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-dot"></div>
+        <div>
+          <h4>One account manager. Always reachable.</h4>
+          <p>You have a dedicated CLS contact who knows your program inside and out. Not a call center. Not a ticketing queue. One person who picks up the phone.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-dot"></div>
+        <div>
+          <h4>Real-time tracking for your team and riders</h4>
+          <p>Samsara GPS on every vehicle means your operations team and riders both know exactly where the shuttle is, no guessing, no refresh button mashing.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-dot"></div>
+        <div>
+          <h4>Monthly reporting without having to ask</h4>
+          <p>Ridership trends, on-time performance, and route utilization delivered to your inbox every month. If a route is underperforming, we flag it before you do.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-dot"></div>
+        <div>
+          <h4>Driver background checks and drug testing</h4>
+          <p>Every CLS driver passes a DOT drug screen, background check, and behind-the-wheel evaluation before they ever carry a passenger. Ongoing monitoring throughout employment.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-dot"></div>
+        <div>
+          <h4>Rider app with live ETAs and alerts</h4>
+          <p>Employees track their shuttle, see stop-level ETAs, and get push alerts if anything changes. Available on iOS and Android.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-dot"></div>
+        <div>
+          <h4>Flexible contracts that scale</h4>
+          <p>Headcount change? New office location? Seasonal schedule? We adjust routes and vehicle counts without making you renegotiate a contract from scratch.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-dot"></div>
+        <div>
+          <h4>Emissions reporting for your ESG goals</h4>
+          <p>CLS is a Green Ride Global Gold Member since 2013. Every program includes an annual carbon footprint audit and emissions report to support your sustainability filings.</p>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-dot"></div>
+        <div>
+          <h4>TCP #37344. Fully licensed and insured.</h4>
+          <p>California TCP permit holder operating under full commercial insurance. Your legal and compliance team won't have to worry about a thing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="section proof-bg">
+  <div class="section-inner">
+    <div class="section-label">Client References</div>
+    <h2>What our clients say.</h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.5)">From tech campuses to property portfolios, here's who trusts CLS to run their daily programs.</p>
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="proof-quote">"CLS has kept a perfect safety record across our entire shuttle program. That kind of consistency is rare, and our employees notice. It's one less thing I ever have to worry about."</p>
+        <div class="proof-attr">
+          <div class="proof-name">Mike McLean</div>
+          <div class="proof-role">Corporate Transportation Manager</div>
+          <span class="proof-company">Adobe</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="proof-quote">"Hundreds of people in this building count on CLS to get to work. In three years, they've never missed a beat, on time, professional, and easy to reach when I need something changed."</p>
+        <div class="proof-attr">
+          <div class="proof-name">Erin Bravo</div>
+          <div class="proof-role">Property Manager</div>
+          <span class="proof-company">Levi Plaza</span>
+        </div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="proof-quote">"Aaron's team picks up the phone. Every time we've had a last-minute change or a rider issue, they handle it before it becomes a problem. That kind of response makes a real difference."</p>
+        <div class="proof-attr">
+          <div class="proof-name">Ronda Wilson</div>
+          <div class="proof-role">Employee Transportation Manager</div>
+          <span class="proof-company">eBay</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH SPECS -->
+<section class="section" style="background:var(--white);">
+  <div class="section-inner">
+    <div class="tech-specs">
+      <div class="tech-spec-left">
+        <div class="section-label">Technology</div>
+        <h2>Every vehicle is live-tracked from day one.</h2>
+        <p>We run Samsara GPS and telematics on every vehicle in our fleet. Riders see live locations in the CLS rider app. Your operations team has dashboard access. Nothing is a black box.</p>
+        <p style="margin-top:16px;">Our dispatch and reservation platform (Tripshot and Ride Systems) handles all the coordination automatically, passenger counts, driver assignments, route changes, and rider notifications go through the system, not through a spreadsheet.</p>
+      </div>
+      <div>
+        <div class="tech-spec-list">
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>Samsara GPS live tracking on every vehicle</p>
+          </div>
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>Driver behavior scoring and safety alerts</p>
+          </div>
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>Onboard video monitoring on all buses</p>
+          </div>
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>Tripshot and Ride Systems dispatch platform</p>
+          </div>
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>Automated rider ETAs and delay notifications</p>
+          </div>
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>Electronic ticketing and badge reader integration</p>
+          </div>
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>Automated passenger counting per stop</p>
+          </div>
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>Monthly ridership reports and heat map analysis</p>
+          </div>
+          <div class="tech-spec-item">
+            <div class="tech-check"><svg viewBox="0 0 12 12"><polyline points="1,6 4,9 11,2"/></svg></div>
+            <p>iOS and Android rider app with live ETAs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="section-inner" style="max-width:760px;">
+    <div class="section-label">Common Questions</div>
+    <h2>Questions we get a lot.</h2>
+    <p class="section-sub">If you don't see yours here, just call us at 650.460.8778.</p>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">How long does it take to launch a new shuttle program? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Most programs are up and running within two to four weeks of signing. We've launched programs in under a week for clients with urgent timelines. The main factors are finalizing routes, vehicle availability, and getting your rider communications out.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What's the minimum size for a CLS shuttle program? <span class="faq-icon">+</span></div>
+        <div class="faq-a">There's no hard minimum. We've run programs for companies with 50 daily riders and programs with thousands. If you have a genuine commuter challenge, we'll build something that makes financial sense at your scale.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What if our headcount or office changes? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We adjust. Route changes, vehicle upgrades or downgrades, added stops, and schedule changes are all handled by your account manager. You don't have to go back out to bid every time something changes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you handle rider communications and app setup? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. CLS sets up the rider app, sends launch communications to your employees, and manages ongoing support questions from riders. Your HR or facilities team doesn't need to babysit it.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do you handle driver shortages or vehicle issues on the day of service? <span class="faq-icon">+</span></div>
+        <div class="faq-a">We maintain backup driver and vehicle capacity across our Bay Area operations. If a vehicle has a mechanical issue or a driver calls in sick, our dispatch team covers it without your team needing to know. That's what fully managed means.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Can you help us with a pre-tax commuter benefit program? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes. We work with your HR team to structure the program so employees can use pre-tax commuter dollars (up to the IRS limit) to cover their shuttle pass. This reduces net cost for employees and removes payroll tax for the company on that benefit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are CLS drivers employees or contractors? <span class="faq-icon">+</span></div>
+        <div class="faq-a">CLS drivers are CLS employees, not gig workers or subcontractors. They go through our training program, drug testing, and background checks. They wear our uniform and represent CLS every day. That's a meaningful difference in accountability.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip" id="quote">
+  <div class="cta-strip-inner">
+    <div>
+      <h2>Ready to stop managing this yourself?</h2>
+      <p>Tell us your situation and we'll put together a program and a price in 24 hours.</p>
+    </div>
+    <a href="index.html#quote" class="btn-white-solid">Get a Custom Quote</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <strong>CLS Global Transportation</strong>
+      <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 1991. Serving SF, the Peninsula, South Bay, and East Bay.</p>
+      <div class="footer-contact">
+        <a href="tel:6504608778"><strong>650.460.8778</strong>, Call or Text</a>
+        <a href="mailto:info@clsgt.com">info@clsgt.com</a>
+        <a href="#">TCP #37344 · Available 24/7</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Corporate</h5>
+      <a href="corporate-shuttle.html">Home to Work Shuttles</a>
+      <a href="corporate-shuttle.html">BART &amp; Caltrain Connection</a>
+      <a href="corporate-shuttle.html">Inter-Campus Routes</a>
+      <a href="corporate-shuttle.html">Shared Commuter</a>
+      <a href="corporate-shuttle.html">Park &amp; Ride</a>
+      <a href="corporate-shuttle.html">Executive Transport</a>
+    </div>
+    <div class="footer-col">
+      <h5>University &amp; Gov</h5>
+      <a href="university.html">University Transit</a>
+      <a href="university.html">Municipal Shuttles</a>
+      <a href="university.html">Employee Transit</a>
+      <a href="university.html">ADA &amp; Paratransit</a>
+    </div>
+    <div class="footer-col">
+      <h5>Events</h5>
+      <a href="events-charter.html">Wine Tours</a>
+      <a href="events-charter.html">Weddings</a>
+      <a href="events-charter.html">Conferences</a>
+      <a href="events-charter.html">Sporting Events</a>
+      <a href="events-charter.html">Private Charters</a>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <a href="about.html">About CLS</a>
+      <a href="index.html#tech">Safety &amp; Tech</a>
+      <a href="index.html#env">Environmental</a>
+      <a href="index.html#quote">Get a Quote</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>CLS Global Transportation, Inc. All rights reserved.</span>
+    <span>TCP #37344</span>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
