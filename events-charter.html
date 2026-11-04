@@ -361,6 +361,65 @@
   .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.55); text-decoration: none; margin-bottom: 10px; transition: color 0.15s; }
   .footer-col a:hover { color: var(--white); }
   .footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 20px 0; font-size: 13px; color: rgba(255,255,255,0.25); flex-wrap: wrap; gap: 8px; }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    z-index: 1001;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--black);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 88px 24px 32px;
+    z-index: 999;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    display: block;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu .mobile-cta {
+    margin-top: 24px;
+    background: var(--red);
+    color: white !important;
+    border-radius: 999px;
+    text-align: center;
+    padding: 16px 0 !important;
+    border-bottom: none !important;
+  }
+
 </style>
 </head>
 <body>
@@ -379,6 +438,7 @@
     <li><a href="corporate-shuttle.html">Corporate</a></li>
     <li><a href="university.html">University</a></li>
     <li><a href="events-charter.html" class="active">Events &amp; Charter</a></li>
+    <li><a href="fleet.html">Fleet</a></li>
     <li><a href="index.html#tech">Technology</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
@@ -386,7 +446,21 @@
     <a href="tel:6504608778" class="nav-phone">650.460.8778</a>
     <a href="#quote" class="btn-red">Get a Quote</a>
   </div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="corporate-shuttle.html">Corporate</a>
+  <a href="university.html">University</a>
+  <a href="events-charter.html">Events &amp; Charter</a>
+  <a href="fleet.html">Fleet</a>
+  <a href="index.html#tech">Technology</a>
+  <a href="about.html">About</a>
+  <a href="tel:6504608778">650.460.8778</a>
+  <a href="#quote" class="mobile-cta">Get a Quote</a>
+</div>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
@@ -409,7 +483,7 @@
         <div class="hero-stat-lbl">Events Managed</div>
       </div>
       <div>
-        <div class="hero-stat-val">30+</div>
+        <div class="hero-stat-val">15+</div>
         <div class="hero-stat-lbl">Years in the Bay Area</div>
       </div>
       <div>
@@ -417,8 +491,8 @@
         <div class="hero-stat-lbl">Operations Dispatch</div>
       </div>
       <div>
-        <div class="hero-stat-val">TCP</div>
-        <div class="hero-stat-lbl">#37344 Licensed &amp; Insured</div>
+        <div class="hero-stat-val">Since</div>
+        <div class="hero-stat-lbl">2011</div>
       </div>
     </div>
   </div>
@@ -479,7 +553,7 @@
       <div>
         <ul class="charter-list">
           <li>Sprinters, mini coaches, and full-size motorcoaches available</li>
-          <li>Minimum 3-hour booking, up to multi-day</li>
+          <li>Minimums start at 4 hours depending on vehicle size, up to multi-day</li>
           <li>Professional CLS driver included, background-checked and DOT-screened</li>
           <li>WiFi and USB charging on most vehicles</li>
           <li>Bay Area, Northern California, and beyond</li>
@@ -578,7 +652,7 @@
         <div class="vehicle-icon">🚌</div>
         <h4>Mini Coach</h4>
         <p>Great for wine tours, wedding shuttles, and team outings</p>
-        <div class="vehicle-cap">24–30 passengers</div>
+        <div class="vehicle-cap">Up to 37 passengers</div>
       </div>
       <div class="vehicle-card">
         <div class="vehicle-icon">🚍</div>
@@ -591,6 +665,12 @@
         <h4>ADA Coach</h4>
         <p>Fully accessible with ramp or lift, available for any event</p>
         <div class="vehicle-cap">Accessible configurations</div>
+      </div>
+      <div class="vehicle-card">
+        <div class="vehicle-icon">🚘</div>
+        <h4>Sedan, SUV &amp; Limo</h4>
+        <p>Executive sedans, black SUVs, and limo service for VIP transfers and airport runs</p>
+        <div class="vehicle-cap">Custom quote — worldwide booking</div>
       </div>
     </div>
     <p style="margin-top:28px;font-size:14px;color:var(--gray-mid);">All vehicles include onboard cameras. WiFi, USB charging, and reclining seats available on most coaches. Need hybrid or EV options? Just ask.</p>
@@ -673,27 +753,24 @@
         <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <p class="proof-quote">"We had 400 guests at a Napa venue with one road in and one road out. CLS had eight coaches running a shuttle loop that kept the queue moving all night. Not a single complaint from guests about the ride."</p>
         <div class="proof-attr">
-          <div class="proof-name">Jennifer Caldwell</div>
-          <div class="proof-role">Senior Events Manager</div>
-          <span class="proof-company">Salesforce</span>
+          <div class="proof-name">Jennifer C.</div>
+          <div class="proof-role">Senior Events Manager / Technology</div>
         </div>
       </div>
       <div class="proof-card">
         <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <p class="proof-quote">"Our annual conference brings in speakers and guests from seven cities. CLS handled all the SFO pickups, hotel shuttles, and venue transfers for three days straight. Every run was on time."</p>
         <div class="proof-attr">
-          <div class="proof-name">Marcus Reid</div>
-          <div class="proof-role">Conference Operations Lead</div>
-          <span class="proof-company">Tech Industry Forum</span>
+          <div class="proof-name">Marcus R.</div>
+          <div class="proof-role">Conference Operations Lead / Technology</div>
         </div>
       </div>
       <div class="proof-card">
         <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
         <p class="proof-quote">"We booked CLS for our team's wine tour in Sonoma, 28 people, three wineries, one very long day. The driver was professional, patient, and knew the area. The whole thing was exactly what we wanted."</p>
         <div class="proof-attr">
-          <div class="proof-name">Rachel Torres</div>
-          <div class="proof-role">People Operations</div>
-          <span class="proof-company">Bay Area Tech Company</span>
+          <div class="proof-name">Rachel T.</div>
+          <div class="proof-role">People Operations / Technology</div>
         </div>
       </div>
     </div>
@@ -713,7 +790,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">What's your minimum booking for a private charter? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Our minimum charter booking is three hours, which covers most half-day wine tours and local events. For multi-day or overnight trips, we quote based on total hours including deadhead and overnight positioning as needed.</div>
+        <div class="faq-a">Minimums start at 4 hours depending on vehicle size. Sprinters and mini coaches start at 4 hours; motorcoaches are typically 4 to 5. For multi-day or overnight trips, we quote based on total hours including deadhead and overnight positioning as needed.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Can you provide a certificate of insurance for our venue? <span class="faq-icon">+</span></div>
@@ -721,7 +798,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">What happens if a driver or vehicle has a problem on event day? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Our dispatch team monitors all events from a central operations center and keeps backup capacity available. If a vehicle has a mechanical issue or a driver is unavailable, we have a replacement ready. In 30 years of Bay Area events, we have never canceled a confirmed job.</div>
+        <div class="faq-a">Our dispatch team monitors all events from a central operations center and keeps backup capacity available. If a vehicle has a mechanical issue or a driver is unavailable, we have a replacement ready. In 15 years of Bay Area events, we have never canceled a confirmed job.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Do you charge extra for waiting time or late events? <span class="faq-icon">+</span></div>
@@ -755,11 +832,11 @@
   <div class="footer-top">
     <div class="footer-brand">
       <strong>CLS Global Transportation</strong>
-      <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 1991. Serving SF, the Peninsula, South Bay, and East Bay.</p>
+      <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 2011. Serving SF, the Peninsula, and South Bay.</p>
       <div class="footer-contact">
         <a href="tel:6504608778"><strong>650.460.8778</strong>, Call or Text</a>
-        <a href="mailto:info@clsgt.com">info@clsgt.com</a>
-        <a href="#">TCP #37344 · Available 24/7</a>
+        <a href="mailto:res@clsgt.com">res@clsgt.com</a>
+        <a href="#">Available 24/7</a>
       </div>
     </div>
     <div class="footer-col">
@@ -786,6 +863,7 @@
     <div class="footer-col">
       <h5>Company</h5>
       <a href="about.html">About CLS</a>
+      <a href="fleet.html">Fleet</a>
       <a href="index.html#tech">Safety &amp; Tech</a>
       <a href="index.html#env">Environmental</a>
       <a href="index.html#quote">Get a Quote</a>
@@ -793,7 +871,7 @@
   </div>
   <div class="footer-bottom">
     <span>CLS Global Transportation, Inc. All rights reserved.</span>
-    <span>TCP #37344</span>
+    <span>Bay Area's Transportation Partner Since 2011</span>
   </div>
 </footer>
 
@@ -808,5 +886,22 @@
   });
 </script>
 
+
+<script>
+  var btn = document.getElementById('navHamburger');
+  var menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>
