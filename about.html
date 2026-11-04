@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>About CLS Global Transportation | Bay Area Since 1991</title>
+<title>About CLS Global Transportation | Bay Area Since 2011</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -1022,6 +1022,8 @@
   @media (max-width: 900px) {
     nav { width: calc(100% - 20px); padding: 0 16px; }
     .nav-links { display: none; }
+    .nav-right { display: none; }
+    .nav-hamburger { display: flex; }
 
     .page-hero { padding: 48px 20px 44px; }
     .page-hero-inner { grid-template-columns: 1fr; gap: 36px; }
@@ -1055,6 +1057,65 @@
     .footer-top { grid-template-columns: 1fr 1fr; }
     .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
   }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    z-index: 1001;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--black);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 88px 24px 32px;
+    z-index: 999;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    display: block;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu .mobile-cta {
+    margin-top: 24px;
+    background: var(--red);
+    color: white !important;
+    border-radius: 999px;
+    text-align: center;
+    padding: 16px 0 !important;
+    border-bottom: none !important;
+  }
+
 </style>
 </head>
 <body>
@@ -1078,6 +1139,7 @@
     <li><a href="corporate-shuttle.html">Corporate Shuttle</a></li>
     <li><a href="university.html">University</a></li>
     <li><a href="events-charter.html">Events &amp; Charter</a></li>
+    <li><a href="fleet.html">Fleet</a></li>
     <li><a href="index.html#tech">Technology</a></li>
     <li><a href="about.html" class="active">About</a></li>
   </ul>
@@ -1086,7 +1148,21 @@
     <a href="tel:6504608778" class="nav-phone">650.460.8778</a>
     <a href="index.html#quote" class="btn-red">Get a Quote</a>
   </div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="corporate-shuttle.html">Corporate Shuttle</a>
+  <a href="university.html">University</a>
+  <a href="events-charter.html">Events &amp; Charter</a>
+  <a href="fleet.html">Fleet</a>
+  <a href="index.html#tech">Technology</a>
+  <a href="about.html">About</a>
+  <a href="tel:6504608778">650.460.8778</a>
+  <a href="#quote" class="mobile-cta">Get a Quote</a>
+</div>
 
 <!-- PAGE HERO -->
 <section class="page-hero">
@@ -1096,11 +1172,11 @@
         <div class="page-tag-dot"></div>
         About CLS
       </div>
-      <h1>Doing this since 1991. Still doing it right.</h1>
-      <p class="lead">CLS Global Transportation started in the Bay Area more than 30 years ago and never left. We run corporate shuttles, campus transit, and event transportation for some of the most demanding clients in the country. One partner. Full accountability. No excuses.</p>
+      <h1>Doing this since 2011. Still doing it right.</h1>
+      <p class="lead">CLS Global Transportation started in the Bay Area in 2011 and never left. We run corporate shuttles, campus transit, and event transportation for some of the most demanding clients in the country. One partner. Full accountability. No excuses.</p>
       <div class="hero-stats-row">
         <div class="stat-cell">
-          <div class="stat-value">1991</div>
+          <div class="stat-value">2011</div>
           <div class="stat-label">Year Founded</div>
         </div>
         <div class="stat-cell">
@@ -1125,7 +1201,7 @@
         </div>
         <div class="hero-fact-text">
           <h4>Rooted in the Bay Area</h4>
-          <p>Offices in San Francisco, San Jose, and the East Bay. We know the corridors, the traffic patterns, and the riders.</p>
+          <p>Headquartered in San Bruno, with satellite offices in San Jose and San Francisco. We know the corridors, the traffic patterns, and the riders.</p>
         </div>
       </div>
       <div class="hero-fact">
@@ -1142,7 +1218,7 @@
           <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div class="hero-fact-text">
-          <h4>Zero passenger injuries in 30 years</h4>
+          <h4>Zero passenger injuries in 15 years</h4>
           <p>TSI-certified drivers, weekly safety reviews, and onboard monitoring on every vehicle since day one.</p>
         </div>
       </div>
@@ -1152,7 +1228,7 @@
         </div>
         <div class="hero-fact-text">
           <h4>Licensed, insured, and audited</h4>
-          <p>TCP #37344. Green Ride Global Gold Member since 2013. Independent audits every year, not just when someone asks.</p>
+          <p>Green Ride Global Gold Member since 2013. Independent audits every year, not just when someone asks.</p>
         </div>
       </div>
     </div>
@@ -1163,8 +1239,8 @@
 <section class="story">
   <div class="story-left">
     <h2>We started on the ground. We've stayed there.</h2>
-    <p>CLS was founded in the Bay Area in 1991 with one goal: run transportation programs the right way. Not brokered out. Not handed off to a dispatch number. Actually run, with drivers who knew the routes, dispatchers who watched every trip, and a team that treated each program as their own.</p>
-    <p>Over 30 years, that approach hasn't changed. What's changed is the technology and the scale. We now serve millions of passengers a year, across corporate campuses, universities, government agencies, and private events up and down California.</p>
+    <p>CLS was founded in the Bay Area in 2011 with one goal: run transportation programs the right way. Not brokered out. Not handed off to a dispatch number. Actually run, with drivers who knew the routes, dispatchers who watched every trip, and a team that treated each program as their own.</p>
+    <p>Over 15 years, that approach hasn't changed. What's changed is the technology and the scale. We now serve millions of passengers a year, across corporate campuses, universities, government agencies, and private events up and down California.</p>
     <p>We're not the biggest company in the space. That's on purpose. We take on clients where we can actually deliver. That means dedicated staff on your account, not a shared inbox, and a team that knows your routes, your riders, and your standards.</p>
     <div class="pull-quote">
       "Run right, your shuttle program becomes an asset and a reputation builder."
@@ -1177,9 +1253,9 @@
         <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
       </div>
       <div class="timeline-body">
-        <div class="timeline-year">1991</div>
+        <div class="timeline-year">2011</div>
         <h4>Founded in the Bay Area</h4>
-        <p>CLS launches with a small team and a single focus: running transportation programs that clients can count on, not farm out.</p>
+        <p>CLS launches in San Bruno with a small team and a single focus: running transportation programs that clients can count on, not farm out.</p>
       </div>
     </div>
     <div class="timeline-item">
@@ -1187,9 +1263,9 @@
         <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
       </div>
       <div class="timeline-body">
-        <div class="timeline-year">2000s</div>
+        <div class="timeline-year">2012</div>
         <h4>Growing into corporate transit</h4>
-        <p>As Bay Area tech companies expanded, CLS became the partner of choice for corporate shuttle programs at companies like Adobe, eBay, and Chevron.</p>
+        <p>As Bay Area tech companies expanded, CLS became the partner of choice for corporate shuttle and commute programs.</p>
       </div>
     </div>
     <div class="timeline-item">
@@ -1218,8 +1294,8 @@
       </div>
       <div class="timeline-body">
         <div class="timeline-year">Today</div>
-        <h4>30+ years in, still local</h4>
-        <p>Over 1 million passengers a year. Offices in SF, San Jose, and the East Bay. 24/7 operations, 365 days a year. Same commitment as day one.</p>
+        <h4>15+ years in, still local</h4>
+        <p>Over 1 million passengers a year. Headquartered in San Bruno, with offices in San Jose and San Francisco. 24/7 operations, 365 days a year. Same commitment as day one.</p>
       </div>
     </div>
   </div>
@@ -1258,7 +1334,7 @@
       </div>
       <div class="value-text">
         <h4>Local knowledge that can't be outsourced</h4>
-        <p>We know the Bay Area. The traffic windows, the problem intersections, the rider behavior patterns. That knowledge comes from 30 years of actually running routes here.</p>
+        <p>We know the Bay Area. The traffic windows, the problem intersections, the rider behavior patterns. That knowledge comes from 15 years of actually running routes here.</p>
       </div>
     </div>
     <div class="value-item">
@@ -1294,7 +1370,7 @@
     <div class="diff-card">
       <div class="diff-num">03</div>
       <h3>24/7 operations, not just during business hours.</h3>
-      <p>Operations analysts in San Francisco and San Jose monitor every route around the clock, with added coverage in Fremont and Hayward during peak weekday hours. If a vehicle breaks down at 5 AM, someone is already on it.</p>
+      <p>Operations analysts in San Francisco and San Jose monitor every route around the clock. If a vehicle breaks down at 5 AM, someone is already on it.</p>
     </div>
     <div class="diff-card">
       <div class="diff-num">04</div>
@@ -1309,7 +1385,7 @@
     <div class="diff-card">
       <div class="diff-num">06</div>
       <h3>Bay Area experience you can't replace.</h3>
-      <p>We've been running routes in this region since 1991. We know which corridors run late on Mondays. We know where to stage vehicles for game days. We know the commute patterns, the peak hours, and the workarounds. That is local knowledge at 30 years deep.</p>
+      <p>We've been running routes in this region since 2011. We know which corridors run late on Mondays. We know where to stage vehicles for game days. We know the commute patterns, the peak hours, and the workarounds. That is real local knowledge.</p>
     </div>
   </div>
 </section>
@@ -1327,7 +1403,7 @@
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <h4>24/7 Dispatch Centers</h4>
-        <p>Dispatch desks in San Francisco and San Jose run around the clock, every day of the year. Fremont and Hayward offices add coverage Monday through Friday.</p>
+        <p>Dispatch desks in San Francisco and San Jose run around the clock, every day of the year.</p>
       </div>
       <div class="ops-card">
         <div class="ops-icon">
@@ -1358,7 +1434,7 @@
 <section class="safety-section">
   <div class="safety-left">
     <h2>Our safety record is our longest-standing proof point.</h2>
-    <p>Eleven million miles. Over 30 years. Zero passenger injuries. That number doesn't happen by accident. It happens because safety isn't a department at CLS, it's how every driver is trained, every vehicle is maintained, and every route is reviewed.</p>
+    <p>Eleven million miles. 15+ years. Zero passenger injuries. That number doesn't happen by accident. It happens because safety isn't a department at CLS, it's how every driver is trained, every vehicle is maintained, and every route is reviewed.</p>
     <p>Every driver is TSI-certified before they get behind the wheel on a CLS route. Every vehicle has onboard camera monitoring and Samsara telematics. Weekly safety reviews look at driver behavior data, flag anything unusual, and address it before it becomes a problem.</p>
     <p>When you hand your employees to us every morning, you're trusting us with something real. We have never taken that lightly.</p>
     <div class="safety-stats">
@@ -1367,7 +1443,7 @@
         <div class="lbl">Miles driven without a passenger injury</div>
       </div>
       <div class="safety-stat">
-        <div class="val">30+</div>
+        <div class="val">15+</div>
         <div class="lbl">Years of safe operations</div>
       </div>
       <div class="safety-stat">
@@ -1424,7 +1500,7 @@
       </div>
       <div>
         <h4>Licensed and insured</h4>
-        <p>CLS holds TCP #37344 and maintains commercial insurance that meets or exceeds California transportation requirements for all program types.</p>
+        <p>CLS maintains commercial insurance that meets or exceeds California transportation requirements for all program types.</p>
       </div>
     </div>
   </div>
@@ -1500,27 +1576,24 @@
       <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <p class="proof-quote">"CLS has kept a perfect safety record across our entire shuttle program. That kind of consistency is rare, and our employees notice. It's one less thing I ever have to worry about."</p>
       <div class="proof-attr">
-        <div class="proof-name">Mike McLean</div>
-        <div class="proof-role">Corporate Transportation Manager</div>
-        <span class="proof-company">Adobe</span>
+        <div class="proof-name">Mike M.</div>
+        <div class="proof-role">Corporate Transportation Manager / Technology</div>
       </div>
     </div>
     <div class="proof-card">
       <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <p class="proof-quote">"Hundreds of people in this building count on CLS to get to work. In three years, they've never missed a beat. On time, professional, and easy to reach when I need something changed."</p>
       <div class="proof-attr">
-        <div class="proof-name">Erin Bravo</div>
-        <div class="proof-role">Property Manager</div>
-        <span class="proof-company">Levi Plaza</span>
+        <div class="proof-name">Erin B.</div>
+        <div class="proof-role">Property Manager / Commercial Real Estate</div>
       </div>
     </div>
     <div class="proof-card">
       <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-      <p class="proof-quote">"Aaron's team picks up the phone. Every time we've had a last-minute change or a rider issue, they handle it before it becomes a problem. That kind of response makes a real difference."</p>
+      <p class="proof-quote">"The team picks up the phone. Every time we've had a last-minute change or a rider issue, they handle it before it becomes a problem. That kind of response makes a real difference."</p>
       <div class="proof-attr">
-        <div class="proof-name">Ronda Wilson</div>
-        <div class="proof-role">Employee Transportation Manager</div>
-        <span class="proof-company">eBay</span>
+        <div class="proof-name">Ronda W.</div>
+        <div class="proof-role">Employee Transportation Manager / Technology</div>
       </div>
     </div>
   </div>
@@ -1541,11 +1614,11 @@
   <div class="footer-top">
     <div class="footer-brand">
       <strong>CLS Global Transportation</strong>
-      <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 1991. Serving San Francisco, the Peninsula, South Bay, and East Bay.</p>
+      <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 2011. Serving San Francisco, the Peninsula, and South Bay.</p>
       <div class="footer-contact">
         <a href="tel:6504608778"><strong>650.460.8778</strong>, Call or Text</a>
-        <a href="mailto:info@clsgt.com">info@clsgt.com</a>
-        <a href="#">TCP #37344 · Available 24/7</a>
+        <a href="mailto:res@clsgt.com">res@clsgt.com</a>
+        <a href="#">Available 24/7</a>
       </div>
     </div>
     <div class="footer-col">
@@ -1574,15 +1647,15 @@
     <div class="footer-col">
       <h5>Company</h5>
       <a href="about.html">About CLS</a>
+      <a href="fleet.html">Fleet</a>
       <a href="about.html">Safety &amp; Tech</a>
       <a href="about.html">Environmental</a>
       <a href="index.html#quote">Get a Quote</a>
-      <a href="#">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
     <span>CLS Global Transportation, Inc. All rights reserved.</span>
-    <span>TCP #37344</span>
+    <span>Bay Area's Transportation Partner Since 2011</span>
   </div>
 </footer>
 
@@ -1593,5 +1666,22 @@
   }, { passive: true });
 </script>
 
+
+<script>
+  var btn = document.getElementById('navHamburger');
+  var menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function() {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  }
+</script>
 </body>
 </html>

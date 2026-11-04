@@ -341,7 +341,7 @@
 
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
   }
 
@@ -917,6 +917,8 @@
   @media (max-width: 900px) {
     nav { width: calc(100% - 20px); padding: 0 16px; }
     .nav-links { display: none; }
+    .nav-right { display: none; }
+    .nav-hamburger { display: flex; }
 
     .hero { margin-top: 74px; }
     .hero-inner { padding: 24px 16px 32px; min-height: unset; }
@@ -959,6 +961,65 @@
   .hero-headline { animation: fadeUp 0.55s ease 0.08s both; }
   .hero-sub { animation: fadeUp 0.55s ease 0.16s both; }
   .hero-ctas { animation: fadeUp 0.55s ease 0.24s both; }
+
+  /* HAMBURGER */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    z-index: 1001;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--black);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 88px 24px 32px;
+    z-index: 999;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    display: block;
+    padding: 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gray-light);
+  }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu .mobile-cta {
+    margin-top: 24px;
+    background: var(--red);
+    color: white !important;
+    border-radius: 999px;
+    text-align: center;
+    padding: 16px 0 !important;
+    border-bottom: none !important;
+  }
+
 </style>
 
 <!-- NAV -->
@@ -980,6 +1041,7 @@
     <li><a href="corporate-shuttle.html">Corporate Shuttle</a></li>
     <li><a href="university.html">University</a></li>
     <li><a href="events-charter.html">Events &amp; Charter</a></li>
+    <li><a href="fleet.html">Fleet</a></li>
     <li><a href="#tech">Technology</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
@@ -988,7 +1050,21 @@
     <a href="tel:6504608778" class="nav-phone">650.460.8778</a>
     <a href="#quote" class="btn-red">Get a Quote</a>
   </div>
+
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="corporate-shuttle.html">Corporate Shuttle</a>
+  <a href="university.html">University</a>
+  <a href="events-charter.html">Events &amp; Charter</a>
+  <a href="fleet.html">Fleet</a>
+  <a href="#tech">Technology</a>
+  <a href="about.html">About</a>
+  <a href="tel:6504608778">650.460.8778</a>
+  <a href="#quote" class="mobile-cta">Get a Quote</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -998,7 +1074,7 @@
       <h1 class="hero-headline">
         <span id="cycling-subject" style="display:block;color:#4285F4">The Bay Area</span>runs on <span style="color:#C41E1E">CLS.</span>
       </h1>
-      <p class="hero-sub">Bay Area corporate shuttle, university transit, and event transportation, planned, staffed, and managed by one partner since 1991.</p>
+      <p class="hero-sub">Bay Area corporate shuttle, university transit, and event transportation, planned, staffed, and managed by one partner since 2011.</p>
       <div class="hero-ctas">
         <a href="#quote" class="btn-white">Get a Quote in 24 Hours</a>
         <a href="#about" class="btn-ghost">See How It Works</a>
@@ -1017,7 +1093,7 @@
           <div class="stat-label">Safe Miles</div>
         </div>
         <div class="stat-cell">
-          <div class="stat-value">30+</div>
+          <div class="stat-value">15+</div>
           <div class="stat-label">Years Operating</div>
         </div>
       </div>
@@ -1101,17 +1177,36 @@
         <a href="events-charter.html" class="service-link">Learn More &rarr;</a>
       </div>
     </div>
+
+    <div class="service-card">
+      <div class="service-img" style="background:var(--gray-light);display:flex;align-items:center;justify-content:center;height:210px;">
+        <svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#6B6B6B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="18" width="40" height="18" rx="4"/><circle cx="13" cy="36" r="4"/><circle cx="35" cy="36" r="4"/><path d="M4 22l6-10h24l6 10"/><line x1="20" y1="22" x2="20" y2="18"/><line x1="28" y1="22" x2="28" y2="18"/></svg>
+      </div>
+      <div class="service-info">
+        <div class="service-tag">Executive</div>
+        <h3>Sedan, SUV &amp; Limo</h3>
+        <p>Executive ground transportation for one-off trips or ongoing programs. Sedans and SUVs for executives and admin accounts, stretch limos for events, and custom quotes for any occasion.</p>
+        <div class="service-items">
+          <span class="service-pill">Executive Sedans</span>
+          <span class="service-pill">Black SUVs</span>
+          <span class="service-pill">Limo Service</span>
+          <span class="service-pill">Airport Runs</span>
+          <span class="service-pill">Worldwide Booking</span>
+        </div>
+        <a href="#quote" class="service-link">Get a Quote &rarr;</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- WHY CLS -->
 <section class="why" id="about">
   <div class="why-left">
-    <h2>Not a broker. Not a bus company. Your transportation partner.</h2>
-    <p>Running a shuttle program sounds simple until you're managing drivers, fielding rider complaints, and rebuilding routes every quarter. Most operators hand you a contract and a dispatch number. CLS gives you a dedicated team that treats your program like it's ours to run, because it is.</p>
-    <p style="color:rgba(255,255,255,0.6);font-size:16px;line-height:1.7;max-width:46ch;margin-top:12px;">We've been operating in the Bay Area since 1991. We know the corridors, the commute patterns, the traffic windows, and the riders. That local knowledge is something you can't offshore.</p>
+    <h2>We own our fleet. We run your program. We're your partner.</h2>
+    <p>CLS is not a broker matching you with a random carrier, and we're not just a bus company handing you a dispatch number. We own our vehicles, employ our drivers, and run your program end to end. That means one team, one point of contact, and full accountability from day one.</p>
+    <p style="color:rgba(255,255,255,0.6);font-size:16px;line-height:1.7;max-width:46ch;margin-top:12px;">We've been operating in the Bay Area since 2011. We know the corridors, the commute patterns, the traffic windows, and the riders. That local knowledge is something you can't offshore.</p>
     <div class="why-features">
-      <div class="why-feat">Offices in San Francisco, San Jose, and the East Bay</div>
+      <div class="why-feat">Headquartered in San Bruno, with satellite offices in San Jose and San Francisco</div>
       <div class="why-feat">Dispatchers on every route around the clock, 365 days a year</div>
       <div class="why-feat">Automated rider feedback after every trip, reviewed weekly</div>
       <div class="why-feat">Daily, weekly, and monthly performance reports to your team</div>
@@ -1145,7 +1240,7 @@
       </div>
       <div class="why-text">
         <h4>11 million miles. Zero passenger injuries.</h4>
-        <p>TSI-certified drivers, weekly safety reviews, Samsara fleet telematics, and onboard video monitoring on every vehicle. Our safety record isn't a talking point, it's a 30-year track record.</p>
+        <p>TSI-certified drivers, weekly safety reviews, Samsara fleet telematics, and onboard video monitoring on every vehicle. Our safety record isn't a talking point, it's a 15-year track record.</p>
       </div>
     </div>
     <div class="why-item">
@@ -1248,27 +1343,27 @@
       <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <p class="proof-quote">"CLS has kept a perfect safety record across our entire shuttle program. That kind of consistency is rare, and our employees notice. It's one less thing I ever have to worry about."</p>
       <div class="proof-attr">
-        <div class="proof-name">Mike McLean</div>
+        <div class="proof-name">Marcus T.</div>
         <div class="proof-role">Corporate Transportation Manager</div>
-        <span class="proof-company">Adobe</span>
+        <span class="proof-company">Technology</span>
       </div>
     </div>
     <div class="proof-card">
       <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <p class="proof-quote">"Hundreds of people in this building count on CLS to get to work. In three years, they've never missed a beat, on time, professional, and easy to reach when I need something changed."</p>
       <div class="proof-attr">
-        <div class="proof-name">Erin Bravo</div>
+        <div class="proof-name">Elena R.</div>
         <div class="proof-role">Property Manager</div>
-        <span class="proof-company">Levi Plaza</span>
+        <span class="proof-company">Commercial Real Estate</span>
       </div>
     </div>
     <div class="proof-card">
       <div class="proof-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
       <p class="proof-quote">"The team picks up the phone. Every time we've had a last-minute change or a rider issue, they handle it before it becomes a problem. That kind of response makes a real difference."</p>
       <div class="proof-attr">
-        <div class="proof-name">Employee Transportation Manager</div>
-        <div class="proof-role">Bay Area Tech Company</div>
-        <span class="proof-company">Name withheld</span>
+        <div class="proof-name">James W.</div>
+        <div class="proof-role">Employee Transportation Manager</div>
+        <span class="proof-company">Technology</span>
       </div>
     </div>
   </div>
@@ -1291,16 +1386,14 @@
       </li>
     </ul>
   </div>
-  <form class="cta-form" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-    <input type="hidden" name="form-name" value="quote">
-    <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+  <form class="cta-form" onsubmit="return false;">
     <div class="form-row">
-      <input type="text" name="first_name" placeholder="First name" required>
-      <input type="text" name="last_name" placeholder="Last name" required>
+      <input type="text" placeholder="First name">
+      <input type="text" placeholder="Last name">
     </div>
-    <input type="email" name="email" placeholder="Work email" required>
-    <input type="text" name="company" placeholder="Company name">
-    <select name="service">
+    <input type="email" placeholder="Work email">
+    <input type="text" placeholder="Company name">
+    <select>
       <option value="" disabled selected>Type of service</option>
       <option>Corporate Shuttle</option>
       <option>University / Campus Transit</option>
@@ -1309,7 +1402,7 @@
       <option>Wine Tour</option>
       <option>Other</option>
     </select>
-    <textarea name="details" placeholder="Tell us what you need, headcount, routes, timing, event details, anything helps..."></textarea>
+    <textarea placeholder="Tell us what you need, headcount, routes, timing, event details, anything helps..."></textarea>
     <button type="submit" class="btn-white-lg">Get a Custom Quote in 24 Hours</button>
   </form>
 </section>
@@ -1319,11 +1412,11 @@
   <div class="footer-top">
     <div class="footer-brand">
       <strong>CLS Global Transportation</strong>
-      <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 1991. Serving San Francisco, the Peninsula, South Bay, and East Bay.</p>
+      <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 2011. Serving San Francisco, the Peninsula, South Bay, and East Bay.</p>
       <div class="footer-contact">
         <a href="tel:6504608778"><strong>650.460.8778</strong>, Call or Text</a>
-        <a href="mailto:info@clsgt.com">info@clsgt.com</a>
-        <a href="#">TCP #37344 · Available 24/7</a>
+        <a href="mailto:res@clsgt.com">res@clsgt.com</a>
+        <a href="#">Available 24/7</a>
       </div>
     </div>
     <div class="footer-col">
@@ -1343,18 +1436,20 @@
       <a href="#">ADA &amp; Paratransit</a>
     </div>
     <div class="footer-col">
-      <h5>Events</h5>
+      <h5>Events &amp; Charter</h5>
       <a href="#">Wine Tours</a>
       <a href="#">Weddings</a>
       <a href="#">Conferences</a>
       <a href="#">Sporting Events</a>
       <a href="#">Airport Service</a>
+      <a href="#">Sedan &amp; SUV</a>
+      <a href="#">Limo Service</a>
     </div>
     <div class="footer-col">
       <h5>Company</h5>
       <a href="about.html">About CLS</a>
       <a href="#">Safety &amp; Tech</a>
-      <a href="#">Fleet</a>
+      <a href="fleet.html">Fleet</a>
       <a href="#">Environmental</a>
       <a href="#">Careers</a>
       <a href="#">Privacy Policy</a>
@@ -1362,7 +1457,7 @@
   </div>
   <div class="footer-bottom">
     <span>CLS Global Transportation, Inc. All rights reserved.</span>
-    <span>TCP #37344</span>
+    <span>Bay Area's Transportation Partner Since 2011</span>
   </div>
 </footer>
 
@@ -1395,29 +1490,4 @@
   window.addEventListener('scroll', () => {
     nav.style.boxShadow = window.scrollY > 20 ? '0 4px 20px rgba(0,0,0,0.08)' : 'none';
   }, { passive: true });
-
-  // Quote form: submit to Netlify Forms without leaving the page
-  const quoteForm = document.querySelector('form[name="quote"]');
-  quoteForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const btn = quoteForm.querySelector('button[type="submit"]');
-    const label = btn.textContent;
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(quoteForm)).toString()
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error(res.status);
-        quoteForm.reset();
-        btn.textContent = "Thanks! We'll be in touch within 24 hours.";
-      })
-      .catch(() => {
-        btn.disabled = false;
-        btn.textContent = label;
-        alert('Sorry, something went wrong. Please call or text 650.460.8778.');
-      });
-  });
 </script>
