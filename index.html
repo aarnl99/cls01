@@ -1518,227 +1518,258 @@
 
 
   <!-- Coverage Map Section -->
-  <section style="background:#080B14;padding:80px 0 100px;">
+  <section style="background:#0A0A0C;padding:80px 0 100px;">
     <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
-      <div style="text-align:center;margin-bottom:48px;">
-        <p style="font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C41E1E;margin-bottom:12px;">WHERE WE RUN</p>
-        <h2 style="font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.1;margin-bottom:16px;">Bay Area Service Coverage</h2>
-        <p style="font-size:17px;color:rgba(255,255,255,0.5);max-width:540px;margin:0 auto;">
-          We cover the whole Bay Area. Live shuttle lines light up across the map as pins drop into every city we serve.
-        </p>
-      </div>
-      <div style="position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);box-shadow:0 24px 60px rgba(0,0,0,0.5);">
-        <canvas id="clsMapCanvas" style="width:100%;height:520px;display:block;background:#080B14;cursor:default;"></canvas>
-        <div id="mapTooltip" style="position:absolute;display:none;background:rgba(8,11,20,0.97);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:14px 16px;pointer-events:none;min-width:200px;z-index:10;backdrop-filter:blur(16px);">
-          <div id="mapTtName" style="font-size:15px;font-weight:700;color:#fff;margin-bottom:5px;"></div>
-          <div id="mapTtTime" style="font-size:12px;color:#C41E1E;font-weight:600;margin-bottom:4px;"></div>
-          <div id="mapTtDesc" style="font-size:12px;color:rgba(255,255,255,0.5);line-height:1.5;"></div>
+
+      <!-- Header -->
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:40px;">
+        <div>
+          <p style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#C41E1E;margin-bottom:10px;">SERVICE COVERAGE</p>
+          <h2 style="font-size:clamp(24px,3.5vw,38px);font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.1;">Bay Area, fully covered.</h2>
+        </div>
+        <div style="display:flex;gap:2px;">
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);padding:16px 24px;min-width:100px;">
+            <div style="font-size:28px;font-weight:800;color:#C41E1E;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;">11</div>
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px;">Cities</div>
+          </div>
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-left:none;padding:16px 24px;min-width:100px;">
+            <div style="font-size:28px;font-weight:800;color:#C41E1E;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;">40+</div>
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px;">Routes</div>
+          </div>
+          <div style="background:#141416;border:1px solid rgba(255,255,255,0.08);border-left:none;padding:16px 24px;min-width:100px;">
+            <div style="font-size:28px;font-weight:800;color:#C41E1E;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;">24/7</div>
+            <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px;">Dispatch</div>
+          </div>
         </div>
       </div>
-      <script>
-      (function(){
-        var canvas = document.getElementById('clsMapCanvas');
-        var ctx = canvas.getContext('2d');
-        var tt = document.getElementById('mapTooltip');
-        var ttName = document.getElementById('mapTtName');
-        var ttTime = document.getElementById('mapTtTime');
-        var ttDesc = document.getElementById('mapTtDesc');
 
-        function resize(){
-          var rect = canvas.parentElement.getBoundingClientRect();
-          canvas.width = rect.width;
-          canvas.height = 520;
-        }
-        resize();
-        window.addEventListener('resize', function(){ resize(); });
+      <!-- Map card -->
+      <div style="position:relative;border:1px solid rgba(255,255,255,0.08);overflow:hidden;">
+        <!-- Corner marks -->
+        <div style="position:absolute;top:0;left:0;width:12px;height:12px;border-top:2px solid #C41E1E;border-left:2px solid #C41E1E;z-index:3;"></div>
+        <div style="position:absolute;top:0;right:0;width:12px;height:12px;border-top:2px solid #C41E1E;border-right:2px solid #C41E1E;z-index:3;"></div>
+        <div style="position:absolute;bottom:0;left:0;width:12px;height:12px;border-bottom:2px solid #C41E1E;border-left:2px solid #C41E1E;z-index:3;"></div>
+        <div style="position:absolute;bottom:0;right:0;width:12px;height:12px;border-bottom:2px solid #C41E1E;border-right:2px solid #C41E1E;z-index:3;"></div>
+        <!-- Label -->
+        <div style="position:absolute;top:12px;right:16px;font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.2);z-index:3;">SAN FRANCISCO BAY AREA</div>
 
-        var B = { lng0:-122.72, lng1:-121.65, lat0:36.9, lat1:38.4 };
-        function proj(lat, lng){
-          var pad={t:50,b:30,l:30,r:30};
-          var W=canvas.width-pad.l-pad.r, H=canvas.height-pad.t-pad.b;
-          return {
-            x: pad.l + (lng - B.lng0) / (B.lng1 - B.lng0) * W,
-            y: pad.t + (1 - (lat - B.lat0) / (B.lat1 - B.lat0)) * H
-          };
-        }
-
-        // Water shapes
-        var BAY=[[38.07,-122.37],[38.03,-122.28],[37.98,-122.20],[37.92,-122.18],[37.85,-122.19],[37.80,-122.22],[37.76,-122.22],[37.72,-122.19],[37.66,-122.14],[37.60,-122.10],[37.55,-122.07],[37.52,-122.08],[37.50,-122.05],[37.49,-122.00],[37.50,-121.96],[37.54,-121.94],[37.61,-121.96],[37.65,-122.00],[37.70,-122.03],[37.75,-122.07],[37.82,-122.13],[37.88,-122.18],[37.92,-122.22],[37.97,-122.28],[38.02,-122.33],[38.07,-122.37]];
-        var SAN_PABLO=[[38.05,-122.37],[38.08,-122.42],[38.10,-122.52],[38.08,-122.56],[38.03,-122.52],[37.98,-122.47],[37.96,-122.42],[37.96,-122.37],[38.00,-122.33],[38.05,-122.37]];
-        var OCEAN=[[38.4,-122.72],[38.4,-122.50],[38.1,-122.52],[38.05,-122.37],[37.96,-122.37],[37.76,-122.22],[37.70,-122.50],[37.56,-122.52],[37.46,-122.50],[37.20,-122.42],[36.9,-122.72]];
-
-        function poly(pts, fill){
-          if(!pts.length) return;
-          ctx.beginPath();
-          var p0=proj(pts[0][0],pts[0][1]); ctx.moveTo(p0.x,p0.y);
-          for(var i=1;i<pts.length;i++){var p=proj(pts[i][0],pts[i][1]);ctx.lineTo(p.x,p.y);}
-          ctx.closePath(); ctx.fillStyle=fill; ctx.fill();
-        }
-
-        var PINS=[
-          {name:'San Francisco',sub:'Main Hub',lat:37.775,lng:-122.418,times:'Mon-Fri 5:30AM-10PM',desc:'14 active routes. Home base.',r:7,color:'#C41E1E'},
-          {name:'Oakland',sub:'East Bay Hub',lat:37.805,lng:-122.270,times:'Mon-Fri 6AM-9PM',desc:'BART connections, 3 stations.',r:5,color:'#C41E1E'},
-          {name:'San Jose',sub:'Adobe Campus',lat:37.337,lng:-121.887,times:'Mon-Fri 6AM-9PM',desc:'1,200+ daily riders, 6 routes.',r:6,color:'#818CF8'},
-          {name:'Mountain View',sub:'Tech Corridor',lat:37.386,lng:-122.083,times:'Mon-Fri 6:30AM-8PM',desc:'Direct express from SF.',r:4,color:'#C41E1E'},
-          {name:'Redwood City',sub:'Caltrain Hub',lat:37.485,lng:-122.235,times:'Mon-Fri 6AM-8:30PM',desc:'Major Caltrain connection.',r:4,color:'#C41E1E'},
-          {name:'Palo Alto',sub:'University',lat:37.442,lng:-122.143,times:'Mon-Fri 6:30AM-8PM',desc:'Campus and corporate stops.',r:3,color:'#C41E1E'},
-          {name:'Fremont',sub:'Neuralink Campus',lat:37.548,lng:-121.989,times:'Mon-Fri 6AM-9PM',desc:'Last-mile from BART + Caltrain.',r:4,color:'#FBBF24'},
-          {name:'SFO Airport',sub:'Airport Express',lat:37.621,lng:-122.378,times:'Daily 4AM-11PM',desc:'Peninsula and SF pickups.',r:4,color:'#C41E1E'},
-          {name:'Napa Valley',sub:'Charter',lat:38.297,lng:-122.285,times:'Weekends + Events',desc:'Wine country and corporate events.',r:3,color:'#34D399'},
-          {name:'Millbrae',sub:'Transit Hub',lat:37.600,lng:-122.388,times:'Mon-Fri 6AM-9PM',desc:'BART and Caltrain connection.',r:3,color:'#C41E1E'},
-        ];
-
-        var ROUTES=[
-          {pts:[[37.775,-122.418],[37.740,-122.410],[37.700,-122.400],[37.660,-122.380],[37.621,-122.378],[37.578,-122.345],[37.542,-122.303],[37.510,-122.258],[37.485,-122.235],[37.460,-122.183],[37.442,-122.143],[37.420,-122.120],[37.386,-122.083]],color:'#C41E1E',w:1.8},
-          {pts:[[37.775,-122.418],[37.730,-122.430],[37.690,-122.450],[37.645,-122.440],[37.600,-122.420],[37.555,-122.390],[37.515,-122.355],[37.475,-122.310],[37.440,-122.230],[37.400,-122.100],[37.365,-121.970],[37.337,-121.887]],color:'#818CF8',w:1.8},
-          {pts:[[37.805,-122.270],[37.760,-122.220],[37.720,-122.165],[37.680,-122.100],[37.640,-122.050],[37.600,-122.000],[37.565,-121.975],[37.548,-121.989],[37.520,-121.950],[37.460,-121.900],[37.400,-121.880],[37.337,-121.887]],color:'#C41E1E',w:1.5},
-          {pts:[[37.775,-122.418],[37.730,-122.380],[37.690,-122.330],[37.650,-122.260],[37.610,-122.185],[37.570,-122.095],[37.548,-121.989]],color:'#FBBF24',w:1.5},
-          {pts:[[37.775,-122.418],[37.830,-122.440],[37.890,-122.470],[37.950,-122.490],[38.020,-122.470],[38.100,-122.450],[38.200,-122.380],[38.297,-122.285]],color:'#34D399',w:1.4,dash:true},
-          {pts:[[37.621,-122.378],[37.578,-122.345],[37.542,-122.303],[37.510,-122.258],[37.485,-122.235],[37.460,-122.183],[37.442,-122.143],[37.420,-122.120],[37.386,-122.083]],color:'#C41E1E',w:1.4},
-          {pts:[[37.805,-122.270],[37.760,-122.195],[37.710,-122.095],[37.660,-122.040],[37.610,-122.000],[37.580,-121.995],[37.548,-121.989]],color:'#FBBF24',w:1.3},
-        ];
-
-        var HIGHWAYS=[
-          [[37.775,-122.418],[37.740,-122.408],[37.700,-122.398],[37.620,-122.378],[37.578,-122.344],[37.542,-122.303],[37.510,-122.258],[37.485,-122.235],[37.442,-122.143],[37.386,-122.083],[37.337,-121.887]],
-          [[37.775,-122.418],[37.730,-122.432],[37.690,-122.452],[37.645,-122.442],[37.600,-122.418],[37.555,-122.390],[37.515,-122.355],[37.475,-122.310],[37.440,-122.230],[37.420,-122.120],[37.337,-121.887]],
-          [[37.805,-122.270],[37.760,-122.218],[37.720,-122.165],[37.680,-122.100],[37.640,-122.050],[37.600,-122.000],[37.548,-121.989],[37.520,-121.950],[37.460,-121.900],[37.400,-121.880],[37.337,-121.887]],
-          [[37.775,-122.418],[37.790,-122.396],[37.804,-122.371],[37.810,-122.330],[37.810,-122.270],[37.810,-122.200],[37.810,-122.100]],
-          [[37.775,-122.418],[37.830,-122.438],[37.880,-122.460],[37.940,-122.498],[38.000,-122.520],[38.100,-122.520],[38.200,-122.465],[38.297,-122.285]],
-        ];
-
-        // Moving dots state
-        var dots = ROUTES.map(function(r,i){
-          return {t: Math.random(), speed: 0.04+Math.random()*0.03, active: false};
-        });
-
-        var pinProgress = 0, time = 0, last = null;
-
-        function routePoint(pts, frac){
-          var segs=[], total=0;
-          for(var i=1;i<pts.length;i++){
-            var a=proj(pts[i-1][0],pts[i-1][1]), b=proj(pts[i][0],pts[i][1]);
-            var d=Math.hypot(b.x-a.x,b.y-a.y);
-            segs.push({ax:a.x,ay:a.y,bx:b.x,by:b.y,d:d}); total+=d;
-          }
-          var rem=frac*total;
-          for(var j=0;j<segs.length;j++){
-            var seg=segs[j];
-            if(rem<=seg.d){ var t=rem/seg.d; return {x:seg.ax+(seg.bx-seg.ax)*t, y:seg.ay+(seg.by-seg.ay)*t}; }
-            rem-=seg.d;
-          }
-          var last=segs[segs.length-1]; return {x:last.bx, y:last.by};
-        }
-
-        function draw(){
-          ctx.clearRect(0,0,canvas.width,canvas.height);
-
-          // Background
-          var bg=ctx.createLinearGradient(0,0,0,canvas.height);
-          bg.addColorStop(0,'#060910'); bg.addColorStop(1,'#080B14');
-          ctx.fillStyle=bg; ctx.fillRect(0,0,canvas.width,canvas.height);
-
-          // Dot grid
-          ctx.save(); ctx.globalAlpha=0.025; ctx.fillStyle='#fff';
-          var gs=26;
-          for(var gx=0;gx<canvas.width;gx+=gs) for(var gy=0;gy<canvas.height;gy+=gs){ctx.beginPath();ctx.arc(gx,gy,1,0,Math.PI*2);ctx.fill();}
-          ctx.restore();
-
-          // Water
-          poly(OCEAN,'#071424'); poly(SAN_PABLO,'#071424'); poly(BAY,'#071424');
-
-          // Bay label
-          var bl=proj(37.65,-122.18);
-          ctx.save(); ctx.globalAlpha=0.15; ctx.fillStyle='#4a9ec4'; ctx.font='600 10px Inter,sans-serif'; ctx.textAlign='center';
-          ctx.translate(bl.x,bl.y); ctx.rotate(-0.28); ctx.fillText('SAN FRANCISCO BAY',0,0); ctx.restore(); ctx.textAlign='left';
-
-          // Highways
-          HIGHWAYS.forEach(function(pts){
-            ctx.save(); ctx.globalAlpha=0.07; ctx.strokeStyle='#8899cc'; ctx.lineWidth=1.2; ctx.lineCap='round';
-            ctx.beginPath(); var p0=proj(pts[0][0],pts[0][1]); ctx.moveTo(p0.x,p0.y);
-            pts.slice(1).forEach(function(p){var q=proj(p[0],p[1]);ctx.lineTo(q.x,q.y);}); ctx.stroke(); ctx.restore();
-          });
-
-          // Routes
-          ROUTES.forEach(function(r){
-            ctx.save(); ctx.globalAlpha=0.6; ctx.strokeStyle=r.color; ctx.lineWidth=r.w||2; ctx.lineCap='round'; ctx.lineJoin='round';
-            if(r.dash) ctx.setLineDash([6,5]);
-            ctx.beginPath(); var p0=proj(r.pts[0][0],r.pts[0][1]); ctx.moveTo(p0.x,p0.y);
-            r.pts.slice(1).forEach(function(p){var q=proj(p[0],p[1]);ctx.lineTo(q.x,q.y);}); ctx.stroke();
-            ctx.setLineDash([]); ctx.restore();
-          });
-
-          // Moving dots
-          dots.forEach(function(dot,i){
-            if(!dot.active) return;
-            var pos=routePoint(ROUTES[i].pts, dot.t);
-            var col=ROUTES[i].color;
-            var grad=ctx.createRadialGradient(pos.x,pos.y,0,pos.x,pos.y,8);
-            grad.addColorStop(0,col+'cc'); grad.addColorStop(1,col+'00');
-            ctx.save(); ctx.globalAlpha=0.9; ctx.beginPath(); ctx.arc(pos.x,pos.y,8,0,Math.PI*2); ctx.fillStyle=grad; ctx.fill();
-            ctx.globalAlpha=1; ctx.beginPath(); ctx.arc(pos.x,pos.y,2.5,0,Math.PI*2); ctx.fillStyle='#fff'; ctx.fill(); ctx.restore();
-          });
-
-          // Pins
-          PINS.forEach(function(pin,i){
-            var appear = i/PINS.length;
-            var alpha = Math.max(0,Math.min(1,(pinProgress-appear)*PINS.length*1.2));
-            if(alpha<=0) return;
-            var p=proj(pin.lat,pin.lng), r=pin.r||5, col=pin.color;
-            var pulse=(Math.sin(time*1.5+i*0.8)*0.5+0.5);
-            // Pulse ring
-            ctx.save(); ctx.globalAlpha=alpha*0.15*pulse;
-            ctx.beginPath(); ctx.arc(p.x,p.y,r+9+pulse*4,0,Math.PI*2); ctx.fillStyle=col; ctx.fill(); ctx.restore();
-            // Main circle
-            ctx.save(); ctx.globalAlpha=alpha;
-            ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2); ctx.fillStyle=col; ctx.fill();
-            ctx.beginPath(); ctx.arc(p.x,p.y,r,0,Math.PI*2); ctx.strokeStyle='rgba(255,255,255,0.45)'; ctx.lineWidth=1.5; ctx.stroke();
-            ctx.restore();
-            // White dot
-            ctx.save(); ctx.globalAlpha=alpha; ctx.beginPath(); ctx.arc(p.x,p.y,r*0.35,0,Math.PI*2); ctx.fillStyle='#fff'; ctx.fill(); ctx.restore();
-            // Label
-            ctx.save(); ctx.globalAlpha=alpha*0.9; ctx.font='600 10px Inter,sans-serif'; ctx.fillStyle='#fff'; ctx.textBaseline='middle';
-            var lx=p.x+r+6, ly=p.y;
-            if(pin.name==='Napa Valley'){lx=p.x-72; ly=p.y-13;}
-            ctx.fillText(pin.name,lx,ly); ctx.restore();
-          });
-        }
-
-        function animate(ts){
-          if(!last) last=ts;
-          var dt=(ts-last)/1000; last=ts;
-          time+=dt;
-          pinProgress=Math.min(1,time/3);
-          dots.forEach(function(dot,i){
-            if(time>1.5+i*0.3){ dot.active=true; dot.t=(dot.t+dot.speed*dt)%1; }
-          });
-          draw();
-          requestAnimationFrame(animate);
-        }
-        requestAnimationFrame(animate);
-
-        // Tooltip
-        canvas.addEventListener('mousemove',function(e){
-          var rect=canvas.getBoundingClientRect();
-          var mx=(e.clientX-rect.left)*(canvas.width/rect.width);
-          var my=(e.clientY-rect.top)*(canvas.height/rect.height);
-          var found=null;
-          PINS.forEach(function(pin){
-            var p=proj(pin.lat,pin.lng);
-            if(Math.hypot(mx-p.x,my-p.y)<20) found=pin;
-          });
-          if(found){
-            ttName.textContent=found.name; ttTime.textContent=found.times; ttDesc.textContent=found.sub+' — '+found.desc;
-            tt.style.display='block';
-            tt.style.left=Math.min(e.clientX-canvas.getBoundingClientRect().left+16,canvas.getBoundingClientRect().width-220)+'px';
-            tt.style.top=Math.max(0,e.clientY-canvas.getBoundingClientRect().top-20)+'px';
-            canvas.style.cursor='pointer';
-          } else { tt.style.display='none'; canvas.style.cursor='default'; }
-        });
-        canvas.addEventListener('mouseleave',function(){tt.style.display='none';});
-      })();
-      </script>
+        <canvas id="clsMapCanvas" style="width:100%;height:520px;display:block;background:#0A0A0C;cursor:default;"></canvas>
+        <div id="mapTooltip" style="position:absolute;display:none;background:rgba(10,10,12,0.98);border:1px solid rgba(255,255,255,0.1);padding:12px 16px;pointer-events:none;min-width:190px;z-index:10;">
+          <div id="mapTtName" style="font-size:13px;font-weight:700;color:#fff;letter-spacing:-0.01em;margin-bottom:4px;"></div>
+          <div id="mapTtTime" style="font-size:11px;color:#C41E1E;font-weight:600;letter-spacing:0.04em;margin-bottom:3px;"></div>
+          <div id="mapTtDesc" style="font-size:11px;color:rgba(255,255,255,0.4);line-height:1.5;"></div>
+        </div>
+      </div>
 
     </div>
+
+    <script>
+    (function(){
+      var canvas = document.getElementById('clsMapCanvas');
+      var ctx = canvas.getContext('2d');
+      var tt = document.getElementById('mapTooltip');
+      var ttName = document.getElementById('mapTtName');
+      var ttTime = document.getElementById('mapTtTime');
+      var ttDesc = document.getElementById('mapTtDesc');
+
+      function resize(){
+        var rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = 520;
+      }
+      resize();
+      window.addEventListener('resize', function(){ resize(); });
+
+      var B = { lng0:-122.72, lng1:-121.65, lat0:36.9, lat1:38.4 };
+      function proj(lat, lng){
+        var pad={t:40,b:30,l:30,r:30};
+        var W=canvas.width-pad.l-pad.r, H=canvas.height-pad.t-pad.b;
+        return {
+          x: pad.l + (lng - B.lng0) / (B.lng1 - B.lng0) * W,
+          y: pad.t + (1 - (lat - B.lat0) / (B.lat1 - B.lat0)) * H
+        };
+      }
+
+      var BAY=[[38.07,-122.37],[38.03,-122.28],[37.98,-122.20],[37.92,-122.18],[37.85,-122.19],[37.80,-122.22],[37.76,-122.22],[37.72,-122.19],[37.66,-122.14],[37.60,-122.10],[37.55,-122.07],[37.52,-122.08],[37.50,-122.05],[37.49,-122.00],[37.50,-121.96],[37.54,-121.94],[37.61,-121.96],[37.65,-122.00],[37.70,-122.03],[37.75,-122.07],[37.82,-122.13],[37.88,-122.18],[37.92,-122.22],[37.97,-122.28],[38.02,-122.33],[38.07,-122.37]];
+      var SAN_PABLO=[[38.05,-122.37],[38.08,-122.42],[38.10,-122.52],[38.08,-122.56],[38.03,-122.52],[37.98,-122.47],[37.96,-122.42],[37.96,-122.37],[38.00,-122.33],[38.05,-122.37]];
+      var OCEAN=[[38.4,-122.72],[38.4,-122.50],[38.1,-122.52],[38.05,-122.37],[37.96,-122.37],[37.76,-122.22],[37.70,-122.50],[37.56,-122.52],[37.46,-122.50],[37.20,-122.42],[36.9,-122.72]];
+
+      function poly(pts, fill, stroke, sw){
+        ctx.beginPath();
+        var p0=proj(pts[0][0],pts[0][1]); ctx.moveTo(p0.x,p0.y);
+        for(var i=1;i<pts.length;i++){var p=proj(pts[i][0],pts[i][1]);ctx.lineTo(p.x,p.y);}
+        ctx.closePath();
+        if(fill){ctx.fillStyle=fill;ctx.fill();}
+        if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=sw||1;ctx.stroke();}
+      }
+
+      var PINS=[
+        {name:'San Francisco',sub:'Main Hub',lat:37.775,lng:-122.418,times:'Mon-Fri 5:30AM-10PM',desc:'14 active routes.',r:6,big:true},
+        {name:'Oakland',sub:'East Bay',lat:37.805,lng:-122.270,times:'Mon-Fri 6AM-9PM',desc:'BART at 3 stations.',r:4},
+        {name:'San Jose',sub:'Adobe Campus',lat:37.337,lng:-121.887,times:'Mon-Fri 6AM-9PM',desc:'1,200+ daily riders.',r:5,big:true},
+        {name:'Mountain View',sub:'Tech Corridor',lat:37.386,lng:-122.083,times:'Mon-Fri 6:30AM-8PM',desc:'Express from SF.',r:3},
+        {name:'Redwood City',sub:'Caltrain Hub',lat:37.485,lng:-122.235,times:'Mon-Fri 6AM-8:30PM',desc:'Major transit stop.',r:3},
+        {name:'Palo Alto',sub:'University',lat:37.442,lng:-122.143,times:'Mon-Fri 6:30AM-8PM',desc:'Campus stops.',r:3},
+        {name:'Fremont',sub:'Neuralink',lat:37.548,lng:-121.989,times:'Mon-Fri 6AM-9PM',desc:'Last-mile service.',r:4},
+        {name:'SFO Airport',sub:'Express',lat:37.621,lng:-122.378,times:'Daily 4AM-11PM',desc:'Peninsula pickups.',r:4},
+        {name:'Napa Valley',sub:'Charter',lat:38.297,lng:-122.285,times:'Weekends + Events',desc:'Wine country events.',r:3},
+        {name:'Millbrae',sub:'Transit Hub',lat:37.600,lng:-122.388,times:'Mon-Fri 6AM-9PM',desc:'BART + Caltrain.',r:3},
+        {name:'Burlingame',sub:'Peninsula',lat:37.578,lng:-122.345,times:'Mon-Fri 6:30AM-8PM',desc:'Corporate stop.',r:2},
+      ];
+
+      var ROUTES=[
+        {pts:[[37.775,-122.418],[37.740,-122.410],[37.700,-122.400],[37.660,-122.380],[37.621,-122.378],[37.578,-122.345],[37.542,-122.303],[37.510,-122.258],[37.485,-122.235],[37.460,-122.183],[37.442,-122.143],[37.420,-122.120],[37.386,-122.083]],color:'#C41E1E',w:1.5},
+        {pts:[[37.775,-122.418],[37.730,-122.430],[37.690,-122.450],[37.645,-122.440],[37.600,-122.420],[37.555,-122.390],[37.515,-122.355],[37.475,-122.310],[37.440,-122.230],[37.400,-122.100],[37.365,-121.970],[37.337,-121.887]],color:'#C41E1E',w:1.5},
+        {pts:[[37.805,-122.270],[37.760,-122.220],[37.720,-122.165],[37.680,-122.100],[37.640,-122.050],[37.600,-122.000],[37.565,-121.975],[37.548,-121.989],[37.520,-121.950],[37.460,-121.900],[37.400,-121.880],[37.337,-121.887]],color:'rgba(196,30,30,0.5)',w:1.2},
+        {pts:[[37.775,-122.418],[37.730,-122.380],[37.690,-122.330],[37.650,-122.260],[37.610,-122.185],[37.570,-122.095],[37.548,-121.989]],color:'rgba(196,30,30,0.5)',w:1.2},
+        {pts:[[37.775,-122.418],[37.830,-122.440],[37.890,-122.470],[37.950,-122.490],[38.020,-122.470],[38.100,-122.450],[38.200,-122.380],[38.297,-122.285]],color:'rgba(196,30,30,0.35)',w:1,dash:true},
+        {pts:[[37.621,-122.378],[37.578,-122.345],[37.542,-122.303],[37.510,-122.258],[37.485,-122.235],[37.460,-122.183],[37.442,-122.143],[37.420,-122.120],[37.386,-122.083]],color:'rgba(196,30,30,0.5)',w:1.2},
+      ];
+
+      var dots = ROUTES.map(function(r,i){
+        return {t: i*0.17, speed: 0.022+i*0.004, active:false};
+      });
+
+      function routePoint(pts, frac){
+        var segs=[],total=0;
+        for(var i=1;i<pts.length;i++){
+          var a=proj(pts[i-1][0],pts[i-1][1]),b=proj(pts[i][0],pts[i][1]);
+          var d=Math.hypot(b.x-a.x,b.y-a.y);
+          segs.push({ax:a.x,ay:a.y,bx:b.x,by:b.y,d:d,ang:Math.atan2(b.y-a.y,b.x-a.x)});
+          total+=d;
+        }
+        var rem=frac*total;
+        for(var j=0;j<segs.length;j++){
+          var s=segs[j];
+          if(rem<=s.d){var f=rem/s.d;return{x:s.ax+(s.bx-s.ax)*f,y:s.ay+(s.by-s.ay)*f};}
+          rem-=s.d;
+        }
+        var ls=segs[segs.length-1];return{x:ls.bx,y:ls.by};
+      }
+
+      var pinProgress=0, time=0, last=null;
+
+      function draw(){
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle='#0A0A0C'; ctx.fillRect(0,0,canvas.width,canvas.height);
+
+        // Grid lines
+        ctx.save(); ctx.globalAlpha=0.04; ctx.strokeStyle='#fff'; ctx.lineWidth=1;
+        var gx=0;
+        while(gx<canvas.width){ctx.beginPath();ctx.moveTo(gx,0);ctx.lineTo(gx,canvas.height);ctx.stroke();gx+=40;}
+        var gy=0;
+        while(gy<canvas.height){ctx.beginPath();ctx.moveTo(0,gy);ctx.lineTo(canvas.width,gy);ctx.stroke();gy+=40;}
+        ctx.restore();
+
+        // Water
+        poly(OCEAN,'#0D1520',null);
+        poly(SAN_PABLO,'#0D1520',null);
+        poly(BAY,'#0D1520',null);
+
+        // Water border
+        ctx.save(); ctx.globalAlpha=0.12; ctx.strokeStyle='#4a9ec4'; ctx.lineWidth=1;
+        poly(BAY,null,'#4a9ec4',0.8);
+        ctx.restore();
+
+        // Routes
+        ROUTES.forEach(function(r){
+          ctx.save(); ctx.strokeStyle=r.color; ctx.lineWidth=r.w||1.5; ctx.lineCap='square';
+          if(r.dash) ctx.setLineDash([4,4]);
+          ctx.beginPath();
+          var p0=proj(r.pts[0][0],r.pts[0][1]); ctx.moveTo(p0.x,p0.y);
+          r.pts.slice(1).forEach(function(p){var q=proj(p[0],p[1]);ctx.lineTo(q.x,q.y);});
+          ctx.stroke(); ctx.setLineDash([]); ctx.restore();
+        });
+
+        // Moving dots - small square data-viz style
+        dots.forEach(function(dot,i){
+          if(!dot.active) return;
+          var pos=routePoint(ROUTES[i].pts, dot.t);
+          ctx.save();
+          ctx.fillStyle='#fff';
+          ctx.globalAlpha=0.9;
+          ctx.fillRect(pos.x-2.5, pos.y-2.5, 5, 5);
+          ctx.restore();
+        });
+
+        // Pins
+        PINS.forEach(function(pin,i){
+          var alpha=Math.max(0,Math.min(1,(pinProgress-i/PINS.length)*PINS.length*1.2));
+          if(alpha<=0) return;
+          var p=proj(pin.lat,pin.lng), r=pin.r||4;
+          var pulse=(Math.sin(time*1.8+i)*0.5+0.5);
+
+          // Crosshair rings on big pins
+          if(pin.big){
+            ctx.save(); ctx.globalAlpha=alpha*0.15*pulse;
+            ctx.strokeStyle='#C41E1E'; ctx.lineWidth=1;
+            ctx.beginPath(); ctx.arc(p.x,p.y,r+10+pulse*5,0,Math.PI*2); ctx.stroke();
+            ctx.restore();
+          }
+
+          // Square pin (data-viz style)
+          ctx.save(); ctx.globalAlpha=alpha;
+          var sz = r*2;
+          ctx.fillStyle='#C41E1E';
+          ctx.fillRect(p.x-sz/2, p.y-sz/2, sz, sz);
+          // inner white dot
+          ctx.fillStyle='#fff';
+          ctx.fillRect(p.x-1, p.y-1, 2, 2);
+          ctx.restore();
+
+          // Label
+          ctx.save(); ctx.globalAlpha=alpha*0.85;
+          ctx.font=(pin.big?'700':'600')+' '+(pin.big?'10':'9')+'px Inter,sans-serif';
+          ctx.fillStyle='#fff'; ctx.textBaseline='middle';
+          var lx=p.x+r+5, ly=p.y;
+          if(pin.name==='Napa Valley'){lx=p.x-68;ly=p.y-12;}
+          if(pin.name==='Oakland'){lx=p.x+r+5;}
+          ctx.fillText(pin.name,lx,ly);
+          if(pin.big){
+            ctx.font='500 8px Inter,sans-serif';
+            ctx.fillStyle='rgba(255,255,255,0.35)';
+            ctx.fillText(pin.sub,lx,ly+11);
+          }
+          ctx.restore();
+        });
+      }
+
+      function animate(ts){
+        if(!last) last=ts;
+        var dt=(ts-last)/1000; last=ts;
+        time+=dt;
+        pinProgress=Math.min(1,time/2.5);
+        dots.forEach(function(dot,i){
+          if(time>0.8+i*0.25){dot.active=true;dot.t=(dot.t+dot.speed*dt)%1;}
+        });
+        draw();
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+
+      canvas.addEventListener('mousemove',function(e){
+        var rect=canvas.getBoundingClientRect();
+        var mx=(e.clientX-rect.left)*(canvas.width/rect.width);
+        var my=(e.clientY-rect.top)*(canvas.height/rect.height);
+        var found=null;
+        PINS.forEach(function(pin){
+          var p=proj(pin.lat,pin.lng);
+          if(Math.hypot(mx-p.x,my-p.y)<18) found=pin;
+        });
+        if(found){
+          ttName.textContent=found.name;
+          ttTime.textContent=found.times;
+          ttDesc.textContent=found.sub+' — '+found.desc;
+          tt.style.display='block';
+          tt.style.left=Math.min(e.clientX-rect.left+16,rect.width-210)+'px';
+          tt.style.top=Math.max(0,e.clientY-rect.top-20)+'px';
+          canvas.style.cursor='crosshair';
+        } else {tt.style.display='none';canvas.style.cursor='default';}
+      });
+      canvas.addEventListener('mouseleave',function(){tt.style.display='none';});
+    })();
+    </script>
+
   </section>
 <!-- CTA -->
 <section class="cta-section" id="quote" style="flex-direction:column;align-items:stretch;gap:0;margin-top:80px;">
