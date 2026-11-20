@@ -856,6 +856,20 @@
   }
 
   .cta-form textarea { resize: none; height: 100px; }
+  .cta-form input[type="date"] {
+    color: rgba(255,255,255,0.45);
+    color-scheme: dark;
+  }
+  .cta-form input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) opacity(0.5);
+    cursor: pointer;
+  }
+  .cta-form input[type="date"]:not(:placeholder-shown),
+  .cta-form input[type="date"]:valid {
+    color: var(--white);
+  }
+
+
 
   .btn-white-lg {
     background: var(--white);
@@ -1840,9 +1854,9 @@
       </div>
     </div>
     <div style="flex:1.3;min-width:300px;">
-      <div style="display:flex;gap:0;margin-bottom:20px;border-radius:10px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.22);">
-        <button id="tabShuttle" onclick="switchQuoteTab('shuttle')" style="flex:1;padding:11px 16px;background:rgba(255,255,255,0.18);border:none;color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.15s;">Shuttle Program</button>
-        <button id="tabCharter" onclick="switchQuoteTab('charter')" style="flex:1;padding:11px 16px;background:transparent;border:none;border-left:1.5px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;transition:background 0.15s;">Charter / One-Off</button>
+      <div style="display:flex;gap:0;margin-bottom:24px;border-radius:12px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.22);">
+        <button id="tabShuttle" onclick="switchQuoteTab('shuttle')" style="flex:1;padding:14px 16px;background:rgba(255,255,255,0.18);border:none;color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.15s,color 0.15s;">Shuttle Program</button>
+        <button id="tabCharter" onclick="switchQuoteTab('charter')" style="flex:1;padding:14px 16px;background:transparent;border:none;border-left:1.5px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.55);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;transition:background 0.15s,color 0.15s;">Charter / One-Off</button>
       </div>
       <form id="formShuttle" class="cta-form" name="shuttle-quote" method="POST" data-netlify="true" onsubmit="handleShuttleSubmit(event);">
         <div class="form-row">
@@ -1889,7 +1903,7 @@
           <option>Something else</option>
         </select>
         <div class="form-row">
-          <input type="date" name="event_date">
+          <input type="date" name="event_date" placeholder="Event date">
           <input type="text" name="group_size" placeholder="How many people?">
         </div>
         <div class="form-row">
