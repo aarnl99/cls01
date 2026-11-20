@@ -4,496 +4,404 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bay Area Route Coverage | CLS Global Transportation</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Inter', sans-serif; background: #0D0D0F; color: #fff; overflow: hidden; height: 100vh; }
+html, body { width: 100%; height: 100%; overflow: hidden; }
+body { font-family: 'Inter', sans-serif; background: #0A0A0D; color: #fff; }
 
-#map-canvas {
-  position: absolute; inset: 0;
-  background: #0D0D0F;
-}
+#map { width: 100%; height: 100vh; position: relative; }
+canvas { display: block; }
 
-/* SVG map */
-.bay-area-map { width: 100%; height: 100%; }
-
-/* Roads */
-.road-major { stroke: #1E2030; stroke-width: 1.5; fill: none; }
-.road-highway { stroke: #252840; stroke-width: 2.5; fill: none; }
-
-/* Water */
-.water { fill: #0F1824; }
-.water-label { fill: #1A3048; font-size: 11px; font-weight: 500; letter-spacing: 0.05em; }
-
-/* Land */
-.land { fill: #111318; }
-.land-alt { fill: #0F1014; }
-
-/* CLS Routes */
-.route-line {
-  fill: none;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  opacity: 0;
-  animation: routeFadeIn 0.6s ease forwards;
-}
-.route-corporate { stroke: #C41E1E; stroke-width: 2.5; }
-.route-campus { stroke: #818CF8; stroke-width: 2; }
-.route-event { stroke: #34D399; stroke-width: 2; stroke-dasharray: 6 4; }
-.route-lastmile { stroke: #FBBF24; stroke-width: 2; }
-
-/* Animated dash for all routes */
-.route-line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: drawRoute 1.4s ease forwards; }
-.route-line:nth-child(1) { animation-delay: 0.1s; }
-.route-line:nth-child(2) { animation-delay: 0.3s; }
-.route-line:nth-child(3) { animation-delay: 0.5s; }
-.route-line:nth-child(4) { animation-delay: 0.7s; }
-.route-line:nth-child(5) { animation-delay: 0.9s; }
-.route-line:nth-child(6) { animation-delay: 1.1s; }
-.route-line:nth-child(7) { animation-delay: 1.3s; }
-.route-line:nth-child(8) { animation-delay: 1.5s; }
-
-@keyframes drawRoute {
-  to { stroke-dashoffset: 0; opacity: 1; }
-}
-
-/* City nodes */
-.node-pulse {
-  animation: nodePulse 2.4s ease-in-out infinite;
-}
-@keyframes nodePulse {
-  0%, 100% { opacity: 0.3; r: 10; }
-  50% { opacity: 0.7; r: 14; }
-}
-
-.node-dot { transition: r 0.2s; cursor: pointer; }
-.node-dot:hover { r: 8; }
-
-/* Tooltip */
-#tooltip {
-  position: fixed;
-  background: rgba(13,13,15,0.96);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
-  padding: 14px 18px;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s;
-  z-index: 100;
-  min-width: 200px;
-  backdrop-filter: blur(16px);
-}
-#tooltip.show { opacity: 1; }
-#tooltip h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
-#tooltip p { font-size: 12px; color: rgba(255,255,255,0.55); line-height: 1.5; }
-#tooltip .tt-badge {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 3px 8px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-/* UI overlay */
-#ui {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  pointer-events: none;
-  z-index: 10;
-}
-
-/* Back button */
 #back {
-  position: fixed;
-  top: 20px; left: 20px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 10px;
-  padding: 10px 16px;
-  color: rgba(255,255,255,0.7);
-  font-size: 13px;
-  font-weight: 600;
-  text-decoration: none;
-  font-family: inherit;
-  pointer-events: all;
-  transition: background 0.2s;
-  backdrop-filter: blur(10px);
-  display: flex; align-items: center; gap: 8px;
-  z-index: 20;
+  position: fixed; top: 20px; left: 20px; z-index: 50;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 10px; padding: 9px 16px; color: rgba(255,255,255,0.8);
+  font-size: 13px; font-weight: 600; text-decoration: none;
+  font-family: 'Inter', sans-serif; display: flex; align-items: center; gap: 8px;
+  backdrop-filter: blur(12px);
 }
 #back:hover { background: rgba(255,255,255,0.14); color: #fff; }
 
-/* Title */
-#title-box {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  pointer-events: none;
+#title {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+  text-align: center; z-index: 50; pointer-events: none;
 }
-#title-box h1 {
-  font-size: 15px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.9);
-  letter-spacing: -0.01em;
-}
-#title-box p {
-  font-size: 12px;
-  color: rgba(255,255,255,0.4);
-  margin-top: 3px;
-}
+#title h1 { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.85); }
+#title p { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 3px; }
 
-/* Legend */
 #legend {
-  position: fixed;
-  bottom: 28px;
-  left: 28px;
-  background: rgba(13,13,15,0.9);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 18px 20px;
-  pointer-events: all;
-  backdrop-filter: blur(16px);
+  position: fixed; bottom: 24px; left: 24px; z-index: 50;
+  background: rgba(10,10,13,0.92); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px; padding: 16px 18px; backdrop-filter: blur(16px);
+  min-width: 190px;
 }
-#legend h3 {
-  font-size: 11px;
-  font-weight: 700;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-.legend-item:last-child { margin-bottom: 0; }
-.legend-line {
-  width: 28px;
-  height: 2.5px;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-.legend-dash {
-  background: repeating-linear-gradient(90deg,currentColor 0,currentColor 5px,transparent 5px,transparent 9px);
-  height: 2px;
-}
-.legend-label {
-  font-size: 12px;
-  font-weight: 500;
-  color: rgba(255,255,255,0.65);
-}
+#legend h3 { font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.3); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+.leg { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.leg:last-child { margin-bottom: 0; }
+.leg-line { width: 24px; height: 3px; border-radius: 2px; flex-shrink: 0; }
+.leg-label { font-size: 12px; font-weight: 500; color: rgba(255,255,255,0.6); }
 
-/* Stats panel */
 #stats {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  pointer-events: none;
+  position: fixed; bottom: 24px; right: 24px; z-index: 50;
+  display: flex; flex-direction: column; gap: 8px;
 }
-.stat-pill {
-  background: rgba(13,13,15,0.9);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-  padding: 12px 16px;
-  backdrop-filter: blur(16px);
-  text-align: right;
+.stat {
+  background: rgba(10,10,13,0.92); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 10px 16px; backdrop-filter: blur(16px); text-align: right;
 }
-.stat-pill .val {
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #fff;
-}
-.stat-pill .lbl {
-  font-size: 11px;
-  color: rgba(255,255,255,0.4);
-  margin-top: 1px;
-}
+.stat .v { font-size: 20px; font-weight: 800; letter-spacing: -0.02em; }
+.stat .l { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 1px; }
 
-/* Animated glowing dot */
-@keyframes glow {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+#tooltip {
+  position: fixed; z-index: 60; pointer-events: none; opacity: 0;
+  transition: opacity 0.15s;
+  background: rgba(10,10,13,0.96); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 12px 16px; min-width: 190px;
+  backdrop-filter: blur(16px);
 }
+#tooltip.show { opacity: 1; }
+#tooltip .tt-tag { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 7px; }
+#tooltip h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+#tooltip p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.5; }
 </style>
 </head>
 <body>
 
 <a href="index.html" id="back">
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
   Back to CLS
 </a>
 
-<div id="title-box">
+<div id="title">
   <h1>Bay Area Route Coverage</h1>
-  <p>Active shuttle corridors operated by CLS Global Transportation</p>
+  <p>Active corridors operated by CLS Global Transportation</p>
 </div>
 
 <div id="tooltip"></div>
 
-<svg id="map-canvas" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
-
-  <!-- Bay water -->
-  <path class="water" d="
-    M340 80 L380 60 L420 50 L460 55 L500 65 L520 80 L530 100 L540 130 L545 160 L540 200
-    L535 240 L525 280 L510 320 L495 360 L480 390 L460 420 L440 450 L420 480 L400 500
-    L380 520 L355 540 L330 555 L310 560 L290 555 L275 540 L265 520 L255 500
-    L240 480 L230 460 L225 440 L222 420 L225 400 L230 380 L240 360 L250 340 L265 320
-    L275 300 L282 280 L285 260 L284 240 L280 220 L275 200 L270 180 L268 160 L270 140
-    L278 120 L290 100 L308 85 L325 78 Z
-  "/>
-
-  <!-- San Pablo Bay extension -->
-  <path class="water" d="
-    M200 80 L220 70 L260 65 L300 68 L330 75 L340 80 L325 78 L308 85 L290 100 L278 120
-    L270 140 L268 160 L265 170 L250 165 L235 155 L220 140 L210 120 L200 100 Z
-  "/>
-
-  <!-- Land masses -->
-  <!-- SF Peninsula -->
-  <path class="land" d="
-    M0 0 L340 0 L340 80 L325 78 L308 85 L290 100 L278 120 L270 140 L268 160 L270 180
-    L275 200 L280 220 L284 240 L285 260 L282 280 L275 300 L265 320 L250 340 L240 360
-    L230 380 L225 400 L222 420 L225 440 L230 460 L240 480 L255 500 L265 520 L275 540
-    L290 555 L310 560 L330 555 L355 540 L380 520 L400 500 L410 490 L420 500 L440 520
-    L460 540 L480 560 L500 580 L520 600 L540 620 L560 640 L540 660 L520 680 L500 700
-    L0 700 Z
-  "/>
-
-  <!-- East Bay -->
-  <path class="land" d="
-    M540 0 L1000 0 L1000 700 L700 700 L680 680 L660 660 L640 640 L620 620 L600 600
-    L580 580 L560 560 L540 540 L520 520 L500 500 L480 480 L460 460 L440 440
-    L440 450 L460 420 L480 390 L495 360 L510 320 L525 280 L535 240 L540 200
-    L545 160 L540 130 L530 100 L520 80 L500 65 L480 60 L460 55 L440 50 L420 50
-    L400 45 L380 40 L360 30 L380 0 Z
-  "/>
-
-  <!-- Marin / North Bay -->
-  <path class="land" d="
-    M0 0 L340 0 L380 0 L360 20 L340 40 L320 55 L300 65 L270 65 L240 70 L220 70
-    L200 80 L190 90 L180 80 L170 60 L160 40 L150 20 L140 0 Z
-  "/>
-
-  <!-- Highway lines (subtle) -->
-  <path class="road-highway" d="M180 150 L220 180 L260 220 L290 260 L310 300 L320 340 L325 380 L322 420 L315 460"/>
-  <path class="road-highway" d="M400 50 L420 100 L430 150 L435 200 L430 250 L420 300 L410 350 L400 400 L390 450"/>
-  <path class="road-highway" d="M540 80 L560 120 L580 160 L600 200 L620 240 L640 280 L650 320 L655 360 L650 400 L640 440"/>
-  <path class="road-highway" d="M660 100 L680 150 L700 200 L720 250 L730 300 L735 350 L730 400 L720 440 L710 480"/>
-  <!-- Bay Bridge -->
-  <path class="road-highway" stroke="#2A3060" d="M380 290 L420 285 L460 282 L500 280 L540 278 L560 280"/>
-  <!-- Golden Gate area -->
-  <path class="road-highway" stroke="#2A3060" d="M290 110 L310 90 L330 75"/>
-
-  <!-- CLS ROUTES -->
-  <g id="routes">
-
-    <!-- Route 1: SF Downtown to Mountain View (Corporate Corridor) -->
-    <path class="route-line route-corporate"
-      d="M300 320 Q290 350 285 380 Q280 410 278 440 Q276 470 278 500 Q282 530 288 560"
-      style="animation-delay:0.2s"
-      data-name="SF to Mountain View" data-type="corporate"/>
-
-    <!-- Route 2: Oakland to South Bay (Corporate) -->
-    <path class="route-line route-corporate"
-      d="M600 280 Q620 320 635 360 Q648 400 650 440 Q650 480 645 520"
-      style="animation-delay:0.5s"
-      data-name="Oakland to South Bay" data-type="corporate"/>
-
-    <!-- Route 3: Caltrain Last Mile Fremont (Neuralink) -->
-    <path class="route-line route-lastmile"
-      d="M630 420 Q650 430 670 440 Q690 448 710 450 Q730 450 745 445"
-      style="animation-delay:0.8s"
-      data-name="Caltrain Last Mile (Fremont)" data-type="lastmile"/>
-
-    <!-- Route 4: BART Fremont to Neuralink campus -->
-    <path class="route-line route-lastmile"
-      d="M660 400 Q680 410 700 418 Q720 424 740 425 Q755 424 762 418"
-      style="animation-delay:1.0s"
-      data-name="BART Last Mile (Neuralink)" data-type="lastmile"/>
-
-    <!-- Route 5: Adobe campus inter-campus (SJ) -->
-    <path class="route-line route-campus"
-      d="M640 500 Q660 510 680 515 Q700 518 715 515 Q730 510 738 500"
-      style="animation-delay:1.2s"
-      data-name="Adobe Inter-Campus (San Jose)" data-type="campus"/>
-
-    <!-- Route 6: Levis Plaza downtown SF shuttle loop -->
-    <path class="route-line route-campus"
-      d="M305 310 Q315 305 325 302 Q335 300 342 302 Q350 306 353 315 Q354 325 348 332 Q340 338 328 338 Q316 336 308 328 Q303 320 305 310"
-      style="animation-delay:1.4s"
-      data-name="Levi's Plaza Loop (SF)" data-type="campus"/>
-
-    <!-- Route 7: Napa Wine Tour charter -->
-    <path class="route-line route-event"
-      d="M290 310 Q270 280 250 250 Q235 220 220 185 Q210 160 200 130"
-      style="animation-delay:1.6s"
-      data-name="Wine Country Charter (Napa)" data-type="event"/>
-
-    <!-- Route 8: SFO Airport shuttle -->
-    <path class="route-line route-corporate"
-      d="M300 440 Q305 460 308 480 Q310 500 308 515"
-      style="animation-delay:1.8s"
-      data-name="SFO Airport Express" data-type="corporate"/>
-
-  </g>
-
-  <!-- CITY NODES -->
-  <g id="nodes">
-
-    <!-- San Francisco -->
-    <circle cx="305" cy="315" r="18" fill="#C41E1E" opacity="0.12" class="node-pulse"/>
-    <circle cx="305" cy="315" r="6" fill="#C41E1E" class="node-dot"
-      data-city="San Francisco" data-info="Hub for 14 active corporate shuttle routes. Dispatch office on-site." data-type="corporate"/>
-    <text x="318" y="310" font-size="11" font-weight="700" fill="rgba(255,255,255,0.8)" font-family="Inter, sans-serif">San Francisco</text>
-
-    <!-- Oakland -->
-    <circle cx="600" cy="275" r="14" fill="#C41E1E" opacity="0.12" class="node-pulse" style="animation-delay:0.4s"/>
-    <circle cx="600" cy="275" r="5" fill="#C41E1E" class="node-dot"
-      data-city="Oakland" data-info="East Bay dispatch hub. BART connections at 3 stations." data-type="corporate"/>
-    <text x="610" y="271" font-size="11" font-weight="700" fill="rgba(255,255,255,0.8)" font-family="Inter, sans-serif">Oakland</text>
-
-    <!-- San Jose -->
-    <circle cx="690" cy="510" r="16" fill="#818CF8" opacity="0.12" class="node-pulse" style="animation-delay:0.8s"/>
-    <circle cx="690" cy="510" r="6" fill="#818CF8" class="node-dot"
-      data-city="San Jose" data-info="Adobe campus hub. 6 active routes, 1,200+ daily riders." data-type="campus"/>
-    <text x="700" y="506" font-size="11" font-weight="700" fill="rgba(255,255,255,0.8)" font-family="Inter, sans-serif">San Jose</text>
-
-    <!-- Mountain View -->
-    <circle cx="655" cy="555" r="12" fill="#C41E1E" opacity="0.12" class="node-pulse" style="animation-delay:1.0s"/>
-    <circle cx="655" cy="555" r="5" fill="#C41E1E" class="node-dot"
-      data-city="Mountain View" data-info="Tech corridor stop. Direct express from SF and East Bay." data-type="corporate"/>
-    <text x="665" y="551" font-size="10" font-weight="600" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif">Mountain View</text>
-
-    <!-- Fremont (Neuralink) -->
-    <circle cx="750" cy="440" r="13" fill="#FBBF24" opacity="0.14" class="node-pulse" style="animation-delay:1.2s"/>
-    <circle cx="750" cy="440" r="5" fill="#FBBF24" class="node-dot"
-      data-city="Fremont" data-info="Neuralink campus. Last-mile from BART and Caltrain. 3-week launch." data-type="lastmile"/>
-    <text x="760" y="436" font-size="10" font-weight="600" fill="rgba(255,255,255,0.65)" font-family="Inter, sans-serif">Fremont</text>
-
-    <!-- Redwood City -->
-    <circle cx="610" cy="490" r="11" fill="#C41E1E" opacity="0.1" class="node-pulse" style="animation-delay:0.6s"/>
-    <circle cx="610" cy="490" r="4" fill="#C41E1E" class="node-dot"
-      data-city="Redwood City" data-info="Peninsula hub. Major Caltrain connection." data-type="corporate"/>
-    <text x="618" y="486" font-size="10" font-weight="600" fill="rgba(255,255,255,0.55)" font-family="Inter, sans-serif">Redwood City</text>
-
-    <!-- Palo Alto -->
-    <circle cx="638" cy="525" r="10" fill="#C41E1E" opacity="0.1" class="node-pulse" style="animation-delay:1.4s"/>
-    <circle cx="638" cy="525" r="4" fill="#C41E1E" class="node-dot"
-      data-city="Palo Alto" data-info="University and corporate corridor stop." data-type="campus"/>
-    <text x="646" y="521" font-size="10" font-weight="600" fill="rgba(255,255,255,0.55)" font-family="Inter, sans-serif">Palo Alto</text>
-
-    <!-- SFO -->
-    <circle cx="308" cy="510" r="10" fill="#C41E1E" opacity="0.1" class="node-pulse" style="animation-delay:1.6s"/>
-    <circle cx="308" cy="510" r="4" fill="#C41E1E" class="node-dot"
-      data-city="SFO Airport" data-info="Airport express service. Daily departures from SF and Peninsula." data-type="corporate"/>
-    <text x="316" y="506" font-size="10" font-weight="600" fill="rgba(255,255,255,0.55)" font-family="Inter, sans-serif">SFO</text>
-
-    <!-- Napa (charter) -->
-    <circle cx="200" cy="130" r="10" fill="#34D399" opacity="0.14" class="node-pulse" style="animation-delay:1.8s"/>
-    <circle cx="200" cy="130" r="4" fill="#34D399" class="node-dot"
-      data-city="Napa Valley" data-info="Wine country charter destination. Weekend and corporate event service." data-type="event"/>
-    <text x="210" y="126" font-size="10" font-weight="600" fill="rgba(255,255,255,0.55)" font-family="Inter, sans-serif">Napa Valley</text>
-
-  </g>
-
-  <!-- Bay label -->
-  <text x="395" y="230" text-anchor="middle" font-size="13" font-weight="600" fill="#1A3A5A" font-family="Inter, sans-serif" letter-spacing="0.1em" transform="rotate(-15,395,230)">SAN FRANCISCO BAY</text>
-
-</svg>
-
-<!-- Legend -->
 <div id="legend">
   <h3>Route Type</h3>
-  <div class="legend-item" data-filter="corporate">
-    <div class="legend-line" style="background:#C41E1E;"></div>
-    <span class="legend-label">Corporate Shuttle</span>
-  </div>
-  <div class="legend-item" data-filter="campus">
-    <div class="legend-line" style="background:#818CF8;"></div>
-    <span class="legend-label">Campus Transit</span>
-  </div>
-  <div class="legend-item" data-filter="lastmile">
-    <div class="legend-line" style="background:#FBBF24;"></div>
-    <span class="legend-label">Last Mile / BART Connect</span>
-  </div>
-  <div class="legend-item" data-filter="event">
-    <div class="legend-line" style="background:#34D399; height:2px; background: repeating-linear-gradient(90deg,#34D399 0,#34D399 6px,transparent 6px,transparent 10px);"></div>
-    <span class="legend-label">Charter / Events</span>
-  </div>
+  <div class="leg"><div class="leg-line" style="background:#C41E1E;"></div><span class="leg-label">Corporate Shuttle</span></div>
+  <div class="leg"><div class="leg-line" style="background:#818CF8;"></div><span class="leg-label">Campus Transit</span></div>
+  <div class="leg"><div class="leg-line" style="background:#FBBF24;"></div><span class="leg-label">Last Mile / BART</span></div>
+  <div class="leg"><div class="leg-line" style="background:#34D399; background: repeating-linear-gradient(90deg,#34D399 0,#34D399 6px,transparent 6px,transparent 10px);"></div><span class="leg-label">Charter / Events</span></div>
 </div>
 
-<!-- Stats -->
 <div id="stats">
-  <div class="stat-pill">
-    <div class="val" style="color:#C41E1E;">40+</div>
-    <div class="lbl">Active Bay Area Routes</div>
-  </div>
-  <div class="stat-pill">
-    <div class="val">9</div>
-    <div class="lbl">Cities Served</div>
-  </div>
-  <div class="stat-pill">
-    <div class="val">24/7</div>
-    <div class="lbl">Dispatch Coverage</div>
-  </div>
+  <div class="stat"><div class="v" style="color:#C41E1E;">40+</div><div class="l">Active Routes</div></div>
+  <div class="stat"><div class="v">9</div><div class="l">Cities Served</div></div>
+  <div class="stat"><div class="v">24/7</div><div class="l">Dispatch</div></div>
 </div>
+
+<canvas id="c"></canvas>
 
 <script>
+const canvas = document.getElementById('c');
+const ctx = canvas.getContext('2d');
 const tooltip = document.getElementById('tooltip');
 
-// Node hover tooltips
-document.querySelectorAll('.node-dot').forEach(dot => {
-  dot.addEventListener('mouseenter', (e) => {
-    const city = dot.dataset.city;
-    const info = dot.dataset.info;
-    const type = dot.dataset.type;
-    const colors = { corporate:'#C41E1E', campus:'#818CF8', lastmile:'#FBBF24', event:'#34D399' };
-    const labels = { corporate:'Corporate', campus:'Campus', lastmile:'Last Mile', event:'Charter' };
-    tooltip.innerHTML = `
-      <span class="tt-badge" style="background:${colors[type]}22;color:${colors[type]}">${labels[type]}</span>
-      <h4>${city}</h4>
-      <p>${info}</p>
-    `;
-    tooltip.classList.add('show');
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  draw();
+}
+window.addEventListener('resize', resize);
+
+// Map bounds: lat/lng → pixel
+// Bay Area: lat 37.1–38.1, lng -122.65 to -121.75
+const LNG_MIN = -122.65, LNG_MAX = -121.75;
+const LAT_MIN = 37.1,  LAT_MAX = 38.1;
+
+function px(lat, lng) {
+  const pad = 60;
+  const w = canvas.width - pad * 2;
+  const h = canvas.height - pad * 2;
+  const x = pad + (lng - LNG_MIN) / (LNG_MAX - LNG_MIN) * w;
+  const y = pad + (1 - (lat - LAT_MIN) / (LAT_MAX - LAT_MIN)) * h;
+  return [x, y];
+}
+
+// --- Geography ---
+const water = [
+  // SF Bay approximate outline (clockwise from north)
+  [38.07,-122.37],[38.05,-122.28],[37.98,-122.20],[37.92,-122.18],
+  [37.85,-122.19],[37.78,-122.22],[37.73,-122.19],[37.67,-122.14],
+  [37.60,-122.10],[37.55,-122.07],[37.52,-122.08],[37.50,-122.05],
+  [37.49,-122.00],[37.50,-121.96],[37.54,-121.94],[37.60,-121.95],
+  [37.65,-122.00],[37.70,-122.03],[37.75,-122.07],[37.80,-122.11],
+  [37.86,-122.16],[37.90,-122.22],[37.95,-122.28],[38.00,-122.33],
+  [38.05,-122.37],[38.07,-122.37]
+];
+
+// Bay islands / San Pablo Bay
+const sanPabloBay = [
+  [38.05,-122.37],[38.08,-122.42],[38.1,-122.48],[38.08,-122.55],
+  [38.02,-122.52],[37.98,-122.47],[37.95,-122.42],[37.95,-122.37],
+  [38.00,-122.33],[38.05,-122.37]
+];
+
+// Cities / nodes
+const cities = [
+  { name:'San Francisco', lat:37.774, lng:-122.419, type:'corporate',
+    info:'Hub for 14 active corporate shuttle routes. Dispatch office on-site.' },
+  { name:'Oakland', lat:37.804, lng:-122.271, type:'corporate',
+    info:'East Bay dispatch hub. BART connections at 3 stations.' },
+  { name:'San Jose', lat:37.338, lng:-121.886, type:'campus',
+    info:'Adobe campus hub. 6 active routes, 1,200+ daily riders.' },
+  { name:'Mountain View', lat:37.386, lng:-122.084, type:'corporate',
+    info:'Tech corridor stop. Direct express from SF and East Bay.' },
+  { name:'Redwood City', lat:37.485, lng:-122.236, type:'corporate',
+    info:'Peninsula hub. Major Caltrain connection.' },
+  { name:'Palo Alto', lat:37.441, lng:-122.143, type:'campus',
+    info:'University and corporate corridor stop.' },
+  { name:'Fremont', lat:37.548, lng:-121.989, type:'lastmile',
+    info:'Neuralink campus. Last-mile from BART and Caltrain. 3-week launch.' },
+  { name:'SFO', lat:37.621, lng:-122.379, type:'corporate',
+    info:'Airport express service. Daily departures from SF and Peninsula.' },
+  { name:'Napa Valley', lat:38.297, lng:-122.286, type:'event',
+    info:'Wine country charter destination. Weekend and corporate event service.' },
+];
+
+const typeColors = {
+  corporate: '#C41E1E',
+  campus: '#818CF8',
+  lastmile: '#FBBF24',
+  event: '#34D399'
+};
+
+// Routes as [lat,lng] waypoints
+const routes = [
+  // SF to Mountain View (101 corridor)
+  { type:'corporate', pts:[[37.774,-122.419],[37.700,-122.400],[37.621,-122.379],[37.550,-122.330],[37.485,-122.236],[37.441,-122.143],[37.386,-122.084]] },
+  // Oakland to San Jose (880 corridor)
+  { type:'corporate', pts:[[37.804,-122.271],[37.750,-122.200],[37.700,-122.150],[37.650,-122.080],[37.600,-122.000],[37.550,-121.950],[37.338,-121.886]] },
+  // SF to Fremont (via BART)
+  { type:'lastmile', pts:[[37.774,-122.419],[37.700,-122.350],[37.620,-122.200],[37.548,-121.989]] },
+  // Fremont BART last mile
+  { type:'lastmile', pts:[[37.557,-122.058],[37.548,-121.989]] },
+  // Adobe inter-campus SJ
+  { type:'campus', pts:[[37.338,-121.886],[37.350,-121.900],[37.360,-121.920]] },
+  // SFO express
+  { type:'corporate', pts:[[37.774,-122.419],[37.700,-122.410],[37.621,-122.379]] },
+  // Napa charter
+  { type:'event', pts:[[37.774,-122.419],[37.900,-122.450],[38.100,-122.480],[38.297,-122.286]] },
+  // Palo Alto corridor
+  { type:'campus', pts:[[37.774,-122.419],[37.650,-122.380],[37.550,-122.300],[37.441,-122.143]] },
+];
+
+// Animation
+let progress = 0; // 0–1 overall
+let pulseT = 0;
+let animDone = false;
+let cityHits = {}; // which cities have appeared
+
+function drawWater(pts, color) {
+  if (!pts.length) return;
+  ctx.beginPath();
+  const [sx, sy] = px(pts[0][0], pts[0][1]);
+  ctx.moveTo(sx, sy);
+  for (let i = 1; i < pts.length; i++) {
+    const [x, y] = px(pts[i][0], pts[i][1]);
+    ctx.lineTo(x, y);
+  }
+  ctx.closePath();
+  ctx.fillStyle = color;
+  ctx.fill();
+}
+
+function drawRoute(route, frac, alpha) {
+  if (frac <= 0) return;
+  const pts = route.pts;
+  // compute total length
+  let segs = [];
+  let total = 0;
+  for (let i = 1; i < pts.length; i++) {
+    const [x1,y1] = px(pts[i-1][0],pts[i-1][1]);
+    const [x2,y2] = px(pts[i][0],pts[i][1]);
+    const d = Math.hypot(x2-x1,y2-y1);
+    segs.push({x1,y1,x2,y2,d});
+    total += d;
+  }
+  const drawn = total * Math.min(frac, 1);
+  let rem = drawn;
+  const color = typeColors[route.type];
+
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.strokeStyle = color;
+  ctx.lineWidth = route.type === 'event' ? 2 : 2.5;
+  ctx.lineCap = 'round';
+  ctx.lineJoin = 'round';
+
+  if (route.type === 'event') {
+    ctx.setLineDash([6, 5]);
+  }
+
+  ctx.beginPath();
+  let started = false;
+  for (const seg of segs) {
+    if (rem <= 0) break;
+    const draw = Math.min(rem, seg.d);
+    const t = draw / seg.d;
+    const mx = seg.x1 + (seg.x2 - seg.x1) * t;
+    const my = seg.y1 + (seg.y2 - seg.y1) * t;
+    if (!started) { ctx.moveTo(seg.x1, seg.y1); started = true; }
+    ctx.lineTo(mx, my);
+    rem -= draw;
+  }
+  ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.restore();
+}
+
+function drawCity(city, alpha, pulse) {
+  const [x, y] = px(city.lat, city.lng);
+  const col = typeColors[city.type];
+  const r = 5 + pulse * 2;
+
+  // Glow ring
+  ctx.save();
+  ctx.globalAlpha = alpha * 0.2 * (0.5 + pulse * 0.5);
+  ctx.beginPath();
+  ctx.arc(x, y, r + 8, 0, Math.PI * 2);
+  ctx.fillStyle = col;
+  ctx.fill();
+  ctx.restore();
+
+  // Dot
+  ctx.save();
+  ctx.globalAlpha = alpha;
+  ctx.beginPath();
+  ctx.arc(x, y, 5, 0, Math.PI * 2);
+  ctx.fillStyle = col;
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(x, y, 5, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.restore();
+
+  // Label
+  ctx.save();
+  ctx.globalAlpha = alpha * 0.85;
+  ctx.font = '600 11px Inter, sans-serif';
+  ctx.fillStyle = '#fff';
+  ctx.textBaseline = 'middle';
+  // Offset label to avoid overlap
+  const offX = city.name === 'San Francisco' ? 8 : 8;
+  const offY = city.name === 'Mountain View' ? -12 : city.name === 'Palo Alto' ? -12 : 0;
+  ctx.fillText(city.name, x + offX, y + offY);
+  ctx.restore();
+}
+
+// Label SF Bay
+function drawBayLabel() {
+  const [x, y] = px(37.65, -122.18);
+  ctx.save();
+  ctx.globalAlpha = 0.18;
+  ctx.font = '700 12px Inter, sans-serif';
+  ctx.fillStyle = '#5aa8e0';
+  ctx.textAlign = 'center';
+  ctx.translate(x, y);
+  ctx.rotate(-0.3);
+  ctx.fillText('SAN FRANCISCO BAY', 0, 0);
+  ctx.restore();
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Background
+  ctx.fillStyle = '#0A0A0D';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // Land background (whole canvas is land base)
+  ctx.fillStyle = '#10111A';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  // San Pablo Bay
+  drawWater(sanPabloBay, '#0D1520');
+  // SF Bay
+  drawWater(water, '#0D1520');
+
+  // Grid lines (subtle)
+  ctx.save();
+  ctx.globalAlpha = 0.04;
+  ctx.strokeStyle = '#fff';
+  ctx.lineWidth = 1;
+  for (let lat = 37.2; lat <= 38.1; lat += 0.1) {
+    const [x1,y1] = px(lat, LNG_MIN);
+    const [x2,y2] = px(lat, LNG_MAX);
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  }
+  for (let lng = -122.6; lng <= -121.8; lng += 0.1) {
+    const [x1,y1] = px(LAT_MIN, lng);
+    const [x2,y2] = px(LAT_MAX, lng);
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  }
+  ctx.restore();
+
+  drawBayLabel();
+
+  // Routes
+  const totalRoutes = routes.length;
+  routes.forEach((route, i) => {
+    const start = i / totalRoutes;
+    const frac = Math.max(0, (progress - start) / (1 / totalRoutes));
+    drawRoute(route, frac, 0.85);
   });
-  dot.addEventListener('mousemove', (e) => {
+
+  // Cities
+  cities.forEach((city, i) => {
+    const appear = i / cities.length;
+    const alpha = Math.max(0, Math.min(1, (progress - appear) * cities.length * 0.5));
+    if (alpha > 0) drawCity(city, alpha, Math.sin(pulseT + i * 0.9) * 0.5 + 0.5);
+  });
+}
+
+let last = null;
+function animate(ts) {
+  if (!last) last = ts;
+  const dt = (ts - last) / 1000;
+  last = ts;
+  if (!animDone) {
+    progress = Math.min(1, progress + dt * 0.35);
+    if (progress >= 1) animDone = true;
+  }
+  pulseT += dt * 1.2;
+  draw();
+  requestAnimationFrame(animate);
+}
+
+resize();
+requestAnimationFrame(animate);
+
+// Tooltip on mouse move
+canvas.addEventListener('mousemove', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  let found = null;
+  for (const city of cities) {
+    const [cx, cy] = px(city.lat, city.lng);
+    if (Math.hypot(mx - cx, my - cy) < 16) { found = city; break; }
+  }
+  if (found) {
+    const col = typeColors[found.type];
+    const labels = { corporate:'Corporate', campus:'Campus', lastmile:'Last Mile', event:'Charter' };
+    tooltip.innerHTML = `<div class="tt-tag" style="color:${col}">${labels[found.type]}</div><h4>${found.name}</h4><p>${found.info}</p>`;
     tooltip.style.left = (e.clientX + 16) + 'px';
     tooltip.style.top = (e.clientY - 10) + 'px';
-  });
-  dot.addEventListener('mouseleave', () => {
+    tooltip.classList.add('show');
+    canvas.style.cursor = 'pointer';
+  } else {
     tooltip.classList.remove('show');
-  });
+    canvas.style.cursor = 'default';
+  }
 });
-
-// Legend filter toggle
-document.querySelectorAll('.legend-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const filter = item.dataset.filter;
-    const lines = document.querySelectorAll('.route-line');
-    const isActive = item.style.opacity === '0.4';
-    item.style.opacity = isActive ? '1' : '0.4';
-    lines.forEach(line => {
-      if (line.classList.contains('route-' + filter)) {
-        line.style.opacity = isActive ? '1' : '0';
-      }
-    });
-  });
-});
+canvas.addEventListener('mouseleave', () => tooltip.classList.remove('show'));
 </script>
 </body>
 </html>
