@@ -1,4 +1,4 @@
-<title>CLS Global Transportation</title>
+<title>CLS Global Transportation | Bay Area Corporate and Event Shuttle Company</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -1370,41 +1370,88 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-section" id="quote">
-  <div class="cta-left">
-    <h2>Let's build your program.</h2>
-    <p>Share a few details and we'll come back with a custom plan in 24 hours. No sales pitch, no obligation, just a real look at what your program could look like with CLS running it.</p>
-    <ul style="list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;">
-      <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:15px;">
-        <span style="color:#fff;font-size:18px;">✓</span> Response within 24 hours
-      </li>
-      <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:15px;">
-        <span style="color:#fff;font-size:18px;">✓</span> Custom route and pricing plan
-      </li>
-      <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:15px;">
-        <span style="color:#fff;font-size:18px;">✓</span> No contracts required to start talking
-      </li>
-    </ul>
-  </div>
-  <form class="cta-form" onsubmit="return false;">
-    <div class="form-row">
-      <input type="text" placeholder="First name">
-      <input type="text" placeholder="Last name">
+<section class="cta-section" id="quote" style="flex-direction:column;align-items:stretch;gap:0;">
+  <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap;">
+    <div class="cta-left" style="flex:1;min-width:260px;">
+      <h2>Get a quote in 24 hours.</h2>
+      <p>Share a few details and we will come back with a custom plan. No sales pitch, no obligation.</p>
+      <ul style="list-style:none;margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+        <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:15px;">
+          <span style="color:#fff;font-size:18px;">✓</span> Response within 24 hours
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:15px;">
+          <span style="color:#fff;font-size:18px;">✓</span> Custom route and pricing plan
+        </li>
+        <li style="display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);font-size:15px;">
+          <span style="color:#fff;font-size:18px;">✓</span> No contracts required to start talking
+        </li>
+      </ul>
+      <div style="margin-top:28px;padding:16px 20px;background:rgba(196,30,30,0.18);border:1px solid rgba(196,30,30,0.3);border-radius:10px;">
+        <div style="font-size:12px;font-weight:700;color:rgba(196,30,30,0.85);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:6px;">Need it fast?</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.75);">Call or text <strong style="color:#fff;">650.460.8778</strong>. Dispatch is staffed 24/7.</div>
+      </div>
     </div>
-    <input type="email" placeholder="Work email">
-    <input type="text" placeholder="Company name">
-    <select>
-      <option value="" disabled selected>Type of service</option>
-      <option>Corporate Shuttle</option>
-      <option>University / Campus Transit</option>
-      <option>Event Charter</option>
-      <option>Airport Transfer</option>
-      <option>Wine Tour</option>
-      <option>Other</option>
-    </select>
-    <textarea placeholder="Tell us what you need, headcount, routes, timing, event details, anything helps..."></textarea>
-    <button type="submit" class="btn-white-lg">Get a Custom Quote in 24 Hours</button>
-  </form>
+    <div style="flex:1.3;min-width:300px;">
+      <div style="display:flex;gap:0;margin-bottom:20px;border-radius:10px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.22);">
+        <button id="tabShuttle" onclick="switchQuoteTab('shuttle')" style="flex:1;padding:11px 16px;background:rgba(255,255,255,0.18);border:none;color:#fff;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;transition:background 0.15s;">Shuttle Program</button>
+        <button id="tabCharter" onclick="switchQuoteTab('charter')" style="flex:1;padding:11px 16px;background:transparent;border:none;border-left:1.5px solid rgba(255,255,255,0.22);color:rgba(255,255,255,0.6);font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;transition:background 0.15s;">Charter / One-Off</button>
+      </div>
+      <form id="formShuttle" class="cta-form" onsubmit="return false;">
+        <div class="form-row">
+          <input type="text" placeholder="Your name">
+          <input type="text" placeholder="Company name">
+        </div>
+        <div class="form-row">
+          <input type="email" placeholder="Work email">
+          <input type="tel" placeholder="Phone number">
+        </div>
+        <select>
+          <option value="" disabled selected>Program type</option>
+          <option>Commuter Shuttle</option>
+          <option>Shared Commuter</option>
+          <option>Inter-Campus</option>
+          <option>Last Mile / Parking</option>
+          <option>Bike Share</option>
+          <option>Not sure yet</option>
+        </select>
+        <div class="form-row">
+          <input type="text" placeholder="Approx. rider count (e.g. 50 to 200)">
+          <input type="text" placeholder="Start date (e.g. Q1 2025 or ASAP)">
+        </div>
+        <input type="text" placeholder="Routes or key locations (e.g. Caltrain to Redwood City)">
+        <textarea placeholder="Anything else we should know? Schedule needs, current provider, etc."></textarea>
+        <button type="submit" class="btn-white-lg">Get My Shuttle Quote</button>
+      </form>
+      <form id="formCharter" class="cta-form" onsubmit="return false;" style="display:none;">
+        <div class="form-row">
+          <input type="text" placeholder="Your name">
+          <input type="tel" placeholder="Phone number">
+        </div>
+        <input type="email" placeholder="Email address">
+        <select>
+          <option value="" disabled selected>Occasion type</option>
+          <option>Wedding / Celebration</option>
+          <option>Wine Country Tour</option>
+          <option>Concert / Sporting Event</option>
+          <option>Airport Transfer</option>
+          <option>Group Travel / Retreat</option>
+          <option>Conference / Convention</option>
+          <option>Birthday / Party</option>
+          <option>Other</option>
+        </select>
+        <div class="form-row">
+          <input type="date">
+          <input type="text" placeholder="Group size (e.g. 12 people)">
+        </div>
+        <div class="form-row">
+          <input type="text" placeholder="Pickup location">
+          <input type="text" placeholder="Dropoff location">
+        </div>
+        <textarea placeholder="Round trip? Multiple stops? Special requests or timing..."></textarea>
+        <button type="submit" class="btn-white-lg">Get My Charter Quote</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
