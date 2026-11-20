@@ -27,3 +27,6 @@
 /wp-login.php                           /                    301
 /wp-admin/*                             /                    301
 /feed                                   /                    301
+
+# Keep function source files private
+/netlify/*                              /                    301!

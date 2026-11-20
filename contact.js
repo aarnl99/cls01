@@ -1,26 +1,34 @@
-/* CLS contact: turns the quote and request forms into a ready-to-send email to res@clsgt.com.
-   There is no form backend, so nothing is stored or sent by the website itself. */
+/* CLS forms: sends quote, program and job forms to Netlify Forms without leaving the page.
+   Each entry is stored in Netlify and posted to the CLS Slack channel. */
 (function () {
-  var TO = 'res@clsgt.com';
-  function fieldLabel(el) {
-    var group = el.closest('.form-group');
-    if (group) { var l = group.querySelector('label'); if (l) return l.textContent.trim(); }
-    if (el.tagName === 'SELECT' && el.options.length && el.options[0].disabled) return el.options[0].textContent.trim();
-    return (el.getAttribute('placeholder') || el.name || 'Info').trim();
+  function show(form, text, ok) {
+    var el = form.querySelector('.cls-form-status');
+    if (!el) return;
+    el.textContent = text;
+    el.style.display = 'block';
+    el.style.fontWeight = ok ? '600' : '400';
   }
-  window.clsMailForm = function (target, subject) {
-    var box = target;
-    if (target && target.preventDefault) { target.preventDefault(); box = target.target; }
-    var lines = [];
-    box.querySelectorAll('input, select, textarea').forEach(function (el) {
-      if (el.type === 'hidden' || el.type === 'submit' || el.name === 'bot-field') return;
-      var v = (el.value || '').trim();
-      if (v) lines.push(fieldLabel(el) + ': ' + v);
+  window.clsSendForm = function (event) {
+    event.preventDefault();
+    var form = event.target;
+    var btn = form.querySelector('button[type="submit"]');
+    var label = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    var data = new FormData(form);
+    if (!data.get('form-name')) data.append('form-name', form.getAttribute('name'));
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(data).toString()
+    }).then(function (res) {
+      if (!res.ok) throw new Error('status ' + res.status);
+      form.reset();
+      show(form, 'Thanks! We got it and will be in touch soon.', true);
+    }).catch(function () {
+      show(form, 'Sorry, that did not go through. Please call 650.460.8778 or email res@clsgt.com.', false);
+    }).finally(function () {
+      if (btn) { btn.disabled = false; btn.textContent = label; }
     });
-    var body = 'Hi CLS team,\n\n' + (lines.length ? lines.join('\n') : '') + '\n\nThanks!';
-    window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-    var note = box.querySelector('.cls-mail-note');
-    if (note) note.style.display = 'block';
     return false;
   };
 })();
