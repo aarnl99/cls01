@@ -1,0 +1,32 @@
+# Old clsgt.com WordPress pages -> new pages (keeps old links and Google results working)
+/about-cls-global-transportation        /about               301
+/commuter-shuttles                      /corporate-shuttle   301
+/shared-commuter-solutions              /corporate-shuttle   301
+/inter-campus-shuttles                  /corporate-shuttle   301
+/last-mile-shuttles                     /corporate-shuttle   301
+/parking-shuttles                       /corporate-shuttle   301
+/bicycle-share-programs                 /corporate-shuttle   301
+/employee-benefits                      /corporate-shuttle   301
+/private-group-event-transportation     /events-charter      301
+/napa-wine-tours                        /events-charter      301
+/conferences-conventions                /events-charter      301
+/sporting-event-transportation          /events-charter      301
+/airport-service                        /events-charter      301
+/wedding-transportation                 /events-charter      301
+/prom-night-transportation              /events-charter      301
+/quinceanera-limo-service               /events-charter      301
+/car-services-san-francisco             /events-charter      301
+/san-francisco-shuttle-fleet            /fleet               301
+/safety                                 /safety-technology   301
+/technology                             /safety-technology   301
+/join-clsgt-team                        /careers             301
+/contact                                /#quote              301
+/customized-quote                       /#quote              301
+/thank-you-for-reaching-out             /                    301
+/thank-you-for-reaching-out-managed-service  /               301
+/wp-login.php                           /                    301
+/wp-admin/*                             /                    301
+/feed                                   /                    301
+
+# Keep function source files private
+/netlify/*                              /                    301!
