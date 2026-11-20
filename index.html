@@ -1913,43 +1913,43 @@
       <div class="footer-contact">
         <a href="tel:6504608778"><strong>650.460.8778</strong></a><span style="color:inherit"> Call or Text</span>
         <a href="mailto:res@clsgt.com">res@clsgt.com</a>
-        <a href="#">Available 24/7</a>
+        <span style="color:inherit;opacity:0.6">Available 24/7</span>
       </div>
     </div>
     <div class="footer-col">
       <h5>Corporate</h5>
-      <a href="#">Commuter Shuttles</a>
-      <a href="#">Shared Commuter</a>
-      <a href="#">Inter-Campus</a>
-      <a href="#">Last Mile</a>
-      <a href="#">Parking Shuttles</a>
-      <a href="#">Bike Share</a>
+      <a href="corporate-shuttle.html">Commuter Shuttles</a>
+      <a href="corporate-shuttle.html">Shared Commuter</a>
+      <a href="corporate-shuttle.html">Inter-Campus</a>
+      <a href="corporate-shuttle.html">Last Mile</a>
+      <a href="corporate-shuttle.html">Parking Shuttles</a>
+      <a href="corporate-shuttle.html">Bike Share</a>
     </div>
     <div class="footer-col">
       <h5>University &amp; Gov</h5>
-      <a href="#">University Transit</a>
-      <a href="#">Municipal Shuttles</a>
-      <a href="#">Employee Transit</a>
-      <a href="#">ADA &amp; Paratransit</a>
+      <a href="university.html">University Transit</a>
+      <a href="government.html">Municipal Shuttles</a>
+      <a href="university.html">Employee Transit</a>
+      <a href="government.html">ADA &amp; Paratransit</a>
     </div>
     <div class="footer-col">
       <h5>Events &amp; Charter</h5>
-      <a href="#">Wine Tours</a>
-      <a href="#">Weddings</a>
-      <a href="#">Conferences</a>
-      <a href="#">Sporting Events</a>
-      <a href="#">Airport Service</a>
-      <a href="#">Sedan &amp; SUV</a>
-      <a href="#">Limo Service</a>
+      <a href="events-charter.html">Wine Tours</a>
+      <a href="events-charter.html">Weddings</a>
+      <a href="events-charter.html">Conferences</a>
+      <a href="events-charter.html">Sporting Events</a>
+      <a href="events-charter.html">Airport Service</a>
+      <a href="events-charter.html">Sedan &amp; SUV</a>
+      <a href="events-charter.html">Limo Service</a>
     </div>
     <div class="footer-col">
       <h5>Company</h5>
       <a href="about.html">About CLS</a>
-      <a href="#">Safety &amp; Tech</a>
+      <a href="safety-technology.html">Safety &amp; Tech</a>
       <a href="fleet.html">Fleet</a>
-      <a href="#">Environmental</a>
-      <a href="#">Careers</a>
-      <a href="#">Privacy Policy</a>
+      <a href="environmental.html">Environmental</a>
+      <a href="careers.html">Careers</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -1987,6 +1987,32 @@
   window.addEventListener('scroll', () => {
     nav.style.boxShadow = window.scrollY > 20 ? '0 4px 20px rgba(0,0,0,0.08)' : 'none';
   }, { passive: true });
+
+  function switchQuoteTab(tab) {
+    var shuttle = document.getElementById('formShuttle');
+    var charter = document.getElementById('formCharter');
+    var tabS = document.getElementById('tabShuttle');
+    var tabC = document.getElementById('tabCharter');
+    if (tab === 'shuttle') {
+      shuttle.style.display = 'block';
+      charter.style.display = 'none';
+      tabS.style.background = 'rgba(255,255,255,0.18)';
+      tabS.style.color = '#fff';
+      tabS.style.fontWeight = '600';
+      tabC.style.background = 'transparent';
+      tabC.style.color = 'rgba(255,255,255,0.6)';
+      tabC.style.fontWeight = '500';
+    } else {
+      charter.style.display = 'block';
+      shuttle.style.display = 'none';
+      tabC.style.background = 'rgba(255,255,255,0.18)';
+      tabC.style.color = '#fff';
+      tabC.style.fontWeight = '600';
+      tabS.style.background = 'transparent';
+      tabS.style.color = 'rgba(255,255,255,0.6)';
+      tabS.style.fontWeight = '500';
+    }
+  }
 
   function handleShuttleSubmit(e) {
     e.preventDefault();
