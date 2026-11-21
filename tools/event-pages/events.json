@@ -7,7 +7,7 @@
       "name": "J.P. Morgan Healthcare Conference 2027",
       "short": "JPM Healthcare Week",
       "tag": "JPM Healthcare Week 2027",
-      "dates_text": "January 11 to 14, 2027",
+      "dates_text": "January 2027",
       "start_date": "2027-01-11",
       "dates_confirmed": false,
       "venue": "Union Square hotels",
@@ -25,13 +25,47 @@
       "plans_h2": "Built for back to back meetings.",
       "plans_sub": "JPM week is less about one big venue and more about dozens of meetings, dinners, and receptions across the city.",
       "plans": [
-        ["Hourly sedans and SUVs", "Keep a car and driver with your executives for the day, so they can jump between hotel meetings, offices, and dinners without waiting on a rideshare."],
-        ["SFO and OAK pickups", "We meet arriving guests at the airport and take them straight to their hotel, so they can start meetings the day they land."],
-        ["Dinner and reception shuttles", "Hosting an investor dinner or a reception? A Sprinter or limo bus can bring your whole group there and back together."]
+        [
+          "Hourly sedans and SUVs",
+          "Keep a car and driver with your executives for the day, so they can jump between hotel meetings, offices, and dinners without waiting on a rideshare."
+        ],
+        [
+          "SFO and OAK pickups",
+          "We meet arriving guests at the airport and take them straight to their hotel, so they can start meetings the day they land."
+        ],
+        [
+          "Dinner and reception shuttles",
+          "Hosting an investor dinner or a reception? A Sprinter or limo bus can bring your whole group there and back together."
+        ]
       ],
       "faqs": [
-        ["Can we keep a car with our CEO for the whole week?", "Yes. We can book a sedan or SUV with the same driver by the hour or by the day, so your team always knows who is picking them up."]
-      ]
+        [
+          "Can we keep a car with our CEO for the whole week?",
+          "Yes. We can book a sedan or SUV with the same driver by the hour or by the day, so your team always knows who is picking them up."
+        ]
+      ],
+      "cal": [
+        "JAN",
+        "2027"
+      ],
+      "image": "img-executive.jpg",
+      "seo_title": "JPM Healthcare Conference 2027 Car Service and Shuttles in San Francisco | CLS",
+      "getting": [
+        [
+          "Union Square hotels",
+          "JPM week centers on the hotels around Union Square. The Westin St. Francis hosted the main conference in 2026, and many company meetings happen in nearby hotel suites and rented spaces. Streets around the square get packed, so a car and driver on call saves a lot of waiting."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "Most JPM rides are small: one to six people heading to a meeting or dinner. Sedans and SUVs work best for that. For an investor dinner or a team outing, a Sprinter (10 to 14) or a limo bus (up to 26) keeps the group together."
+        ]
+      ],
+      "city_short": "San Francisco",
+      "venue_short": "Union Square hotels"
     },
     {
       "sort": 2,
@@ -57,11 +91,42 @@
       "plans_h2": "From SFO to the show floor to the after party.",
       "plans_sub": "A lot of GDC happens outside Moscone, at studio parties, dinners, and meetups across the city.",
       "plans": [
-        ["Airport pickups for your team", "Many GDC guests fly in from overseas. We meet them at SFO and get them to their hotel, even on late flights."],
-        ["Hotel to Moscone shuttles", "Staying a little farther out? A shuttle loop between your hotel and Moscone keeps your team on time for talks and meetings."],
-        ["Party and dinner transportation", "Hosting a studio party or press dinner? We can run shuttles from Moscone to your venue and get guests home safely after."]
+        [
+          "Airport pickups for your team",
+          "Many GDC guests fly in from overseas. We meet them at SFO and get them to their hotel, even on late flights."
+        ],
+        [
+          "Hotel to Moscone shuttles",
+          "Staying a little farther out? A shuttle loop between your hotel and Moscone keeps your team on time for talks and meetings."
+        ],
+        [
+          "Party and dinner transportation",
+          "Hosting a studio party or press dinner? We can run shuttles from Moscone to your venue and get guests home safely after."
+        ]
       ],
-      "faqs": []
+      "faqs": [],
+      "cal": [
+        "MAR",
+        "1 to 4"
+      ],
+      "image": "img-corporate.jpg",
+      "seo_title": "GDC 2027 Shuttle and Car Service at Moscone Center | CLS",
+      "getting": [
+        [
+          "Moscone Center and nearby hotels",
+          "Moscone Center sits in SoMa, a short walk from the big Union Square hotels. During a big show, the sidewalks, crosswalks, and curbs around Howard Street get very crowded, so set pickup points a block or two away and plan around session breaks."
+        ],
+        [
+          "Flying in",
+          "Many GDC guests fly in from overseas and land at SFO, often on long flights at odd hours. Oakland (OAK) is across the Bay Bridge and can be a backup. A driver who tracks the flight and waits at arrivals takes the stress out of the first night."
+        ],
+        [
+          "Picking the right vehicle",
+          "A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "city_short": "San Francisco",
+      "venue_short": "Moscone Center"
     },
     {
       "sort": 3,
@@ -69,7 +134,7 @@
       "name": "NVIDIA GTC 2027",
       "short": "NVIDIA GTC",
       "tag": "NVIDIA GTC 2027 in San Jose",
-      "dates_text": "Mid March 2027",
+      "dates_text": "March 2027",
       "start_date": "2027-03-15",
       "dates_confirmed": false,
       "venue": "San Jose McEnery Convention Center and nearby downtown venues",
@@ -79,7 +144,11 @@
       "organizer": "NVIDIA",
       "official_url": "https://www.nvidia.com/gtc/",
       "official_label": "nvidia.com",
-      "area_served": ["San Jose", "Santa Clara", "San Francisco"],
+      "area_served": [
+        "San Jose",
+        "Santa Clara",
+        "San Francisco"
+      ],
       "card_line": "Spread across downtown San Jose, with many guests staying in San Francisco or Santa Clara.",
       "meta": "Shuttles and car service for NVIDIA GTC 2027 in San Jose. Hotel shuttles from San Francisco and Santa Clara, SJC and SFO pickups, and VIP cars.",
       "h1": "Shuttles and cars for NVIDIA GTC in San Jose.",
@@ -87,13 +156,47 @@
       "plans_h2": "Built for a spread out event.",
       "plans_sub": "GTC uses several buildings around downtown San Jose, and guests often stay miles away. That is where a real shuttle plan pays off.",
       "plans": [
-        ["Hotel shuttles from SF and Santa Clara", "A scheduled coach or Sprinter run between your hotel and downtown San Jose, timed around the keynote and your sessions."],
-        ["SJC and SFO pickups", "We meet your team and guests at San Jose or San Francisco airport and take them right to their hotel."],
-        ["VIP and customer cars", "Sedans and SUVs for executives, speakers, and key customers, with a driver who waits for them between meetings."]
+        [
+          "Hotel shuttles from SF and Santa Clara",
+          "A scheduled coach or Sprinter run between your hotel and downtown San Jose, timed around the keynote and your sessions."
+        ],
+        [
+          "SJC and SFO pickups",
+          "We meet your team and guests at San Jose or San Francisco airport and take them right to their hotel."
+        ],
+        [
+          "VIP and customer cars",
+          "Sedans and SUVs for executives, speakers, and key customers, with a driver who waits for them between meetings."
+        ]
       ],
       "faqs": [
-        ["Our team is staying in San Francisco. Can you get them to GTC every day?", "Yes. We can run a daily coach or Sprinter from your San Francisco hotel to downtown San Jose and back, timed to your schedule."]
-      ]
+        [
+          "Our team is staying in San Francisco. Can you get them to GTC every day?",
+          "Yes. We can run a daily coach or Sprinter from your San Francisco hotel to downtown San Jose and back, timed to your schedule."
+        ]
+      ],
+      "cal": [
+        "MAR",
+        "2027"
+      ],
+      "image": "img-corporate.jpg",
+      "seo_title": "NVIDIA GTC 2027 Shuttle and Charter Bus Service in San Jose | CLS",
+      "getting": [
+        [
+          "Downtown San Jose venues",
+          "GTC is based at the San Jose McEnery Convention Center and spreads into other buildings around downtown San Jose. Hotels close to the convention center fill up early, so many teams stay in Santa Clara, the Peninsula, or San Francisco and need a daily ride in."
+        ],
+        [
+          "Flying in",
+          "San Jose airport (SJC) is just a few miles from downtown and is the easiest airport for GTC. Plenty of guests still fly into SFO, which is a much longer drive south, so plan airport rides with traffic in mind."
+        ],
+        [
+          "Picking the right vehicle",
+          "For a team staying outside San Jose, a scheduled Sprinter or coach each morning and evening is often cheaper and calmer than many separate rideshares. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "city_short": "San Jose",
+      "venue_short": "San Jose McEnery Convention Center"
     },
     {
       "sort": 4,
@@ -119,11 +222,42 @@
       "plans_h2": "For sponsors, vendors, and big teams.",
       "plans_sub": "RSAC week is packed with booth duty, customer meetings, and events every night. We plan rides around all of it.",
       "plans": [
-        ["Hotel to Moscone shuttles", "A shuttle loop for your booth staff and team, so they get to the show floor on time and back to the hotel after."],
-        ["Customer dinners and parties", "Hosting a dinner or a party during RSAC? We bring your guests from Moscone to your venue and back, in Sprinters, limo buses, or coaches."],
-        ["VIP cars and airport runs", "Sedans and SUVs for executives and key customers, plus SFO and OAK pickups when your team flies in."]
+        [
+          "Hotel to Moscone shuttles",
+          "A shuttle loop for your booth staff and team, so they get to the show floor on time and back to the hotel after."
+        ],
+        [
+          "Customer dinners and parties",
+          "Hosting a dinner or a party during RSAC? We bring your guests from Moscone to your venue and back, in Sprinters, limo buses, or coaches."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives and key customers, plus SFO and OAK pickups when your team flies in."
+        ]
       ],
-      "faqs": []
+      "faqs": [],
+      "cal": [
+        "APR",
+        "5 to 8"
+      ],
+      "image": "img-executive.jpg",
+      "seo_title": "RSAC 2027 Shuttle, Charter Bus and Car Service at Moscone | CLS",
+      "getting": [
+        [
+          "Moscone Center and nearby hotels",
+          "Moscone Center sits in SoMa, a short walk from the big Union Square hotels. During a big show, the sidewalks, crosswalks, and curbs around Howard Street get very crowded, so set pickup points a block or two away and plan around session breaks."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "RSAC week is heavy on vendor parties and customer dinners. For those, a limo bus or mini coach that loops between Moscone and your venue keeps guests moving. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "city_short": "San Francisco",
+      "venue_short": "Moscone Center"
     },
     {
       "sort": 5,
@@ -149,11 +283,42 @@
       "plans_h2": "For partners, sponsors, and customer teams.",
       "plans_sub": "If you are a Snowflake partner or sponsor, your week is full of customer meetings and events. We keep everyone moving.",
       "plans": [
-        ["Hotel to Moscone shuttles", "A shuttle loop for your team and booth staff between your hotel and Moscone, planned around the session schedule."],
-        ["Partner events and dinners", "Bring customers from Moscone to your dinner, happy hour, or party in a Sprinter, limo bus, or coach."],
-        ["VIP cars and airport runs", "Sedans and SUVs for executives and speakers, and pickups at SFO and OAK when your team arrives."]
+        [
+          "Hotel to Moscone shuttles",
+          "A shuttle loop for your team and booth staff between your hotel and Moscone, planned around the session schedule."
+        ],
+        [
+          "Partner events and dinners",
+          "Bring customers from Moscone to your dinner, happy hour, or party in a Sprinter, limo bus, or coach."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives and speakers, and pickups at SFO and OAK when your team arrives."
+        ]
       ],
-      "faqs": []
+      "faqs": [],
+      "cal": [
+        "JUN",
+        "7 to 10"
+      ],
+      "image": "img-corporate.jpg",
+      "seo_title": "Snowflake Summit 2027 Shuttle and Car Service in San Francisco | CLS",
+      "getting": [
+        [
+          "Moscone Center and nearby hotels",
+          "Moscone Center sits in SoMa, a short walk from the big Union Square hotels. During a big show, the sidewalks, crosswalks, and curbs around Howard Street get very crowded, so set pickup points a block or two away and plan around session breaks."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "city_short": "San Francisco",
+      "venue_short": "Moscone Center"
     },
     {
       "sort": 6,
@@ -179,11 +344,42 @@
       "plans_h2": "For sponsors, partners, and big teams.",
       "plans_sub": "With this many people in town, rideshare gets slow and pricey. A real plan keeps your team and your guests on schedule.",
       "plans": [
-        ["Hotel to venue shuttles", "Scheduled shuttles between your hotel and the venue, sized to your team and timed around the keynotes."],
-        ["Sponsor events and dinners", "Moving customers to a dinner, a party, or an offsite? We run Sprinters, limo buses, and coaches there and back."],
-        ["VIP cars and airport runs", "Sedans and SUVs for executives and speakers, plus SFO and OAK pickups for your team."]
+        [
+          "Hotel to venue shuttles",
+          "Scheduled shuttles between your hotel and the venue, sized to your team and timed around the keynotes."
+        ],
+        [
+          "Sponsor events and dinners",
+          "Moving customers to a dinner, a party, or an offsite? We run Sprinters, limo buses, and coaches there and back."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives and speakers, plus SFO and OAK pickups for your team."
+        ]
       ],
-      "faqs": []
+      "faqs": [],
+      "cal": [
+        "JUN",
+        "21 to 24"
+      ],
+      "image": "img-executive.jpg",
+      "seo_title": "Data + AI Summit 2027 Shuttle and Charter Bus Service in San Francisco | CLS",
+      "getting": [
+        [
+          "The venue and nearby hotels",
+          "Data + AI Summit was held at Moscone Center in 2026, in SoMa, a short walk from the big Union Square hotels. With this many people in town, hotels fill up across the city, and many teams end up farther out. A shuttle plan keeps a spread out team on schedule."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "city_short": "San Francisco",
+      "venue_short": "Moscone Center in 2026"
     },
     {
       "sort": 7,
@@ -209,11 +405,42 @@
       "plans_h2": "For sponsors and startup teams.",
       "plans_sub": "A lot of the action happens at side events and dinners around the city. We help you get people there.",
       "plans": [
-        ["Side event shuttles", "Hosting a meetup, demo night, or happy hour? We bring guests from Moscone West to your venue and back."],
-        ["Team shuttles", "A simple shuttle between your hotel or office and Moscone West, so your team is never late for their talk or booth shift."],
-        ["Airport runs and VIP cars", "SFO and OAK pickups for your team and speakers, plus sedans and SUVs for executives."]
+        [
+          "Side event shuttles",
+          "Hosting a meetup, demo night, or happy hour? We bring guests from Moscone West to your venue and back."
+        ],
+        [
+          "Team shuttles",
+          "A simple shuttle between your hotel or office and Moscone West, so your team is never late for their talk or booth shift."
+        ],
+        [
+          "Airport runs and VIP cars",
+          "SFO and OAK pickups for your team and speakers, plus sedans and SUVs for executives."
+        ]
       ],
-      "faqs": []
+      "faqs": [],
+      "cal": [
+        "JUN",
+        "29 to Jul 1"
+      ],
+      "image": "img-corporate.jpg",
+      "seo_title": "AI Engineer World's Fair 2027 Shuttle and Car Service at Moscone West | CLS",
+      "getting": [
+        [
+          "Moscone West and nearby hotels",
+          "Moscone West is at Fourth and Howard in SoMa, a short walk from Union Square hotels. A lot of the week happens at side events in SoMa, the Mission, and around the city, so short shuttle runs between venues are common."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "city_short": "San Francisco",
+      "venue_short": "Moscone West"
     },
     {
       "sort": 8,
@@ -239,13 +466,47 @@
       "plans_h2": "For sponsors, partners, and big teams.",
       "plans_sub": "Many Dreamforce guests stay outside downtown, and sponsors host events all over the city. Booking early matters.",
       "plans": [
-        ["Hotel shuttles from across the Bay", "When downtown hotels sell out, teams stay in the East Bay, the Peninsula, or near SFO. We run scheduled shuttles to Moscone and back."],
-        ["Sponsor events and customer dinners", "Bring customers from Moscone to your party, dinner, or hospitality suite in Sprinters, limo buses, or full coaches."],
-        ["VIP cars and airport runs", "Sedans and SUVs for executives and speakers, plus SFO and OAK pickups when your team flies in."]
+        [
+          "Hotel shuttles from across the Bay",
+          "When downtown hotels sell out, teams stay in the East Bay, the Peninsula, or near SFO. We run scheduled shuttles to Moscone and back."
+        ],
+        [
+          "Sponsor events and customer dinners",
+          "Bring customers from Moscone to your party, dinner, or hospitality suite in Sprinters, limo buses, or full coaches."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives and speakers, plus SFO and OAK pickups when your team flies in."
+        ]
       ],
       "faqs": [
-        ["When should we book transportation for Dreamforce?", "Earlier than you think. Dreamforce is one of the busiest weeks of the year for Bay Area transportation. If you know you need shuttles or cars, reach out now and we will hold vehicles for your dates."]
-      ]
+        [
+          "When should we book transportation for Dreamforce?",
+          "Earlier than you think. Dreamforce is one of the busiest weeks of the year for Bay Area transportation. If you know you need shuttles or cars, reach out now and we will hold vehicles for your dates."
+        ]
+      ],
+      "cal": [
+        "SEP",
+        "21 to 23"
+      ],
+      "image": "img-executive.jpg",
+      "seo_title": "Dreamforce 2027 Shuttle, Charter Bus and Car Service in San Francisco | CLS",
+      "getting": [
+        [
+          "Moscone Center and hotels",
+          "Dreamforce takes over Moscone Center and the streets around it, and downtown hotels sell out early. Many teams stay in the East Bay, on the Peninsula, or near SFO. Some streets near Moscone close during the event, so set pickup points with that in mind."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "For teams staying outside downtown, a scheduled coach or Sprinter each morning and evening keeps everyone together. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "city_short": "San Francisco",
+      "venue_short": "Moscone Center"
     }
   ]
 }
