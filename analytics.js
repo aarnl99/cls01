@@ -1,12 +1,14 @@
 /* CLS traffic and conversion tracking (Google Analytics 4).
    Counts page views, quote and program form sends, phone taps and email taps. */
 (function () {
-  var GA_ID = 'G-XXXXXXXXXX';
+  var GA_ID = 'G-Y332KTB2KW';
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = gtag;
   gtag('js', new Date());
-  gtag('config', GA_ID);
+  /* Test copies (deploy previews) show up live in GA DebugView. */
+  var isTest = location.hostname.indexOf('clsgt.com') === -1;
+  gtag('config', GA_ID, isTest ? { debug_mode: true } : {});
 
   var s = document.createElement('script');
   s.async = true;
