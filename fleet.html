@@ -239,6 +239,12 @@
     .hero-cta-row { flex-direction:column; }
     .fleet-grid { grid-template-columns: 1fr; }
   }
+
+  /* Phone menu: show the menu button and hide the full link row on small screens */
+  @media (max-width: 900px) {
+    .nav-links, .nav-right { display: none !important; }
+    .nav-hamburger { display: flex !important; }
+  }
 </style>
 <script type="application/ld+json">
 {

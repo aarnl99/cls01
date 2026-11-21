@@ -1740,7 +1740,13 @@
         .cls-ls{font-size:15px;}
         .cls-map-tag{display:none;}
       }
-    </style>
+    
+  /* Phone menu: show the menu button and hide the full link row on small screens */
+  @media (max-width: 900px) {
+    .nav-links, .nav-right { display: none !important; }
+    .nav-hamburger { display: flex !important; }
+  }
+</style>
 
     <script>
     (function(){
@@ -1985,5 +1991,23 @@
 
 </script>
 <script src="/contact.js"></script>
+<script>
+(function () {
+  var btn = document.getElementById('navHamburger');
+  var menu = document.getElementById('mobileMenu');
+  if (btn && menu) {
+    btn.addEventListener('click', function () {
+      btn.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        btn.classList.remove('open');
+        menu.classList.remove('open');
+      });
+    });
+  }
+})();
+</script>
 </body>
 </html>

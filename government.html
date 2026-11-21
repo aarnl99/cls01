@@ -313,6 +313,12 @@
     .form-row { grid-template-columns:1fr; gap:0; }
     .hero-stats-row { gap:28px; margin-top:40px; padding-top:28px; }
   }
+
+  /* Phone menu: show the menu button and hide the full link row on small screens */
+  @media (max-width: 900px) {
+    .nav-links, .nav-right { display: none !important; }
+    .nav-hamburger { display: flex !important; }
+  }
 </style>
 
 <script type="application/ld+json">
