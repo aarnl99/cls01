@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://clsgt.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://clsgt.com/corporate-shuttle.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://clsgt.com/university.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://clsgt.com/government.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://clsgt.com/events-charter.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://clsgt.com/about.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://clsgt.com/safety-technology.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://clsgt.com/fleet.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://clsgt.com/environmental.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
-  <url><loc>https://clsgt.com/careers.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
-  <url><loc>https://clsgt.com/privacy-policy.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://clsgt.com/corporate-shuttle</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/university</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/government</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events-charter</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/about</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/safety-technology</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/fleet</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/environmental</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/careers</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clsgt.com/privacy-policy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
   <url><loc>https://clsgt.com/events/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://clsgt.com/events/jpm-healthcare</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://clsgt.com/events/gdc</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
