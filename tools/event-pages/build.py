@@ -235,6 +235,7 @@ def head(title, description, path, ld_blocks):
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="google-site-verification" content="7jbHhe_Yhm05NuSiomC2O0QaMhTyOEO22_0uCEOFywg">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{e(title)}</title>
 <meta name="description" content="{e(description)}">
