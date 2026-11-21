@@ -3,7 +3,7 @@
   "events": [
     {
       "sort": 1,
-      "slug": "jp-morgan-healthcare-conference-transportation",
+      "slug": "jpm-healthcare",
       "name": "J.P. Morgan Healthcare Conference 2027",
       "short": "JPM Healthcare Week",
       "tag": "JPM Healthcare Week 2027",
@@ -69,7 +69,7 @@
     },
     {
       "sort": 2,
-      "slug": "gdc-transportation",
+      "slug": "gdc",
       "name": "GDC Festival of Gaming 2027",
       "short": "GDC 2027",
       "tag": "GDC 2027 at Moscone",
@@ -130,7 +130,7 @@
     },
     {
       "sort": 3,
-      "slug": "nvidia-gtc-transportation",
+      "slug": "nvidia-gtc",
       "name": "NVIDIA GTC 2027",
       "short": "NVIDIA GTC",
       "tag": "NVIDIA GTC 2027 in San Jose",
@@ -200,7 +200,7 @@
     },
     {
       "sort": 4,
-      "slug": "rsac-conference-transportation",
+      "slug": "rsac",
       "name": "RSAC Conference 2027",
       "short": "RSAC 2027",
       "tag": "RSAC 2027 at Moscone",
@@ -261,7 +261,7 @@
     },
     {
       "sort": 5,
-      "slug": "snowflake-summit-transportation",
+      "slug": "snowflake-summit",
       "name": "Snowflake Summit 2027",
       "short": "Snowflake Summit",
       "tag": "Snowflake Summit 2027",
@@ -322,7 +322,7 @@
     },
     {
       "sort": 6,
-      "slug": "databricks-data-ai-summit-transportation",
+      "slug": "databricks-data-ai-summit",
       "name": "Databricks Data + AI Summit 2027",
       "short": "Data + AI Summit",
       "tag": "Data + AI Summit 2027",
@@ -383,7 +383,7 @@
     },
     {
       "sort": 7,
-      "slug": "ai-engineer-worlds-fair-transportation",
+      "slug": "ai-engineer-worlds-fair",
       "name": "AI Engineer World's Fair 2027",
       "short": "AI Engineer World's Fair",
       "tag": "AI Engineer World's Fair 2027",
@@ -444,7 +444,7 @@
     },
     {
       "sort": 8,
-      "slug": "dreamforce-transportation",
+      "slug": "dreamforce",
       "name": "Dreamforce 2027",
       "short": "Dreamforce",
       "tag": "Dreamforce 2027",

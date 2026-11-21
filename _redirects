@@ -28,6 +28,16 @@
 /wp-admin/*                             /                    301
 /feed                                   /                    301
 
+# Early names for the conference pages
+/events/jp-morgan-healthcare-conference-transportation  /events/jpm-healthcare  301
+/events/gdc-transportation  /events/gdc  301
+/events/nvidia-gtc-transportation  /events/nvidia-gtc  301
+/events/rsac-conference-transportation  /events/rsac  301
+/events/snowflake-summit-transportation  /events/snowflake-summit  301
+/events/databricks-data-ai-summit-transportation  /events/databricks-data-ai-summit  301
+/events/ai-engineer-worlds-fair-transportation  /events/ai-engineer-worlds-fair  301
+/events/dreamforce-transportation  /events/dreamforce  301
+
 # Keep function source files private
 /netlify/*                              /                    301!
 
