@@ -11,4 +11,13 @@
   <url><loc>https://clsgt.com/environmental</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://clsgt.com/careers</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://clsgt.com/privacy-policy</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://clsgt.com/events/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clsgt.com/events/jpm-healthcare</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/gdc</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/nvidia-gtc</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/rsac</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/snowflake-summit</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/databricks-data-ai-summit</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/ai-engineer-worlds-fair</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/dreamforce</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 </urlset>
