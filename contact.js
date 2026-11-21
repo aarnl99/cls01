@@ -22,6 +22,10 @@
       body: new URLSearchParams(data).toString()
     }).then(function (res) {
       if (!res.ok) throw new Error('status ' + res.status);
+      if (window.clsTrackForm) {
+        var lbl = data.get('form_label');
+        window.clsTrackForm(form.getAttribute('name'), lbl ? String(lbl) : '');
+      }
       form.reset();
       show(form, 'Thanks! We got it and will be in touch soon.', true);
     }).catch(function () {
