@@ -526,7 +526,9 @@ def event_page(ev, all_events):
         "areaServed": ev["area_served"],
         "url": SITE + path,
     }
-    faqs = ev.get("faqs", []) + common_faqs(ev)
+    own = ev.get("faqs", [])
+    has_booking_q = any("book" in q[0].lower() for q in own)
+    faqs = own + [f for f in common_faqs(ev) if not (has_booking_q and f[0].startswith("How early should we book"))]
     faq_ld = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
