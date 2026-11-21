@@ -30,3 +30,6 @@
 
 # Keep function source files private
 /netlify/*                              /                    301!
+
+# Keep the page builder source private
+/tools/*                                /                    301!

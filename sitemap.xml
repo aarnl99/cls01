@@ -11,4 +11,13 @@
   <url><loc>https://clsgt.com/environmental.html</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://clsgt.com/careers.html</loc><priority>0.6</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://clsgt.com/privacy-policy.html</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://clsgt.com/events/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://clsgt.com/events/jp-morgan-healthcare-conference-transportation</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/gdc-transportation</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/nvidia-gtc-transportation</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/rsac-conference-transportation</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/snowflake-summit-transportation</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/databricks-data-ai-summit-transportation</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/ai-engineer-worlds-fair-transportation</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/dreamforce-transportation</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 </urlset>
