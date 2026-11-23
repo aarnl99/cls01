@@ -217,7 +217,6 @@ LOCAL_BUSINESS = {
     "name": "CLS Global Transportation",
     "url": SITE,
     "telephone": "+16504608778",
-    "email": "res@clsgt.com",
 }
 
 
@@ -264,7 +263,7 @@ def head(title, description, path, ld_blocks):
 """
 
 
-def nav():
+def nav(quote_href="#quote"):
     return f"""
 <nav>
   <a href="/index.html" class="nav-logo">
@@ -286,7 +285,7 @@ def nav():
   </ul>
   <div class="nav-right">
     <a href="tel:6504608778" class="nav-phone">650.460.8778</a>
-    <a href="#quote" class="btn-red">Get a Quote</a>
+    <a href="{quote_href}" class="btn-red">Get a Quote</a>
   </div>
   <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -300,7 +299,7 @@ def nav():
   <a href="/fleet.html">Fleet</a>
   <a href="/about.html">About</a>
   <a href="tel:6504608778">650.460.8778</a>
-  <a href="#quote" class="mobile-cta">Get a Quote</a>
+  <a href="{quote_href}" class="mobile-cta">Get a Quote</a>
 </div>
 """
 
@@ -314,7 +313,7 @@ def footer():
       <p>The Bay Area's transportation partner for corporate shuttles, campus transit, and events since 2011. Serving San Francisco, the Peninsula, South Bay, and East Bay.</p>
       <div class="footer-contact">
         <a href="tel:6504608778"><strong>650.460.8778</strong></a><span style="color:inherit"> Call or Text</span>
-        <a href="mailto:res@clsgt.com">res@clsgt.com</a>
+        <a href="/contact">Contact us</a>
       </div>
     </div>
     <div class="footer-col">
@@ -460,7 +459,7 @@ def quote_form(ev):
       <textarea name="notes" placeholder="Which days? Hotel loop, airport pickups, a dinner or party? Tell us what you have in mind."></textarea>
       <button type="submit">Send My Request</button>
       <p class="cls-form-status" role="status" style="display:none;"></p>
-      <p class="quote-note">Or email <a href="mailto:res@clsgt.com">res@clsgt.com</a></p>
+      <p class="quote-note">Or <a href="/contact">contact us</a></p>
     </form>
   </div>
 </section>
@@ -740,11 +739,11 @@ def index_page(events):
       <h2>Going to a conference that is not listed?</h2>
       <p>We move groups to events all over the Bay Area. Tell us the event, the dates, and your headcount.</p>
     </div>
-    <a href="/index.html#quote" class="btn-white-solid">Get an Event Quote</a>
+    <a href="/charter-quote" class="btn-white-solid">Get an Event Quote</a>
   </div>
 </div>
 """
-    return head(title, desc, path, [item_list]) + nav() + body + footer()
+    return head(title, desc, path, [item_list]) + nav('/charter-quote') + body + footer()
 
 
 def faq_html(faqs):
