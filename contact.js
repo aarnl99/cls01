@@ -29,7 +29,7 @@
       form.reset();
       show(form, 'Thanks! We got it and will be in touch soon.', true);
     }).catch(function () {
-      show(form, 'Sorry, that did not go through. Please call 650.460.8778 or email res@clsgt.com.', false);
+      show(form, 'Sorry, that did not go through. Please try again or call 650.460.8778.', false);
     }).finally(function () {
       if (btn) { btn.disabled = false; btn.textContent = label; }
     });

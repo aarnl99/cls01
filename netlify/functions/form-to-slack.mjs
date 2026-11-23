@@ -1,4 +1,4 @@
-// Posts every new website form entry (quotes, government requests, job applications)
+// Posts every new website form entry (quotes, contact us, government requests, job applications)
 // to the CLS Slack channel through an incoming webhook.
 // The webhook URL lives only in the SLACK_WEBHOOK_URL environment variable in Netlify.
 
@@ -7,6 +7,7 @@ const TITLES = {
   'charter-quote': 'Charter quote',
   'government-request': 'Government program request',
   'job-application': 'Job application',
+  'contact': 'Corporate shuttle contact',
 };
 
 const LABELS = {
