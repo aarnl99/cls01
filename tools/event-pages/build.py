@@ -263,7 +263,7 @@ def head(title, description, path, ld_blocks):
 """
 
 
-def nav():
+def nav(quote_href="#quote"):
     return f"""
 <nav>
   <a href="/index.html" class="nav-logo">
@@ -285,7 +285,7 @@ def nav():
   </ul>
   <div class="nav-right">
     <a href="tel:6504608778" class="nav-phone">650.460.8778</a>
-    <a href="#quote" class="btn-red">Get a Quote</a>
+    <a href="{quote_href}" class="btn-red">Get a Quote</a>
   </div>
   <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -299,7 +299,7 @@ def nav():
   <a href="/fleet.html">Fleet</a>
   <a href="/about.html">About</a>
   <a href="tel:6504608778">650.460.8778</a>
-  <a href="#quote" class="mobile-cta">Get a Quote</a>
+  <a href="{quote_href}" class="mobile-cta">Get a Quote</a>
 </div>
 """
 
@@ -739,11 +739,11 @@ def index_page(events):
       <h2>Going to a conference that is not listed?</h2>
       <p>We move groups to events all over the Bay Area. Tell us the event, the dates, and your headcount.</p>
     </div>
-    <a href="/index.html#quote" class="btn-white-solid">Get an Event Quote</a>
+    <a href="/charter-quote" class="btn-white-solid">Get an Event Quote</a>
   </div>
 </div>
 """
-    return head(title, desc, path, [item_list]) + nav() + body + footer()
+    return head(title, desc, path, [item_list]) + nav('/charter-quote') + body + footer()
 
 
 def faq_html(faqs):

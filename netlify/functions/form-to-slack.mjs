@@ -7,7 +7,7 @@ const TITLES = {
   'charter-quote': 'Charter quote',
   'government-request': 'Government program request',
   'job-application': 'Job application',
-  'contact': 'Corporate shuttle contact',
+  'contact': 'Contact us',
 };
 
 const LABELS = {
