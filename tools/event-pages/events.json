@@ -507,6 +507,378 @@
       ],
       "city_short": "San Francisco",
       "venue_short": "Moscone Center"
+    },
+    {
+      "slug": "ors",
+      "name": "ORS 2027 Annual Meeting",
+      "short": "ORS 2027",
+      "tag": "ORS 2027 at Moscone West",
+      "dates_text": "February 19 to 23, 2027",
+      "start_date": "2027-02-19",
+      "dates_confirmed": true,
+      "cal": [
+        "FEB",
+        "19 to 23"
+      ],
+      "venue": "Moscone West",
+      "venue_short": "Moscone West",
+      "city": "San Francisco",
+      "city_short": "San Francisco",
+      "area_served": "San Francisco",
+      "attendance": "",
+      "attendance_note": "",
+      "organizer": "Orthopaedic Research Society",
+      "official_url": "https://moscone.com/events/orthopaedic-research-society-2027-annual-meeting",
+      "official_label": "moscone.com",
+      "source_kind": "venue",
+      "image": "img-corporate.jpg",
+      "card_line": "Researchers, labs, and device teams from around the world, with lab dinners and sponsor events after hours.",
+      "meta": "Shuttles and car service for the ORS 2027 Annual Meeting at Moscone West, February 19 to 23. Hotel shuttles, SFO pickups, VIP cars, and group dinners.",
+      "seo_title": "ORS 2027 Annual Meeting Shuttle and Car Service at Moscone West | CLS",
+      "h1": "Shuttles and cars for ORS 2027 in San Francisco.",
+      "intro": "The Orthopaedic Research Society brings its 2027 Annual Meeting to Moscone West. CLS gets your lab, your company team, and your guests between hotels, sessions, and dinners on time.",
+      "plans_h2": "For research teams, sponsors, and exhibitors.",
+      "plans_sub": "Five days of sessions plus dinners and meetups at night. We plan the rides around your schedule.",
+      "plans": [
+        [
+          "Hotel to Moscone shuttles",
+          "A scheduled shuttle between your hotel and Moscone West, timed around the morning sessions and the end of the day."
+        ],
+        [
+          "Lab and sponsor dinners",
+          "Taking your group or your guests to dinner? We bring them from Moscone to the restaurant and back in a Sprinter or a mini coach."
+        ],
+        [
+          "Airport runs and VIP cars",
+          "SFO and OAK pickups for your team and speakers, plus sedans and SUVs for anyone who needs their own car."
+        ]
+      ],
+      "getting": [
+        [
+          "Moscone West and nearby hotels",
+          "Moscone West is at Fourth and Howard Streets in SoMa, a short walk from the Union Square hotels. When many sessions let out at once, the curbs nearby get busy, so set pickup points a block or two away."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "For a lab group or a company team staying in one hotel, one Sprinter or mini coach each morning and evening keeps everyone together. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "faqs": [],
+      "sort": 0
+    },
+    {
+      "slug": "aad",
+      "name": "AAD Annual Meeting 2027",
+      "short": "AAD 2027",
+      "tag": "AAD 2027 at Moscone",
+      "dates_text": "March 19 to 23, 2027",
+      "start_date": "2027-03-19",
+      "dates_confirmed": true,
+      "cal": [
+        "MAR",
+        "19 to 23"
+      ],
+      "venue": "Moscone North, South, and West",
+      "venue_short": "Moscone North, South, and West",
+      "city": "San Francisco",
+      "city_short": "San Francisco",
+      "area_served": "San Francisco",
+      "attendance": "",
+      "attendance_note": "",
+      "organizer": "American Academy of Dermatology",
+      "official_url": "https://www.aad.org/member/meetings-education/am27",
+      "official_label": "aad.org",
+      "source_kind": "",
+      "image": "img-executive.jpg",
+      "card_line": "Dermatology's big yearly meeting fills all three Moscone halls, with industry dinners every night.",
+      "meta": "Shuttles and car service for the 2027 AAD Annual Meeting at Moscone Center, March 19 to 23. Hotel shuttles, SFO pickups, VIP cars, and dinner rides.",
+      "seo_title": "AAD 2027 Annual Meeting Shuttle, Charter Bus and Car Service | CLS",
+      "h1": "Transportation for the 2027 AAD Annual Meeting.",
+      "intro": "The AAD Annual Meeting takes over all three Moscone halls in March 2027. CLS runs the hotel shuttles, airport pickups, and dinner rides that keep your team and your guests moving.",
+      "plans_h2": "For exhibitors, sponsors, and big teams.",
+      "plans_sub": "With all three halls in use, guests spread out across the city. A ride plan keeps your people together.",
+      "plans": [
+        [
+          "Hotel shuttles across downtown",
+          "Scheduled shuttles from your hotel to Moscone and back, even when your team is staying outside downtown."
+        ],
+        [
+          "Industry dinners and events",
+          "Bring physicians and guests from Moscone to your dinner or event in Sprinters, limo buses, or full coaches."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives, speakers, and key guests, plus SFO and OAK pickups."
+        ]
+      ],
+      "getting": [
+        [
+          "Three halls at Moscone",
+          "The meeting uses Moscone North, South, and West, which sit across Howard Street and Fourth Street from each other in SoMa. Tell us which hall you need most, and we will set pickup points that avoid the busiest corners."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "For a big booth team or a group of guests, a coach loop between your hotel and Moscone is often easier than many separate rideshares. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "faqs": [],
+      "sort": 0
+    },
+    {
+      "slug": "amcp",
+      "name": "AMCP 2027 Annual Meeting",
+      "short": "AMCP 2027",
+      "tag": "AMCP 2027 at Moscone West",
+      "dates_text": "April 13 to 16, 2027",
+      "start_date": "2027-04-13",
+      "dates_confirmed": true,
+      "cal": [
+        "APR",
+        "13 to 16"
+      ],
+      "venue": "Moscone West",
+      "venue_short": "Moscone West",
+      "city": "San Francisco",
+      "city_short": "San Francisco",
+      "area_served": "San Francisco",
+      "attendance": "",
+      "attendance_note": "",
+      "organizer": "Academy of Managed Care Pharmacy",
+      "official_url": "https://amcpannual.org/about/amcp-future-meetings",
+      "official_label": "amcpannual.org",
+      "source_kind": "",
+      "image": "img-corporate.jpg",
+      "card_line": "Pharmacy, health plan, and pharma teams at Moscone West, with client dinners and receptions at night.",
+      "meta": "Shuttles and car service for AMCP 2027 at Moscone West, April 13 to 16. Hotel shuttles, SFO pickups, VIP cars, and rides to client dinners.",
+      "seo_title": "AMCP 2027 Annual Meeting Shuttle and Car Service at Moscone West | CLS",
+      "h1": "Shuttles and cars for AMCP 2027 in San Francisco.",
+      "intro": "The Academy of Managed Care Pharmacy holds AMCP 2027 at Moscone West. CLS helps pharma and health plan teams get to sessions, meetings, and client dinners without the rideshare scramble.",
+      "plans_h2": "For pharma teams, health plans, and exhibitors.",
+      "plans_sub": "Booth duty by day and client dinners by night. We plan rides around both.",
+      "plans": [
+        [
+          "Hotel to Moscone shuttles",
+          "A scheduled shuttle for your booth staff and team, timed around the show floor hours."
+        ],
+        [
+          "Client dinners and receptions",
+          "We bring your guests from Moscone to your dinner or reception and back, in Sprinters, limo buses, or coaches."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives and key clients, plus SFO and OAK pickups when your team flies in."
+        ]
+      ],
+      "getting": [
+        [
+          "Moscone West and nearby hotels",
+          "Moscone West is at Fourth and Howard Streets in SoMa, a short walk from the Union Square hotels. Curbs near the building get busy at the start and end of the day, so set pickup points a block or two away."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "For client dinners, a Sprinter or limo bus keeps a group together and arriving at the same time. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "faqs": [],
+      "sort": 0
+    },
+    {
+      "slug": "stripe-sessions",
+      "name": "Stripe Sessions 2027",
+      "short": "Stripe Sessions",
+      "tag": "Stripe Sessions 2027 at Moscone",
+      "dates_text": "May 4 to 6, 2027",
+      "start_date": "2027-05-04",
+      "dates_confirmed": true,
+      "cal": [
+        "MAY",
+        "4 to 6"
+      ],
+      "venue": "Moscone North and South",
+      "venue_short": "Moscone North and South",
+      "city": "San Francisco",
+      "city_short": "San Francisco",
+      "area_served": "San Francisco",
+      "attendance": "",
+      "attendance_note": "",
+      "organizer": "Stripe",
+      "official_url": "https://stripesessions.com/",
+      "official_label": "stripesessions.com",
+      "source_kind": "",
+      "image": "img-executive.jpg",
+      "card_line": "Founders, builders, and payments teams at Moscone, with partner events and dinners all week.",
+      "meta": "Shuttles and car service for Stripe Sessions 2027 at Moscone North and South, May 4 to 6. Hotel shuttles, SFO pickups, VIP cars, and event rides.",
+      "seo_title": "Stripe Sessions 2027 Shuttle and Car Service at Moscone | CLS",
+      "h1": "Transportation for Stripe Sessions 2027.",
+      "intro": "Stripe Sessions comes back to Moscone North and South in May 2027. CLS moves your team, your customers, and your guests between hotels, the conference, and your side events.",
+      "plans_h2": "For partners, sponsors, and big teams.",
+      "plans_sub": "Three days of talks plus side events and dinners across the city. We plan rides around all of it.",
+      "plans": [
+        [
+          "Hotel to Moscone shuttles",
+          "A shuttle loop for your team so everyone makes the keynote and gets back to the hotel after."
+        ],
+        [
+          "Side events and customer dinners",
+          "Hosting a dinner or a party during Sessions week? We bring your guests from Moscone to your venue and back."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives and speakers, plus SFO and OAK pickups when your team flies in."
+        ]
+      ],
+      "getting": [
+        [
+          "Moscone North and South",
+          "Moscone North and South face each other across Howard Street in SoMa, a short walk from the Union Square hotels. When a keynote lets out, the sidewalks on Howard get crowded, so set pickup points a block or two away."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "For side events, a limo bus or mini coach that loops between Moscone and your venue keeps guests moving. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "faqs": [],
+      "sort": 0
+    },
+    {
+      "slug": "visa-payments-forum",
+      "name": "Visa Payments Forum 2027",
+      "short": "Visa Payments Forum",
+      "tag": "Visa Payments Forum 2027",
+      "dates_text": "May 25 to 27, 2027",
+      "start_date": "2027-05-25",
+      "dates_confirmed": true,
+      "cal": [
+        "MAY",
+        "25 to 27"
+      ],
+      "venue": "Moscone Center",
+      "venue_short": "Moscone Center",
+      "city": "San Francisco",
+      "city_short": "San Francisco",
+      "area_served": "San Francisco",
+      "attendance": "",
+      "attendance_note": "",
+      "organizer": "Visa",
+      "official_url": "https://moscone.com/events/visa-payment-forum-vpf-2027",
+      "official_label": "moscone.com",
+      "source_kind": "venue",
+      "image": "img-corporate.jpg",
+      "card_line": "Payments leaders, banks, and partners at Moscone, with client meetings and dinners every night.",
+      "meta": "Shuttles and car service for Visa Payments Forum 2027 at Moscone Center, May 25 to 27. Hotel shuttles, SFO pickups, VIP cars, and dinner rides.",
+      "seo_title": "Visa Payments Forum 2027 Shuttle and Car Service at Moscone | CLS",
+      "h1": "Shuttles and cars for Visa Payments Forum 2027.",
+      "intro": "Visa Payments Forum is at Moscone Center in May 2027. CLS gets your team and your clients to sessions, meetings, and dinners on time, with one dispatch number for the whole week.",
+      "plans_h2": "For banks, partners, and big teams.",
+      "plans_sub": "Packed days of meetings and client events at night. We plan the rides so your team can focus on the work.",
+      "plans": [
+        [
+          "Hotel to Moscone shuttles",
+          "A scheduled shuttle between your hotel and Moscone, timed around the main sessions."
+        ],
+        [
+          "Client meetings and dinners",
+          "Bring clients from Moscone to your dinner or meeting and back in a sedan, a Sprinter, or a limo bus."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives and key clients, plus SFO and OAK pickups."
+        ]
+      ],
+      "getting": [
+        [
+          "Moscone Center and nearby hotels",
+          "Moscone Center sits in SoMa, a short walk from the big Union Square hotels. During a big show, the sidewalks and curbs around Howard Street get very crowded, so set pickup points a block or two away."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "For executive meetings around town, a sedan or SUV with a driver who waits between stops saves time. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "faqs": [],
+      "sort": 0
+    },
+    {
+      "slug": "ocp-global-summit",
+      "name": "OCP Global Summit 2027",
+      "short": "OCP Global Summit",
+      "tag": "OCP Global Summit 2027 at Moscone",
+      "dates_text": "October 4 to 7, 2027",
+      "start_date": "2027-10-04",
+      "dates_confirmed": true,
+      "cal": [
+        "OCT",
+        "4 to 7"
+      ],
+      "venue": "Moscone Center",
+      "venue_short": "Moscone Center",
+      "city": "San Francisco",
+      "city_short": "San Francisco",
+      "area_served": "San Francisco",
+      "attendance": "",
+      "attendance_note": "",
+      "organizer": "Open Compute Project",
+      "official_url": "https://www.opencompute.org/events/ocp-summit/2027-ocp-global-summit/",
+      "official_label": "opencompute.org",
+      "source_kind": "",
+      "image": "img-executive.jpg",
+      "card_line": "The data center and hardware crowd moves from San Jose to Moscone for 2027, with vendor events every night.",
+      "meta": "Shuttles and car service for the OCP Global Summit 2027 at Moscone Center, October 4 to 7. Hotel shuttles, SFO and SJC pickups, VIP cars, and event rides.",
+      "seo_title": "OCP Global Summit 2027 Shuttle and Car Service at Moscone | CLS",
+      "h1": "Transportation for the OCP Global Summit 2027.",
+      "intro": "The OCP Global Summit moves to Moscone Center in San Francisco for 2027. Many teams are used to San Jose, so CLS helps you plan new hotel, airport, and event rides for the move north.",
+      "plans_h2": "For vendors, sponsors, and big teams.",
+      "plans_sub": "A new city for this show means new hotels and new routes. We plan rides so the move is easy for your team.",
+      "plans": [
+        [
+          "Hotel to Moscone shuttles",
+          "A shuttle loop for your booth staff and team, including from the Peninsula or South Bay if that is where you stay."
+        ],
+        [
+          "Vendor events and customer dinners",
+          "Bring customers from Moscone to your dinner or party and back, in Sprinters, limo buses, or coaches."
+        ],
+        [
+          "VIP cars and airport runs",
+          "Sedans and SUVs for executives and speakers, plus SFO, OAK, and SJC pickups."
+        ]
+      ],
+      "getting": [
+        [
+          "Moscone Center, not San Jose",
+          "Starting in 2027 the summit is at Moscone Center in SoMa, a short walk from the Union Square hotels. If your team still books rooms in the South Bay, plan a daily ride up to the city, which can take an hour or more at rush hour."
+        ],
+        [
+          "Flying in",
+          "Most out of town guests fly into SFO, south of the city. Oakland (OAK) is across the Bay Bridge and is often a good backup. Traffic into downtown can be slow at rush hour, so build in extra time for arrivals on the first day."
+        ],
+        [
+          "Picking the right vehicle",
+          "For a team staying outside the city, a scheduled coach or Sprinter each morning and evening keeps everyone together. A good rule of thumb: sedans and SUVs for one to six people, an Executive Sprinter for 10 to 14, a limo bus for up to 26, a mini coach for up to 37, and a full motorcoach for 40 to 57."
+        ]
+      ],
+      "faqs": [],
+      "sort": 0
     }
   ]
 }

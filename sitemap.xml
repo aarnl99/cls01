@@ -20,4 +20,10 @@
   <url><loc>https://clsgt.com/events/databricks-data-ai-summit</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://clsgt.com/events/ai-engineer-worlds-fair</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://clsgt.com/events/dreamforce</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/ors</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/aad</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/amcp</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/stripe-sessions</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/visa-payments-forum</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://clsgt.com/events/ocp-global-summit</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
 </urlset>

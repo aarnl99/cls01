@@ -505,6 +505,10 @@ COUNTDOWN_JS = """
 
 
 def event_page(ev, all_events):
+    crowd_row = ""
+    if ev.get("attendance"):
+        crowd_row = f"""        <div class="ev-pass-row"><div class="ev-pass-ico">{ICONS['people']}</div><div><div class="ev-pass-lbl">Crowd size</div><div class="ev-pass-val">{e(ev['attendance'])}</div><div class="ev-pass-sub">{e(ev.get('attendance_note',''))}</div></div></div>"""
+    source_from = "the Moscone Center event listing" if ev.get("source_kind") == "venue" else "the organizer's website"
     path = f"/events/{ev['slug']}"
     title = ev["seo_title"]
     desc = ev["meta"]
@@ -573,13 +577,13 @@ def event_page(ev, all_events):
       <div class="ev-pass-rows">
         <div class="ev-pass-row"><div class="ev-pass-ico">{ICONS['calendar']}</div><div><div class="ev-pass-lbl">Dates</div><div class="ev-pass-val">{e(ev['dates_text'])}</div></div></div>
         <div class="ev-pass-row"><div class="ev-pass-ico">{ICONS['pin']}</div><div><div class="ev-pass-lbl">Venue</div><div class="ev-pass-val">{e(ev['venue'])}</div><div class="ev-pass-sub">{e(ev['city'])}</div></div></div>
-        <div class="ev-pass-row"><div class="ev-pass-ico">{ICONS['people']}</div><div><div class="ev-pass-lbl">Crowd size</div><div class="ev-pass-val">{e(ev['attendance'])}</div><div class="ev-pass-sub">{e(ev.get('attendance_note',''))}</div></div></div>
+{crowd_row}
         <div class="ev-pass-row"><div class="ev-pass-ico">{ICONS['flag']}</div><div><div class="ev-pass-lbl">Hosted by</div><div class="ev-pass-val">{e(ev['organizer'])}</div></div></div>
       </div>
     </div>
   </div>
 </section>
-<div class="ev-source"><p>Event details come from the organizer's website, <a href="{e(ev['official_url'])}" rel="nofollow noopener" target="_blank">{e(ev['official_label'])}</a>. Please check there for the latest. CLS Global Transportation is an independent company and is not affiliated with or endorsed by {e(ev['organizer'])}.</p></div>
+<div class="ev-source"><p>Event details come from {source_from}, <a href="{e(ev['official_url'])}" rel="nofollow noopener" target="_blank">{e(ev['official_label'])}</a>. Please check there for the latest. CLS Global Transportation is an independent company and is not affiliated with or endorsed by {e(ev['organizer'])}.</p></div>
 
 <section class="section">
   <div class="section-inner">
@@ -673,7 +677,7 @@ def index_page(events):
             "Hotel shuttles, airport pickups, VIP cars, and group charters from CLS Global Transportation.")
     first = [ev for ev in events if ev["start_date"] < "2027-05-01"]
     later = [ev for ev in events if ev["start_date"] >= "2027-05-01"]
-    groups = [("Winter and spring 2027", first), ("Summer and fall 2027", later)]
+    groups = [("January to April 2027", first), ("May to October 2027", later)]
     group_html = "\n".join(
         f"""    <div class="ix-group">
       <div class="ix-group-h"><h3>{e(name)}</h3><div></div></div>
@@ -716,7 +720,7 @@ def index_page(events):
   <div class="section-inner">
     <div class="section-label">Upcoming Events</div>
     <h2>The Bay Area's biggest conferences, coming up.</h2>
-    <p class="section-sub">Pick your event to see the dates, the venue, and how we can help. Dates come from each organizer's website. CLS is an independent company and is not affiliated with these events.</p>
+    <p class="section-sub">Pick your event to see the dates, the venue, and how we can help. Dates come from each organizer's website or the venue's event listing. CLS is an independent company and is not affiliated with these events.</p>
 {group_html}
   </div>
 </section>
@@ -789,7 +793,7 @@ def common_faqs(ev):
 
 def main():
     data = json.load(open(os.path.join(HERE, "events.json"), encoding="utf-8"))
-    events = sorted(data["events"], key=lambda ev: ev["sort"])
+    events = sorted(data["events"], key=lambda ev: ev["start_date"])
     os.makedirs(OUT, exist_ok=True)
     for ev in events:
         with open(os.path.join(OUT, ev["slug"] + ".html"), "w", encoding="utf-8") as f:
